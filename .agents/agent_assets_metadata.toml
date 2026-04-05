@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "XmdwxgH5Xwso0NXJByEdP"
+uri = "file://artifacts/pe-website/public/hero.png"
+type = "image"
+title = "Dark cinematic financial architecture"
+
+[[generated]]
+id = "bnGwb5HynWHWXg667Bv51"
+uri = "file://artifacts/pe-website/public/partner1.png"
+type = "image"
+title = "Professional headshot man"
+
+[[generated]]
+id = "2dJE5ow4j79W6rgxqgPVG"
+uri = "file://artifacts/pe-website/public/partner2.png"
+type = "image"
+title = "Professional headshot woman"
+
+[[generated]]
+id = "F43tmw2JRMHzk5Phz8MH8"
+uri = "file://artifacts/pe-website/public/partner3.png"
+type = "image"
+title = "Professional headshot man glasses"
