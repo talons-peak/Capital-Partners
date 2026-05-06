@@ -70,7 +70,7 @@ export default function About() {
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="about-page">
 
       {/* ── PAGE HERO ── */}
-      <section className="py-24 md:py-32 border-b border-border bg-white">
+      <section className="py-16 md:py-24 border-b border-border bg-white">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
           <motion.div variants={fadeInUp}><GoldLabel>About L&amp;E Partners</GoldLabel></motion.div>
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-serif font-semibold leading-[0.9] tracking-tight text-foreground mb-10 max-w-4xl">
@@ -83,7 +83,7 @@ export default function About() {
       </section>
 
       {/* ── PRINCIPALS ── */}
-      <section className="py-24 md:py-32 bg-white" data-testid="principals-section">
+      <section className="py-16 md:py-24 bg-white" data-testid="principals-section">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           <Reveal className="mb-16">
             <motion.div variants={fadeInUp}>
@@ -92,7 +92,7 @@ export default function About() {
             </motion.div>
           </Reveal>
 
-          <div className="space-y-24 md:space-y-32">
+          <div className="space-y-16 md:space-y-20">
             {principals.map((p, i) => (
               <Reveal key={p.name}>
                 <motion.div
@@ -138,7 +138,7 @@ export default function About() {
                   </div>
                 </motion.div>
 
-                {i < principals.length - 1 && <div className="mt-16 h-[1px] bg-border" />}
+                {i < principals.length - 1 && <div className="mt-12 h-[1px] bg-border" />}
               </Reveal>
             ))}
           </div>

@@ -74,11 +74,11 @@ export default function Home() {
     <div className="selection:bg-primary selection:text-primary-foreground">
 
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center pt-28" data-testid="hero-section">
+      <section className="relative flex items-center pt-28 pb-12 md:pb-16" data-testid="hero-section">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
 
-            <motion.div initial="hidden" animate="visible" variants={stagger} className="py-16 lg:py-24">
+            <motion.div initial="hidden" animate="visible" variants={stagger} className="py-10 lg:py-16">
               <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-[2px] bg-primary" />
                 <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold">Executive Search for Private Equity</p>
@@ -116,7 +116,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] as const, delay: 0.2 }}
-              className="relative h-[520px] lg:h-[700px] overflow-hidden"
+              className="relative h-[440px] lg:h-[600px] overflow-hidden"
             >
               <motion.img
                 src="/le/hero-home.jpg"
@@ -133,7 +133,7 @@ export default function Home() {
       </section>
 
       {/* ── INTRO COPY (per L&E feedback) ── */}
-      <section className="py-28 md:py-36 bg-white" data-testid="intro-section">
+      <section className="py-16 md:py-24 bg-white" data-testid="intro-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <motion.div variants={fadeInUp} className="lg:col-span-4">
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* ── DUAL AUDIENCE CARDS ── */}
-      <section className="py-24 md:py-28 bg-muted" data-testid="audience-cards-section">
+      <section className="py-16 md:py-20 bg-muted" data-testid="audience-cards-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div variants={fadeInUp}>
@@ -206,7 +206,7 @@ export default function Home() {
       </section>
 
       {/* ── PULL QUOTE FULL-BLEED ── */}
-      <section className="relative h-[420px] md:h-[520px] overflow-hidden" data-testid="pullquote-section">
+      <section className="relative h-[340px] md:h-[420px] overflow-hidden" data-testid="pullquote-section">
         <img src="/le/hero-pe.jpg" alt="" className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-accent/80" />
         <div className="absolute inset-0 flex items-center justify-center">
@@ -230,7 +230,7 @@ export default function Home() {
       </section>
 
       {/* ── SECTORS ── */}
-      <section className="py-24 md:py-32 bg-white" data-testid="sectors-section">
+      <section className="py-16 md:py-24 bg-white" data-testid="sectors-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
           <motion.div variants={fadeInUp} className="mb-12">
             <div className="flex items-center gap-3 mb-4">
@@ -261,7 +261,7 @@ export default function Home() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 md:py-32 bg-muted" data-testid="testimonials-section">
+      <section className="py-16 md:py-24 bg-muted" data-testid="testimonials-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
           <motion.div variants={fadeInUp} className="mb-14 text-center max-w-3xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -296,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-24 md:py-32 bg-white border-t border-border" data-testid="cta-section">
+      <section className="py-16 md:py-24 bg-white border-t border-border" data-testid="cta-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInUp}>

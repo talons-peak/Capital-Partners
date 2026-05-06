@@ -34,9 +34,9 @@ export default function ForExecutives() {
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="for-executives-page">
 
       {/* ── PAGE HERO ── */}
-      <section className="py-24 md:py-32 border-b border-border bg-white">
+      <section className="py-12 md:py-20 border-b border-border bg-white">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
-          <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">
+          <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-5">
             <div className="w-8 h-[2px] bg-primary" />
             <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold">Services</p>
           </motion.div>
@@ -50,13 +50,13 @@ export default function ForExecutives() {
       </section>
 
       {/* ── HERO IMAGE ── */}
-      <section className="relative h-[360px] md:h-[480px] overflow-hidden" data-testid="hero-image-section">
+      <section className="relative h-[280px] md:h-[380px] overflow-hidden" data-testid="hero-image-section">
         <img src="/le/hero-executives.jpg" alt="" className="w-full h-full object-cover object-center" />
         <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
       </section>
 
       {/* ── CANDIDATE TYPES ── */}
-      <section className="py-24 md:py-32 bg-white" data-testid="candidate-types-section">
+      <section className="py-16 md:py-24 bg-white" data-testid="candidate-types-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-foreground mb-12">
             These entrepreneurs may be:
@@ -79,7 +79,7 @@ export default function ForExecutives() {
       </section>
 
       {/* ── HOW WE COLLABORATE ── */}
-      <section className="py-24 md:py-32 bg-muted" data-testid="collaboration-section">
+      <section className="py-16 md:py-24 bg-muted" data-testid="collaboration-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
           <motion.div variants={fadeInUp} className="space-y-7 text-lg text-muted-foreground font-light leading-relaxed">
             <p>
@@ -93,7 +93,7 @@ export default function ForExecutives() {
       </section>
 
       {/* ── CONFIDENTIALITY ── */}
-      <section className="py-20 md:py-24 bg-white border-t border-border" data-testid="confidentiality-section">
+      <section className="py-14 md:py-20 bg-white border-t border-border" data-testid="confidentiality-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
           <motion.div variants={fadeInUp} className="flex gap-6 items-start">
             <Lock className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
@@ -108,7 +108,7 @@ export default function ForExecutives() {
       </section>
 
       {/* ── CTA — navy ── */}
-      <section className="py-24 bg-accent" data-testid="cta-section">
+      <section className="py-16 md:py-20 bg-accent" data-testid="cta-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-white mb-4">
             Start a confidential conversation.
