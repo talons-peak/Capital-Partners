@@ -8,11 +8,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 35 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const } },
 };
 const stagger = {
   hidden: { opacity: 0 },
@@ -40,27 +40,27 @@ const inquirySchema = z.object({
 
 type InquiryForm = z.infer<typeof inquirySchema>;
 
-const offices = [
+const team = [
   {
-    city: "New York",
-    label: "Headquarters",
-    address: ["One Liberty Plaza, Suite 4200", "New York, NY 10006"],
-    phone: "+1 (212) 000-0000",
-    email: "nyc@le-partners.com",
+    name: "Lori Hess",
+    title: "Managing Partner",
+    office: "(646) 858-0034",
+    mobile: "(917) 446-3126",
+    email: "lori@l-epartners.com",
   },
   {
-    city: "London",
-    label: "European Office",
-    address: ["20 St James's Street", "London, SW1A 1ES"],
-    phone: "+44 20 0000 0000",
-    email: "london@le-partners.com",
+    name: "Sandi Macan",
+    title: "Partner",
+    office: "(646) 858-0036",
+    mobile: "(610) 420-3142",
+    email: "sandi@l-epartners.com",
   },
   {
-    city: "Singapore",
-    label: "Asia Pacific Office",
-    address: ["1 Raffles Place, #35-00", "OUB Centre, Singapore 048616"],
-    phone: "+65 6000 0000",
-    email: "apac@le-partners.com",
+    name: "Nikki Delp",
+    title: "Principal",
+    office: "(646) 777-1574",
+    mobile: "(610) 500-4164",
+    email: "nikki@l-epartners.com",
   },
 ];
 
@@ -75,15 +75,15 @@ export default function Contact() {
     console.log(values);
     toast({
       title: "Inquiry Received",
-      description: "Thank you for reaching out. A member of our team will be in touch within 2 business days.",
+      description: "Thank you for reaching out. A member of our team will be in touch shortly.",
     });
     form.reset();
   }
 
   return (
-    <div className="pt-24 selection:bg-primary selection:text-primary-foreground" data-testid="contact-page">
+    <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="contact-page">
 
-      {/* ── PAGE HERO with boardroom image ── */}
+      {/* ── PAGE HERO ── */}
       <section className="relative border-b border-border overflow-hidden bg-white">
         <div className="absolute inset-0 opacity-[0.06]">
           <img src="/boardroom.png" alt="" className="w-full h-full object-cover" />
@@ -94,29 +94,98 @@ export default function Contact() {
             <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold">Contact</p>
           </motion.div>
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-serif font-semibold leading-[0.9] tracking-tight text-foreground mb-10 max-w-4xl">
-            Initiate a dialogue.
+            Get in touch.
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-xl text-muted-foreground font-light leading-relaxed max-w-2xl">
-            L-E Partners welcomes inquiries from exceptional management teams, intermediaries, and prospective limited partners. All correspondence is held in strict confidence.
+            L&amp;E Partners welcomes inquiries from private equity firms and senior operating executives. All correspondence is held in strict confidence.
           </motion.p>
         </Reveal>
       </section>
 
-      {/* ── FORM + INFO ── */}
-      <section className="py-28 md:py-36 bg-muted" data-testid="contact-form-section">
-        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+      {/* ── TEAM CONTACTS ── */}
+      <section className="py-20 md:py-28 bg-white" data-testid="team-contacts-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
+          <motion.div variants={fadeInUp} className="mb-12">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-[2px] bg-primary" />
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Our Team</p>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground">Reach a principal directly.</h2>
+          </motion.div>
 
-            {/* Sidebar */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {team.map((p, i) => (
+              <motion.div
+                key={p.name}
+                variants={fadeInUp}
+                className="border border-border bg-white p-8 hover:border-primary/40 transition-colors"
+                data-testid={`contact-card-${i}`}
+              >
+                <div className="w-8 h-[2px] bg-primary mb-5" />
+                <h3 className="text-xl font-serif text-foreground mb-1">{p.name}</h3>
+                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-6">{p.title}</p>
+                <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                  <li>
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground/60 font-semibold">Office</span>
+                    <br />
+                    <a href={`tel:${p.office.replace(/\D/g, "")}`} className="hover:text-primary transition-colors">{p.office}</a>
+                  </li>
+                  <li>
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground/60 font-semibold">Mobile</span>
+                    <br />
+                    <a href={`tel:${p.mobile.replace(/\D/g, "")}`} className="hover:text-primary transition-colors">{p.mobile}</a>
+                  </li>
+                  <li>
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground/60 font-semibold">Email</span>
+                    <br />
+                    <a href={`mailto:${p.email}`} className="hover:text-primary transition-colors break-all">{p.email}</a>
+                  </li>
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ── FORM + INFO ── */}
+      <section className="py-24 md:py-32 bg-muted" data-testid="contact-form-section">
+        <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
             <Reveal className="lg:col-span-4">
               <motion.div variants={fadeInUp} className="space-y-12">
                 <div>
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-8 h-[2px] bg-primary" />
+                    <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Office</p>
+                  </div>
+                  <ul className="space-y-4 text-sm text-muted-foreground font-light">
+                    <li className="flex items-start gap-3">
+                      <MapPin className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span>36 East 10th Street, Suite 8E<br />New York, NY 10003</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <Phone className="w-4 h-4 text-accent flex-shrink-0" />
+                      <a href="tel:6468580034" className="hover:text-primary transition-colors">+1 (646) 858-0034</a>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <Mail className="w-4 h-4 text-accent flex-shrink-0" />
+                      <a href="mailto:lori@l-epartners.com" className="hover:text-primary transition-colors">
+                        lori@l-epartners.com
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="h-[1px] bg-border" />
+
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-[2px] bg-primary" />
                     <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Inquiry Types</p>
                   </div>
-                  <ul className="space-y-4">
-                    {["Investment Opportunities", "Limited Partner Inquiries", "Management Team Introductions", "Intermediary / Advisor Relations", "Media & Press", "General Inquiries"].map((item) => (
+                  <ul className="space-y-3">
+                    {["Private Equity Firm", "Executive", "General Inquiry"].map((item) => (
                       <li key={item} className="flex items-center gap-3 text-sm text-muted-foreground font-light">
                         <span className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
                         {item}
@@ -124,50 +193,9 @@ export default function Contact() {
                     ))}
                   </ul>
                 </div>
-
-                <div className="h-[1px] bg-border" />
-
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-[2px] bg-primary" />
-                    <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Response Time</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Clock className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                      All inquiries receive a response within 2 business days. Investment-related correspondence is reviewed by a senior member of our team.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="h-[1px] bg-border" />
-
-                <div>
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-8 h-[2px] bg-primary" />
-                    <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Headquarters</p>
-                  </div>
-                  <ul className="space-y-4 text-sm text-muted-foreground font-light">
-                    <li className="flex items-start gap-3">
-                      <MapPin className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                      <span>One Liberty Plaza, Suite 4200<br />New York, NY 10006</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Phone className="w-4 h-4 text-accent flex-shrink-0" />
-                      +1 (212) 000-0000
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <Mail className="w-4 h-4 text-accent flex-shrink-0" />
-                      <a href="mailto:inquiries@le-partners.com" className="hover:text-primary transition-colors">
-                        inquiries@le-partners.com
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </motion.div>
             </Reveal>
 
-            {/* Form */}
             <div className="lg:col-span-7 lg:col-start-6 bg-white border border-border p-10 md:p-12" data-testid="contact-form">
               <h2 className="text-2xl font-serif text-foreground mb-8">Send an Inquiry</h2>
               <Form {...form}>
@@ -177,7 +205,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">Full Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Jonathan Sterling" className="border-border focus:border-accent rounded-none h-12" data-testid="input-name" {...field} />
+                          <Input placeholder="Jane Smith" className="border-border focus:border-accent rounded-none h-12" data-testid="input-name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -186,7 +214,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">Organization</FormLabel>
                         <FormControl>
-                          <Input placeholder="Acme Corporation" className="border-border focus:border-accent rounded-none h-12" data-testid="input-organization" {...field} />
+                          <Input placeholder="Acme Capital" className="border-border focus:border-accent rounded-none h-12" data-testid="input-organization" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -198,7 +226,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">Email Address</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="j.sterling@example.com" className="border-border focus:border-accent rounded-none h-12" data-testid="input-email" {...field} />
+                          <Input type="email" placeholder="jane@example.com" className="border-border focus:border-accent rounded-none h-12" data-testid="input-email" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -226,11 +254,8 @@ export default function Contact() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="border-border">
-                          <SelectItem value="investment">Investment Opportunity</SelectItem>
-                          <SelectItem value="lp">Limited Partner Inquiry</SelectItem>
-                          <SelectItem value="management">Management Team Introduction</SelectItem>
-                          <SelectItem value="intermediary">Intermediary / Advisor</SelectItem>
-                          <SelectItem value="media">Media & Press</SelectItem>
+                          <SelectItem value="pe">Private Equity Firm</SelectItem>
+                          <SelectItem value="executive">Executive</SelectItem>
                           <SelectItem value="general">General Inquiry</SelectItem>
                         </SelectContent>
                       </Select>
@@ -257,40 +282,13 @@ export default function Contact() {
                   </button>
 
                   <p className="text-xs text-muted-foreground/50 leading-relaxed text-center font-light">
-                    By submitting this form, your information will be handled in accordance with our Privacy Policy and held in strict confidence.
+                    By submitting this form, your information will be handled in confidence.
                   </p>
                 </form>
               </Form>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ── OFFICES ── */}
-      <section className="py-24 bg-accent" data-testid="offices-section">
-        <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
-          <motion.div variants={fadeInUp} className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-[2px] bg-primary" />
-              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Global Presence</p>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif text-white">Offices</h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {offices.map((o, i) => (
-              <motion.div key={i} variants={fadeInUp} className="bg-accent p-10">
-                <p className="text-[10px] uppercase tracking-widest text-primary font-semibold mb-2">{o.label}</p>
-                <h3 className="text-2xl font-serif mb-6 text-white">{o.city}</h3>
-                <ul className="space-y-3 text-sm text-white/45 font-light">
-                  {o.address.map((line) => <li key={line}>{line}</li>)}
-                  <li className="pt-3"><a href={`tel:${o.phone}`} className="hover:text-primary transition-colors">{o.phone}</a></li>
-                  <li><a href={`mailto:${o.email}`} className="hover:text-primary transition-colors">{o.email}</a></li>
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </Reveal>
       </section>
     </div>
   );

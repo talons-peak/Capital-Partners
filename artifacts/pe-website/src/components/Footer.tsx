@@ -8,11 +8,11 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/">
               <span className="font-serif text-3xl font-bold tracking-wider text-white cursor-pointer">
-                L<span className="text-primary">-</span>E<span className="text-primary">.</span>
+                L<span className="text-white/40">&amp;</span>E Partners
               </span>
             </Link>
             <p className="mt-4 text-sm text-white/50 font-light max-w-xs leading-relaxed">
-              A high-conviction private equity firm operating at the intersection of capital and strategic value creation.
+              A boutique executive search firm exclusive to and on retainer with the private equity community.
             </p>
           </div>
 
@@ -22,8 +22,8 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "About", href: "/about" },
-                { label: "Portfolio", href: "/portfolio" },
-                { label: "Team", href: "/team" },
+                { label: "For Private Equity Firms", href: "/services/private-equity" },
+                { label: "For Executives", href: "/services/executives" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -38,26 +38,24 @@ export default function Footer() {
           <div>
             <h4 className="text-xs uppercase tracking-widest font-semibold text-white/35 mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-white/55 font-light">
-              <li>One Liberty Plaza</li>
-              <li>New York, NY 10006</li>
+              <li>36 East 10th Street, Suite 8E</li>
+              <li>New York, NY 10003</li>
               <li className="pt-2">
-                <a href="mailto:inquiries@le-partners.com" className="hover:text-primary transition-colors">
-                  inquiries@le-partners.com
+                <a href="mailto:lori@l-epartners.com" className="hover:text-primary transition-colors">
+                  lori@l-epartners.com
                 </a>
               </li>
-              <li>+1 (212) 000-0000</li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-white/30 tracking-wider">
-            © {new Date().getFullYear()} L-E Partners LLC. All rights reserved.
+            © {new Date().getFullYear()} L&amp;E Partners LLC. All rights reserved.
           </p>
           <div className="flex gap-8 text-xs uppercase tracking-widest text-white/30 font-semibold">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors">Terms</a>
-            <a href="#" className="hover:text-primary transition-colors">Disclosures</a>
           </div>
         </div>
       </div>

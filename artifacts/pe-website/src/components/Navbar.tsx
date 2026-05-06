@@ -1,18 +1,40 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
+type NavLink =
+  | { label: string; href: string }
+  | { label: string; children: { label: string; href: string }[] };
+
+const navLinks: NavLink[] = [
   { label: "About", href: "/about" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Team", href: "/team" },
-  { label: "Sectors", href: "/about#sectors" },
+  {
+    label: "Services",
+    children: [
+      { label: "For Private Equity Firms", href: "/services/private-equity" },
+      { label: "For Executives", href: "/services/executives" },
+    ],
+  },
+  { label: "Contact", href: "/contact" },
 ];
+
+function Brand({ tone = "dark" }: { tone?: "dark" | "light" }) {
+  const text = tone === "dark" ? "text-foreground" : "text-white";
+  const ampersand = "text-foreground/40";
+  return (
+    <Link href="/" data-testid="nav-logo">
+      <span className={`font-serif text-2xl font-bold tracking-wider cursor-pointer select-none ${text}`}>
+        L<span className={ampersand}>&amp;</span>E Partners
+      </span>
+    </Link>
+  );
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -23,53 +45,111 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileOpen(false);
+    setOpenDropdown(null);
   }, [location]);
 
   return (
     <>
       <nav
         data-testid="navbar"
-        className={`fixed top-0 left-0 right-0 z-50 px-6 py-5 md:px-12 flex justify-between items-center transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 transition-all duration-400 ${
           scrolled || mobileOpen
             ? "bg-white/95 backdrop-blur shadow-sm border-b border-border"
             : "bg-white border-b border-border"
         }`}
       >
-        <Link href="/" data-testid="nav-logo">
-          <span className="font-serif text-2xl font-bold tracking-wider text-foreground cursor-pointer select-none">
-            L<span className="text-primary">-</span>E<span className="text-primary">.</span>
-          </span>
-        </Link>
+        <div className="flex justify-between items-center py-4">
+          <div className="flex flex-col">
+            <Brand />
+            <span className="hidden md:block text-[10px] text-foreground/40 uppercase tracking-[0.2em] font-semibold mt-1">
+              Rethinking How Private Equity Firms Invest in Executives
+            </span>
+          </div>
 
-        <div className="hidden md:flex gap-10 text-sm font-medium tracking-widest uppercase">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} data-testid={`nav-link-${link.label.toLowerCase()}`}>
-              <span
-                className={`transition-colors cursor-pointer ${
-                  location === link.href
-                    ? "text-primary"
-                    : "text-foreground/60 hover:text-primary"
-                }`}
-              >
-                {link.label}
+          <div className="hidden md:flex gap-10 text-sm font-medium tracking-widest uppercase">
+            {navLinks.map((link) =>
+              "children" in link ? (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <button
+                    type="button"
+                    data-testid={`nav-link-${link.label.toLowerCase()}`}
+                    className={`flex items-center gap-1 transition-colors cursor-pointer ${
+                      link.children.some((c) => location === c.href)
+                        ? "text-primary"
+                        : "text-foreground/60 hover:text-primary"
+                    }`}
+                  >
+                    {link.label}
+                    <ChevronDown className="w-3 h-3" />
+                  </button>
+                  <AnimatePresence>
+                    {openDropdown === link.label && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 6 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 6 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute left-0 top-full pt-3 min-w-[260px]"
+                      >
+                        <div className="bg-white border border-border shadow-md py-2">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              data-testid={`nav-dropdown-${child.href.replace(/\//g, "-")}`}
+                            >
+                              <span
+                                className={`block px-5 py-3 text-xs tracking-widest cursor-pointer transition-colors ${
+                                  location === child.href
+                                    ? "text-primary bg-muted/50"
+                                    : "text-foreground/70 hover:text-primary hover:bg-muted/30"
+                                }`}
+                              >
+                                {child.label}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link key={link.href} href={link.href} data-testid={`nav-link-${link.label.toLowerCase()}`}>
+                  <span
+                    className={`transition-colors cursor-pointer ${
+                      location === link.href
+                        ? "text-primary"
+                        : "text-foreground/60 hover:text-primary"
+                    }`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              ),
+            )}
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Link href="/contact" data-testid="nav-cta">
+              <span className="hidden md:inline-block bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground px-6 py-2.5 uppercase text-xs tracking-widest font-semibold transition-all duration-300 cursor-pointer">
+                Inquiries
               </span>
             </Link>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-4">
-          <Link href="/contact" data-testid="nav-cta">
-            <span className="hidden md:inline-block bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground px-6 py-2.5 uppercase text-xs tracking-widest font-semibold transition-all duration-300 cursor-pointer">
-              Inquiries
-            </span>
-          </Link>
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setMobileOpen((v) => !v)}
-            data-testid="nav-mobile-toggle"
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+            <button
+              className="md:hidden text-foreground"
+              onClick={() => setMobileOpen((v) => !v)}
+              data-testid="nav-mobile-toggle"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -80,15 +160,28 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 px-6"
           >
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href}>
-                <span className="text-3xl font-serif text-foreground hover:text-primary transition-colors cursor-pointer">
-                  {link.label}
-                </span>
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              "children" in link ? (
+                <div key={link.label} className="flex flex-col items-center gap-4">
+                  <span className="text-3xl font-serif text-foreground">{link.label}</span>
+                  {link.children.map((child) => (
+                    <Link key={child.href} href={child.href}>
+                      <span className="text-lg font-light text-foreground/70 hover:text-primary cursor-pointer">
+                        {child.label}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <Link key={link.href} href={link.href}>
+                  <span className="text-3xl font-serif text-foreground hover:text-primary transition-colors cursor-pointer">
+                    {link.label}
+                  </span>
+                </Link>
+              ),
+            )}
             <Link href="/contact">
               <span className="mt-6 bg-accent text-accent-foreground px-10 py-4 uppercase text-xs tracking-widest font-semibold hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer">
                 Inquiries
