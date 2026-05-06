@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="L&amp;E Partners social card">
+  <rect width="1200" height="630" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="8" height="630" fill="#CC9A14"/>
+  <text x="80" y="290" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-weight="700" font-size="120" fill="#0F172A" letter-spacing="2">L<tspan fill="#0F172A" fill-opacity="0.4">&amp;</tspan>E Partners</text>
+  <text x="80" y="370" font-family="Inter, sans-serif" font-weight="400" font-size="40" fill="#0F172A" fill-opacity="0.7" letter-spacing="0.5">Executive Search for Private Equity</text>
+  <text x="80" y="555" font-family="Inter, sans-serif" font-weight="600" font-size="22" fill="#CC9A14" letter-spacing="6">RETHINKING HOW PRIVATE EQUITY FIRMS INVEST IN EXECUTIVES</text>
+</svg>

@@ -57,7 +57,8 @@ const delivered: ChecklistGroup[] = [
       { done: true, title: "Pulled all real L&E imagery from the live site (logo, three bio photos, three editorial heroes)" },
       { done: true, title: "Pull-quote: 'Partnerships are grown, not born' (the L&E ethos)" },
       { done: true, title: "50+ Years of Combined Relationships stat band" },
-      { done: true, title: "Canonical /public/brand/ asset directory; SVG wordmarks and icons created" },
+      { done: true, title: "Canonical /public/brand/ asset directory with full SVG coverage (wordmark, icon, favicon, apple-touch-icon, android 192/512, maskable, OG image)" },
+      { done: true, title: "Site favicon, apple-touch-icon, web manifest, and OG/Twitter cards all wired to brand assets" },
     ],
   },
   {
@@ -162,8 +163,8 @@ const outstanding: ChecklistGroup[] = [
       },
       {
         done: false,
-        title: "Designer-produced brand assets",
-        detail: "Current /brand library has SVG wordmarks and icon, plus an SVG favicon, all built from inline text. PNG fallbacks and the favicon raster sizes (16/32/48/64/96/180/192/512) are pending designer-produced exports. Spec compliance requires these files to be present before the brand page is considered complete.",
+        title: "Designer-produced PNG fallbacks for brand assets",
+        detail: "The /brand library has full SVG coverage: wordmark (light + dark), icon (light + dark), favicon, apple-touch-icon, android 192 + 512, maskable-icon, and a 1200x630 OG image. All use Playfair text with serif fallback - they render with system serif on platforms that don't load the Playfair web font. PNG raster fallbacks for the favicon sizes (16/32/48/64/96) and PNG versions of the wordmark and icon are still pending designer-produced exports. Modern browsers handle the SVG fine; PNGs matter mostly for legacy clients and email signature use.",
         priority: "Medium",
       },
     ],

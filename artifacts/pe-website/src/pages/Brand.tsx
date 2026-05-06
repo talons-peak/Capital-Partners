@@ -168,45 +168,71 @@ const primaryMarks: AssetCard[] = [
     ],
   },
   {
-    title: "Wordmark · PNG",
-    meta: "PNG · raster fallback",
-    note: "Raster fallback for environments that do not support SVG. Pending designer-produced export.",
+    title: "Original logo · PNG",
+    meta: "PNG · 431×52",
+    note: "The original L&E Partners wordmark in the brand blue, pulled from l-epartners.com. Use until designer-produced PNG fallbacks for the new wordmark are produced.",
     previewSurface: "light",
-    preview: null,
-    status: "pending",
-  },
-  {
-    title: "Icon · PNG",
-    meta: "PNG · raster fallback",
-    note: "Raster fallback of the icon for environments that do not support SVG. Pending designer-produced export.",
-    previewSurface: "light",
-    preview: null,
-    status: "pending",
+    preview: <img src="/brand/logo/logo-light.png" alt="L&E Partners original logo" style={{ height: "26px" }} />,
+    downloads: [
+      { label: "PNG", href: "/brand/logo/logo-light.png" },
+    ],
   },
 ];
 
 const webAndAppIcons: AssetCard[] = [
   {
-    title: "Favicon · SVG",
+    title: "Favicon",
     meta: "SVG · scalable",
     note: "Modern browser tab icon. Scales to any density without loss.",
     previewSurface: "light",
     preview: <img src="/brand/favicon/favicon.svg" alt="favicon" style={{ width: "32px", height: "32px" }} />,
     downloads: [{ label: "SVG", href: "/brand/favicon/favicon.svg" }],
   },
-  { title: "Favicon · 16×16", meta: "PNG · 16×16", note: "Standard-DPI tab icon for legacy browsers.", previewSurface: "light", preview: null, status: "pending" },
-  { title: "Favicon · 32×32", meta: "PNG · 32×32", note: "High-DPI tab icon.", previewSurface: "light", preview: null, status: "pending" },
-  { title: "Favicon · 48×48", meta: "PNG · 48×48", note: "Windows taskbar pinning.", previewSurface: "light", preview: null, status: "pending" },
-  { title: "Favicon · 64×64", meta: "PNG · 64×64", note: "High-DPI Windows tile use.", previewSurface: "light", preview: null, status: "pending" },
-  { title: "Favicon · 96×96", meta: "PNG · 96×96", note: "Larger tile and bookmark uses.", previewSurface: "light", preview: null, status: "pending" },
-  { title: "Apple touch icon", meta: "PNG · 180×180", note: "iOS home-screen icon.", previewSurface: "light", preview: null, status: "pending" },
-  { title: "Android icon · 192", meta: "PNG · 192×192", note: "Android launcher and PWA install prompt.", previewSurface: "light", preview: null, status: "pending" },
-  { title: "Android icon · 512", meta: "PNG · 512×512", note: "High-resolution Android launcher and store listings.", previewSurface: "light", preview: null, status: "pending" },
+  {
+    title: "Apple touch icon",
+    meta: "SVG · 180×180 viewBox",
+    note: "iOS home screen icon. Used when an L&E URL is added to the iOS home screen.",
+    previewSurface: "light",
+    preview: <img src="/brand/app-icons/apple-touch-icon.svg" alt="apple touch icon" style={{ width: "60px", height: "60px" }} />,
+    downloads: [{ label: "SVG", href: "/brand/app-icons/apple-touch-icon.svg" }],
+  },
+  {
+    title: "Android icon · 192",
+    meta: "SVG · 192×192 viewBox",
+    note: "Android launcher and PWA install prompt.",
+    previewSurface: "light",
+    preview: <img src="/brand/app-icons/android-chrome-192x192.svg" alt="android 192" style={{ width: "60px", height: "60px" }} />,
+    downloads: [{ label: "SVG", href: "/brand/app-icons/android-chrome-192x192.svg" }],
+  },
+  {
+    title: "Android icon · 512",
+    meta: "SVG · 512×512 viewBox",
+    note: "High-resolution Android launcher and store listings.",
+    previewSurface: "light",
+    preview: <img src="/brand/app-icons/android-chrome-512x512.svg" alt="android 512" style={{ width: "60px", height: "60px" }} />,
+    downloads: [{ label: "SVG", href: "/brand/app-icons/android-chrome-512x512.svg" }],
+  },
+  {
+    title: "Maskable icon",
+    meta: "SVG · 512×512 viewBox",
+    note: "PWA maskable launcher icon with extra safe-zone padding for Android adaptive icons.",
+    previewSurface: "light",
+    preview: <img src="/brand/app-icons/maskable-icon-512x512.svg" alt="maskable icon" style={{ width: "60px", height: "60px" }} />,
+    downloads: [{ label: "SVG", href: "/brand/app-icons/maskable-icon-512x512.svg" }],
+  },
+  {
+    title: "Open Graph card",
+    meta: "SVG · 1200×630",
+    note: "Social preview card for link unfurls on LinkedIn, X, and other platforms.",
+    previewSurface: "light",
+    preview: <img src="/brand/social/og-image.svg" alt="og image" style={{ width: "120px", height: "63px", objectFit: "contain" }} />,
+    downloads: [{ label: "SVG", href: "/brand/social/og-image.svg" }],
+  },
 ];
 
-// Sizes 16/32/48/64 will render at native size when the PNGs are produced.
-// The renderer (NativeIconPreview) is wired up so we can swap status -> available
-// without changing layout. Reference kept for the spec compliance.
+// PNG raster sizes (16/32/48/64/96) are SVG-only on this build. NativeIconPreview
+// is preserved for future PNG ports - it renders icons at their actual pixel
+// dimensions per the brand-spec rule about not upscaling small raster files.
 void NativeIconPreview;
 
 const doRules = [
