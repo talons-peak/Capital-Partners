@@ -51,13 +51,13 @@ export default function Navbar() {
     <>
       <nav
         data-testid="navbar"
-        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
           scrolled || mobileOpen
             ? "bg-white/95 backdrop-blur shadow-sm border-b border-border"
             : "bg-white border-b border-border"
         }`}
       >
-        <div className="flex justify-between items-center py-4">
+        <div className="container mx-auto px-6 md:px-12 max-w-7xl flex justify-between items-center py-4">
           <div className="flex flex-col">
             <Brand />
             <span className="hidden md:block text-[10px] text-foreground/40 uppercase tracking-[0.2em] font-semibold mt-1">
