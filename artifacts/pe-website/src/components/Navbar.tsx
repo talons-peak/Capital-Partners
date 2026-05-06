@@ -8,7 +8,6 @@ type NavLink =
   | { label: string; children: { label: string; href: string }[] };
 
 const navLinks: NavLink[] = [
-  { label: "About", href: "/about" },
   {
     label: "Services",
     children: [
@@ -16,7 +15,7 @@ const navLinks: NavLink[] = [
       { label: "For Executives", href: "/services/executives" },
     ],
   },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "/about" },
 ];
 
 function Brand({ tone = "dark" }: { tone?: "dark" | "light" }) {
@@ -66,7 +65,7 @@ export default function Navbar() {
             </span>
           </div>
 
-          <div className="hidden md:flex gap-10 text-sm font-medium tracking-widest uppercase">
+          <div className="hidden md:flex items-center gap-10 text-sm font-medium tracking-widest uppercase">
             {navLinks.map((link) =>
               "children" in link ? (
                 <div
@@ -78,7 +77,7 @@ export default function Navbar() {
                   <button
                     type="button"
                     data-testid={`nav-link-${link.label.toLowerCase()}`}
-                    className={`flex items-center gap-1 transition-colors cursor-pointer ${
+                    className={`flex items-center gap-1 uppercase tracking-widest text-sm font-medium transition-colors cursor-pointer ${
                       link.children.some((c) => location === c.href)
                         ? "text-primary"
                         : "text-foreground/60 hover:text-primary"
@@ -133,23 +132,21 @@ export default function Navbar() {
                 </Link>
               ),
             )}
-          </div>
-
-          <div className="flex items-center gap-4">
             <Link href="/contact" data-testid="nav-cta">
-              <span className="hidden md:inline-block bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground px-6 py-2.5 uppercase text-xs tracking-widest font-semibold transition-all duration-300 cursor-pointer">
+              <span className="bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground px-6 py-2.5 uppercase text-xs tracking-widest font-semibold transition-all duration-300 cursor-pointer">
                 Inquiries
               </span>
             </Link>
-            <button
-              className="md:hidden text-foreground"
-              onClick={() => setMobileOpen((v) => !v)}
-              data-testid="nav-mobile-toggle"
-              aria-label="Toggle menu"
-            >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
           </div>
+
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setMobileOpen((v) => !v)}
+            data-testid="nav-mobile-toggle"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </nav>
 
