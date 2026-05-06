@@ -325,44 +325,6 @@ export default function Todo() {
           <p className="text-sm text-muted-foreground/60 font-light mt-3">
             This page is not linked from the navigation. Delete it before going live.
           </p>
-
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <a
-              href="/brand"
-              className="border border-border bg-white hover:border-primary hover:shadow-sm transition-all p-4 group"
-              data-testid="quicklink-brand"
-            >
-              <p className="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Internal</p>
-              <p className="text-sm font-serif text-foreground group-hover:text-primary transition-colors">/brand</p>
-              <p className="text-xs text-muted-foreground/70 font-light mt-1 leading-relaxed">
-                Public brand asset library: marks, icons, colors, typography, usage rules
-              </p>
-            </a>
-            <a
-              href="/"
-              className="border border-border bg-white hover:border-primary hover:shadow-sm transition-all p-4 group"
-              data-testid="quicklink-home"
-            >
-              <p className="text-[10px] uppercase tracking-widest text-primary font-bold mb-1">Live</p>
-              <p className="text-sm font-serif text-foreground group-hover:text-primary transition-colors">Home</p>
-              <p className="text-xs text-muted-foreground/70 font-light mt-1 leading-relaxed">
-                The new public-facing L&amp;E Partners site
-              </p>
-            </a>
-            <a
-              href="https://l-epartners.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-border bg-white hover:border-primary hover:shadow-sm transition-all p-4 group"
-              data-testid="quicklink-old"
-            >
-              <p className="text-[10px] uppercase tracking-widest text-muted-foreground/60 font-bold mb-1">Old site</p>
-              <p className="text-sm font-serif text-foreground group-hover:text-primary transition-colors">l-epartners.com ↗</p>
-              <p className="text-xs text-muted-foreground/70 font-light mt-1 leading-relaxed">
-                The current production WordPress site, for comparison
-              </p>
-            </a>
-          </div>
         </div>
       </section>
 
