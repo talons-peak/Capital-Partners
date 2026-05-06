@@ -232,13 +232,57 @@ export default function Brand() {
       {/* 1. INTRO */}
       <section className="py-12 md:py-16 border-b border-border bg-white">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold mb-3">Brand</p>
-          <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-tight text-foreground mb-5">
-            L&amp;E Partners brand assets
-          </h1>
-          <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-3xl">
-            Marks, wordmarks, colors, typography, and platform icons. Use the approved files below and follow the usage rules at the bottom of the page. The brand should feel quiet, precise, and trustworthy. It is the visual face of a thirty-year boutique relationship business; the design should never overshadow the people or the work.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+            <div className="md:col-span-8">
+              <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold mb-3">Brand</p>
+              <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-tight text-foreground mb-5">
+                L&amp;E Partners brand assets
+              </h1>
+              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                Marks, wordmarks, colors, typography, and platform icons. Use the approved files below and follow the usage rules at the bottom of the page. The brand should feel quiet, precise, and trustworthy. It is the visual face of a thirty-year boutique relationship business; the design should never overshadow the people or the work.
+              </p>
+            </div>
+            <div className="md:col-span-4 flex items-center justify-center md:justify-end">
+              <img
+                src="/brand/logo/ampersand-light.png"
+                alt=""
+                aria-hidden="true"
+                className="w-40 md:w-48 h-auto select-none"
+                data-testid="ampersand-hero"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE AMPERSAND - signature glyph */}
+      <section className="py-12 md:py-16 border-b border-border bg-muted/40">
+        <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-4 bg-white border border-border h-[200px] flex items-center justify-center">
+              <img
+                src="/brand/logo/ampersand-light.png"
+                alt="L&E Partners ampersand glyph"
+                className="h-32 w-auto"
+                data-testid="ampersand-feature"
+              />
+            </div>
+            <div className="md:col-span-7 md:col-start-6">
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-2">Signature Glyph</p>
+              <h2 className="text-2xl md:text-3xl font-serif text-foreground leading-tight mb-3">The ampersand.</h2>
+              <p className="text-muted-foreground font-light leading-relaxed mb-4">
+                The ornate ampersand at the heart of the L&amp;E Partners wordmark is the brand's most distinctive shorthand. Use it on its own as a section divider, a watermark, or a single-glyph mark wherever the full wordmark would be too heavy. It carries the firm's identity without ever needing to introduce it.
+              </p>
+              <a
+                href="/brand/logo/ampersand-light.png"
+                download
+                className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold border border-border text-foreground/80 hover:border-primary hover:text-primary px-2.5 py-1.5 transition-colors"
+              >
+                <Download className="w-3 h-3" />
+                PNG
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
