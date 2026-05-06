@@ -101,8 +101,8 @@ export default function Home() {
               className="relative h-[520px] lg:h-[700px] overflow-hidden"
             >
               <motion.img
-                src="/boardroom.png"
-                alt="L&E Partners boardroom"
+                src="/le/hero-home.jpg"
+                alt="L&E Partners"
                 className="w-full h-full object-cover object-center"
                 style={{ y: imgY }}
                 data-testid="hero-image"
@@ -144,10 +144,10 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* ── BOARDROOM FULL-BLEED ── */}
-      <section className="relative h-[420px] md:h-[520px] overflow-hidden" data-testid="boardroom-section">
-        <img src="/boardroom.png" alt="" className="w-full h-full object-cover object-center" />
-        <div className="absolute inset-0 bg-accent/75" />
+      {/* ── PULL QUOTE FULL-BLEED ── */}
+      <section className="relative h-[420px] md:h-[520px] overflow-hidden" data-testid="pullquote-section">
+        <img src="/le/hero-pe.jpg" alt="" className="w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-accent/80" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center max-w-3xl px-6">
             <motion.div
@@ -158,8 +158,11 @@ export default function Home() {
             >
               <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold mb-6">Est. 2010</p>
               <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight">
-                "Markets shift and transform — but business remains driven by one thing: human talent."
+                "Partnerships are grown, not born."
               </h2>
+              <p className="text-white/55 text-sm uppercase tracking-widest mt-6 font-semibold">
+                The L&amp;E Partners ethos
+              </p>
             </motion.div>
           </div>
         </div>

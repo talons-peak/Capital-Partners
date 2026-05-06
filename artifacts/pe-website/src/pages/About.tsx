@@ -29,37 +29,37 @@ function GoldLabel({ children }: { children: ReactNode }) {
   );
 }
 
-// NOTE: Lori's bio is a placeholder pulled from the live site at l-epartners.com.
-// L&E to provide updated copy — flagged "X" in the April 2026 feedback document.
+// NOTE: Lori's bio is a placeholder per "X" in the April 2026 feedback document —
+// the copy below comes from l-epartners.com. Update when L&E sends the new bio.
 const principals = [
   {
     name: "Lori Hess",
     title: "Founder & Managing Partner",
-    img: "/partner1.png",
+    img: "/le/lori.webp",
     bio: [
-      "Lori has spent the majority of her career working within or with the private equity community. From 1994 to 2007 she was with Charterhouse Group Inc., a middle-market private equity firm in New York, where she developed the firm's Healthcare vertical and played key roles in significant acquisitions and an IPO.",
-      "Prior to founding L&E Partners in November 2010, Lori led the U.S. Private Equity Practice at Rice & Dore. Earlier in her career she held positions at Avon Products, Sterling Health, and Houlihan Lokey Howard & Zukin.",
-      "Lori holds an MBA from Columbia Business School and a BA in Economics from the University of Pennsylvania.",
+      "Lori has spent the majority of her career within the private equity sector. From 1994 to 2007 she was with Charterhouse Group Inc., a middle-market private equity firm in New York, where she developed the firm's Healthcare industry vertical and was instrumental in healthcare initiatives and portfolio companies — including the acquisition of Cross Country Healthcare, the merger with its leading competitor, and the subsequent IPO. She served on several healthcare portfolio company boards and co-led the Business Development function, identifying operating executives for new investment strategies and collaborating with deal and financing sources.",
+      "Prior to establishing L&E Partners in November 2010, Lori headed the U.S. Private Equity Practice for Rice & Dore, a global executive search firm serving alternative investment funds, working with senior-level investment professionals and experienced operating executives. Between 1992 and 1994 she held financial and strategic planning positions at Avon Products and Sterling Health, and she began her career at Houlihan Lokey Howard & Zukin in Los Angeles as a financial analyst.",
+      "Lori resides in New York with her family. She holds an MBA from Columbia Business School and a BA in Economics from the University of Pennsylvania.",
     ],
     education: ["MBA, Columbia Business School", "BA Economics, University of Pennsylvania"],
   },
   {
     name: "Sandi Macan",
     title: "Partner",
-    img: "/partner2.png",
+    img: "/le/sandi.webp",
     bio: [
-      "Sandi Macan has been an executive recruiter for the past thirty years, identifying senior-level management for a variety of industries. She has collaborated with executives and investors to build leadership teams across healthcare, cleantech, industrial, financial services, and consumer products sectors for publicly traded, private equity-backed, and venture-funded companies.",
-      "Sandi joined L&E Partners in 2021 and became Partner in 2023.",
+      "Sandi Macan has worked as an executive recruiter for thirty years, identifying senior-level management across various industries. She has partnered with executives and investors to build high-performing leadership teams for publicly traded, private equity-backed, and venture-funded companies in healthcare, cleantech, industrial, financial services, and consumer products.",
+      "Sandi joined L&E Partners in 2021 and became a Partner in 2023. She lives in the Philadelphia suburbs and holds an MBA from Villanova University and a BA in Political Science from Johns Hopkins University.",
     ],
     education: ["MBA, Villanova University", "BA Political Science, Johns Hopkins University"],
   },
   {
     name: "Nikki Delp",
     title: "Principal",
-    img: "/partner3.png",
+    img: "/le/nikki.jpg",
     bio: [
-      "Nikki Delp has been an executive recruiter since 2018, working across various industries including industrial, healthcare, and consumer products for publicly traded, private equity-backed, and venture-funded companies. Since 2020 she has concentrated on private equity work.",
-      "Nikki brings marketing and communications expertise to her recruitment role and joined L&E Partners in 2023.",
+      "Nikki Delp has worked as an executive recruiter since 2018 across industrial, healthcare, and consumer products sectors, serving publicly traded, private equity-backed, and venture-funded companies. Since 2020 she has focused primarily on private equity — both for portfolio companies and for private equity firms directly.",
+      "Nikki brings marketing and communications expertise and has assisted search firm marketing departments. She joined L&E Partners in 2023, lives in the Philadelphia suburbs, and holds a BA in Mass Communication from the University of Delaware.",
     ],
     education: ["BA Mass Communication, University of Delaware"],
   },

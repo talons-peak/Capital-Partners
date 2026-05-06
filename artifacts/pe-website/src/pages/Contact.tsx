@@ -86,7 +86,7 @@ export default function Contact() {
       {/* ── PAGE HERO ── */}
       <section className="relative border-b border-border overflow-hidden bg-white">
         <div className="absolute inset-0 opacity-[0.06]">
-          <img src="/boardroom.png" alt="" className="w-full h-full object-cover" />
+          <img src="/le/hero-home.jpg" alt="" className="w-full h-full object-cover" />
         </div>
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10 py-24 md:py-32">
           <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-6">

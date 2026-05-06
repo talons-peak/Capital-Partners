@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, ImageIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 const fadeInUp = {
@@ -22,9 +22,12 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
   );
 }
 
-// NOTE: Page copy is a placeholder — L&E feedback (April 2026) only specified
-// "Change layout to fully vertical" and "Change photo" for this page; final copy
-// is pending from L&E. Replace the body copy below when received.
+const candidateTypes = [
+  "An existing, recently departed, or retired chairperson, CEO, President, COO, or CFO",
+  "A business owner / manager",
+  "A board director",
+  "An advisor or consultant who is well-connected within an industry",
+];
 
 export default function ForExecutives() {
   return (
@@ -40,40 +43,50 @@ export default function ForExecutives() {
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-serif font-semibold leading-[0.9] tracking-tight text-foreground mb-10">
             For Executives.
           </motion.h1>
-          <motion.p variants={fadeInUp} className="text-xl text-foreground/85 font-light leading-relaxed">
-            <strong className="font-semibold">L&amp;E Partners introduces senior operating executives to private equity firms — for new and existing portfolio companies, investment thesis development, and opportunities being diligenced.</strong>
-          </motion.p>
+          <motion.blockquote variants={fadeInUp} className="text-xl text-foreground/85 font-light leading-relaxed font-serif italic border-l-2 border-primary pl-6">
+            "We look for entrepreneurial professionals with creative vision, skill, and proven experience in building businesses who are interested in exploring leadership opportunities with the private equity community."
+          </motion.blockquote>
         </Reveal>
       </section>
 
-      {/* ── PHOTO PLACEHOLDER ── */}
-      <section className="py-16 md:py-24 bg-muted" data-testid="photo-section">
+      {/* ── HERO IMAGE ── */}
+      <section className="relative h-[360px] md:h-[480px] overflow-hidden" data-testid="hero-image-section">
+        <img src="/le/hero-executives.jpg" alt="" className="w-full h-full object-cover object-center" />
+        <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
+      </section>
+
+      {/* ── CANDIDATE TYPES ── */}
+      <section className="py-24 md:py-32 bg-white" data-testid="candidate-types-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
-          <motion.div
-            variants={fadeInUp}
-            className="relative aspect-[16/9] bg-muted-foreground/10 border border-dashed border-border flex flex-col items-center justify-center gap-3 text-muted-foreground/70"
-          >
-            <ImageIcon className="w-10 h-10" />
-            <p className="text-xs uppercase tracking-widest font-semibold">Photo placeholder — pending from L&amp;E</p>
-          </motion.div>
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-foreground mb-12">
+            These entrepreneurs may be:
+          </motion.h2>
+
+          <ul className="space-y-6">
+            {candidateTypes.map((item, i) => (
+              <motion.li
+                key={i}
+                variants={fadeInUp}
+                className="flex gap-5 items-start text-lg text-muted-foreground font-light leading-relaxed"
+                data-testid={`candidate-type-${i}`}
+              >
+                <span className="w-2 h-2 rounded-full bg-primary mt-3 flex-shrink-0" />
+                <span>{item}</span>
+              </motion.li>
+            ))}
+          </ul>
         </Reveal>
       </section>
 
-      {/* ── PLACEHOLDER COPY ── */}
-      <section className="py-24 md:py-32 bg-white" data-testid="copy-section">
+      {/* ── HOW WE COLLABORATE ── */}
+      <section className="py-24 md:py-32 bg-muted" data-testid="collaboration-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
           <motion.div variants={fadeInUp} className="space-y-7 text-lg text-muted-foreground font-light leading-relaxed">
             <p>
-              We work with proven operating executives — current and emerging C-level leaders, operating partners, board directors, and senior advisors — who bring deep industry expertise to private equity-backed platforms.
+              The L&amp;E Partners team collaborates with entrepreneurs to evaluate proprietary investment opportunities and develop strategic approaches toward private equity participation.
             </p>
             <p>
-              For senior executives entering a transition phase of their careers, we offer a long-term partnership: a confidential conversation, a careful read of where your skills fit best, and patient introductions to private equity clients whose portfolios match your sector and your stage.
-            </p>
-            <p>
-              We do not push transactions. We make introductions where there is real conviction on both sides — and the resulting partnerships speak for themselves.
-            </p>
-            <p className="text-sm italic text-muted-foreground/60 pt-4 border-t border-border">
-              Note: final copy for this page pending from L&amp;E.
+              The firm provides in-depth understanding of private equity cultures, investment criteria, and internal processes, with continuous involvement ensuring successful relationship development.
             </p>
           </motion.div>
         </Reveal>

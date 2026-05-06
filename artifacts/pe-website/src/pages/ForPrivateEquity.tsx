@@ -63,6 +63,12 @@ export default function ForPrivateEquity() {
         </Reveal>
       </section>
 
+      {/* ── HERO IMAGE ── */}
+      <section className="relative h-[360px] md:h-[480px] overflow-hidden" data-testid="hero-image-section">
+        <img src="/le/hero-pe.jpg" alt="" className="w-full h-full object-cover object-center" />
+        <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
+      </section>
+
       {/* ── WHAT THESE INTRODUCTIONS OFFER ── */}
       <section className="py-24 md:py-32 bg-white" data-testid="offers-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
