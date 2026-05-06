@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Lock } from "lucide-react";
 import { Link } from "wouter";
 
 const fadeInUp = {
@@ -92,16 +92,34 @@ export default function ForExecutives() {
         </Reveal>
       </section>
 
+      {/* ── CONFIDENTIALITY ── */}
+      <section className="py-20 md:py-24 bg-white border-t border-border" data-testid="confidentiality-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
+          <motion.div variants={fadeInUp} className="flex gap-6 items-start">
+            <Lock className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <div>
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-3">Discretion Is the Default</p>
+              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                Many of the executives we speak with are still in seat. Every conversation we have is held in strict confidence. There is no obligation, no formal application, and no résumé required to begin a dialogue — just a quiet introduction and a careful read of where your experience might fit.
+              </p>
+            </div>
+          </motion.div>
+        </Reveal>
+      </section>
+
       {/* ── CTA — navy ── */}
       <section className="py-24 bg-accent" data-testid="cta-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-white mb-8">
-            Interested in connecting?
+          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-white mb-4">
+            Start a confidential conversation.
           </motion.h2>
+          <motion.p variants={fadeInUp} className="text-white/60 font-light mb-10 max-w-xl mx-auto">
+            A short note is enough — we'll take it from there.
+          </motion.p>
           <motion.div variants={fadeInUp}>
             <Link href="/contact" data-testid="cta-link">
               <span className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 uppercase text-xs tracking-widest font-bold hover:bg-white hover:text-accent transition-colors duration-300 cursor-pointer">
-                Contact L&amp;E Partners <ArrowRight className="w-4 h-4" />
+                Reach Out in Confidence <ArrowRight className="w-4 h-4" />
               </span>
             </Link>
           </motion.div>

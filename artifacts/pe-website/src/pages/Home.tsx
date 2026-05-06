@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight, Quote, Building2, HeartPulse, Landmark, ShoppingBag, Leaf } from "lucide-react";
 import { Link } from "wouter";
 
 const fadeInUp = {
@@ -22,30 +22,48 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
   );
 }
 
-const clientTestimonials = [
+// Verbatim from l-epartners.com — mix of PE-firm clients and placed executives.
+const testimonials = [
   {
-    quote:
-      "Thank you for everything. You guys are great — we never would have made this work without you.",
-    attribution: "Managing Director, Middle-Market Private Equity Firm",
+    quote: "Thank you for everything… you guys are great…we never would have made this work without you.",
+    attribution: "CEO of a healthcare company that received growth equity from a PE fund introduced by L&E",
   },
   {
-    quote:
-      "L&E delivered the exact operating partner we needed in a market where everyone says they can but few actually do.",
-    attribution: "Partner, Healthcare-Focused Buyout Fund",
+    quote: "Really great to work with the two of you. Keep thinking.",
+    attribution: "CoFounder / Partner — PE client that invested in a company brought to its attention by L&E",
+  },
+  {
+    quote: "Hope you have gotten off to a good start this year… we love your guys.",
+    attribution: "Managing Director — PE Client",
+  },
+  {
+    quote: "You two are terrific!",
+    attribution: "Operating Partner placed by L&E",
+  },
+  {
+    quote: "Thanks again for organizing a very full schedule. Thanks for all your…",
+    attribution: "Executive Chairman placed by L&E",
+  },
+  {
+    quote: "I am truly impressed with your efforts on my behalf. I appreciate the…",
+    attribution: "Executive-in-Residence placed by L&E",
+  },
+  {
+    quote: "I always appreciate hearing from you, and your update was comprehensive…",
+    attribution: "CEO",
+  },
+  {
+    quote: "I enjoyed meeting you both and understanding your business model. I see…",
+    attribution: "CEO",
   },
 ];
 
-const executiveTestimonials = [
-  {
-    quote:
-      "Lori and her team understood my background, my motivations, and the kind of platform that would let me do my best work. The match was exceptional.",
-    attribution: "Chief Executive Officer, PE-Backed Industrial Platform",
-  },
-  {
-    quote:
-      "L&E doesn't push transactions. They make introductions where there's real conviction on both sides — that's a rare thing in this market.",
-    attribution: "Operating Partner, Specialty Finance",
-  },
+const sectors = [
+  { icon: <HeartPulse className="w-5 h-5" />, label: "Healthcare" },
+  { icon: <Building2 className="w-5 h-5" />, label: "Industrial" },
+  { icon: <Landmark className="w-5 h-5" />, label: "Financial Services" },
+  { icon: <ShoppingBag className="w-5 h-5" />, label: "Consumer Products" },
+  { icon: <Leaf className="w-5 h-5" />, label: "Cleantech" },
 ];
 
 export default function Home() {
@@ -77,7 +95,7 @@ export default function Home() {
                 variants={fadeInUp}
                 className="text-lg text-muted-foreground font-light leading-relaxed mb-12 max-w-lg"
               >
-                We introduce industry-specific executives to private equity firms — for new and existing portfolio companies, investment thesis development, and opportunities being diligenced.
+                Markets shift and transform — but business remains driven by one thing: human talent. At L&amp;E Partners, our job is to facilitate mutually beneficial introductions that connect our private equity clients with high-caliber executives who can create value within our clients' new and existing investments.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
@@ -144,6 +162,49 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* ── DUAL AUDIENCE CARDS ── */}
+      <section className="py-24 md:py-28 bg-muted" data-testid="audience-cards-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div variants={fadeInUp}>
+              <Link href="/services/private-equity" data-testid="audience-card-pe">
+                <div className="bg-white border border-border p-10 md:p-12 group hover:border-primary/40 hover:shadow-md transition-all duration-300 cursor-pointer h-full">
+                  <div className="w-8 h-[2px] bg-primary mb-6" />
+                  <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-4">For Private Equity Firms</p>
+                  <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-6 leading-tight">
+                    Qualified, high-caliber, C-level industry experts.
+                  </h3>
+                  <p className="text-muted-foreground font-light leading-relaxed mb-8">
+                    L&amp;E Partners consistently brings value to private equity firms by introducing C-level executives with industry specialization who can help move businesses forward.
+                  </p>
+                  <span className="inline-flex items-center gap-3 text-accent text-xs uppercase tracking-widest font-bold group-hover:text-primary transition-colors">
+                    Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+
+            <motion.div variants={fadeInUp}>
+              <Link href="/services/executives" data-testid="audience-card-executives">
+                <div className="bg-white border border-border p-10 md:p-12 group hover:border-primary/40 hover:shadow-md transition-all duration-300 cursor-pointer h-full">
+                  <div className="w-8 h-[2px] bg-primary mb-6" />
+                  <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-4">For Executives</p>
+                  <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-6 leading-tight">
+                    Entrepreneurial professionals with creative vision.
+                  </h3>
+                  <p className="text-muted-foreground font-light leading-relaxed mb-8">
+                    L&amp;E Partners looks for entrepreneurial professionals with creative vision, skill, and proven experience within specific industry sectors.
+                  </p>
+                  <span className="inline-flex items-center gap-3 text-accent text-xs uppercase tracking-widest font-bold group-hover:text-primary transition-colors">
+                    Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* ── PULL QUOTE FULL-BLEED ── */}
       <section className="relative h-[420px] md:h-[520px] overflow-hidden" data-testid="pullquote-section">
         <img src="/le/hero-pe.jpg" alt="" className="w-full h-full object-cover object-center" />
@@ -168,62 +229,64 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CLIENT TESTIMONIALS ── */}
-      <section className="py-24 md:py-32 bg-white" data-testid="client-testimonials-section">
+      {/* ── SECTORS ── */}
+      <section className="py-24 md:py-32 bg-white" data-testid="sectors-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
-          <motion.div variants={fadeInUp} className="mb-14">
+          <motion.div variants={fadeInUp} className="mb-12">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-[2px] bg-primary" />
-              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Client Testimonials</p>
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Industry Coverage</p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-2xl">From the private equity firms we serve.</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground max-w-2xl">
+              We work across all industry sectors.
+            </h2>
+            <p className="text-muted-foreground font-light leading-relaxed max-w-2xl mt-6 text-lg">
+              The principals of L&amp;E Partners have built leadership teams across publicly traded, private equity-backed, and venture-funded companies — with particular depth in the sectors below.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {clientTestimonials.map((t, i) => (
-              <motion.figure
+          <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border border border-border">
+            {sectors.map((s, i) => (
+              <div
                 key={i}
-                variants={fadeInUp}
-                className="bg-muted/40 border border-border p-10 md:p-12 relative"
-                data-testid={`client-testimonial-${i}`}
+                className="bg-white p-8 flex flex-col items-center justify-center text-center gap-3"
+                data-testid={`sector-${i}`}
               >
-                <Quote className="w-6 h-6 text-primary mb-6" />
-                <blockquote className="text-lg text-foreground/90 font-light leading-relaxed font-serif italic">
-                  "{t.quote}"
-                </blockquote>
-                <figcaption className="mt-8 text-xs uppercase tracking-widest text-muted-foreground font-semibold">
-                  — {t.attribution}
-                </figcaption>
-              </motion.figure>
+                <div className="text-primary">{s.icon}</div>
+                <p className="text-sm font-serif text-foreground">{s.label}</p>
+              </div>
             ))}
-          </div>
+          </motion.div>
         </Reveal>
       </section>
 
-      {/* ── EXECUTIVE TESTIMONIALS — navy strip ── */}
-      <section className="py-24 md:py-32 bg-accent" data-testid="executive-testimonials-section">
+      {/* ── TESTIMONIALS ── */}
+      <section className="py-24 md:py-32 bg-muted" data-testid="testimonials-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
-          <motion.div variants={fadeInUp} className="mb-14">
-            <div className="flex items-center gap-3 mb-4">
+          <motion.div variants={fadeInUp} className="mb-14 text-center max-w-3xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-8 h-[2px] bg-primary" />
-              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Executive Testimonials</p>
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">In Their Words</p>
+              <div className="w-8 h-[2px] bg-primary" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-serif text-white max-w-2xl">From the operators we've placed.</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
+              Our services have been utilized by many private equity firms and CEOs — both groups clearly recognizing our value.
+            </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {executiveTestimonials.map((t, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {testimonials.map((t, i) => (
               <motion.figure
                 key={i}
                 variants={fadeInUp}
-                className="border border-white/10 bg-white/5 p-10 md:p-12"
-                data-testid={`executive-testimonial-${i}`}
+                className="bg-white border border-border p-8 flex flex-col"
+                data-testid={`testimonial-${i}`}
               >
-                <Quote className="w-6 h-6 text-primary mb-6" />
-                <blockquote className="text-lg text-white/85 font-light leading-relaxed font-serif italic">
+                <Quote className="w-5 h-5 text-primary mb-5" />
+                <blockquote className="text-base text-foreground/85 font-light leading-relaxed font-serif italic flex-1">
                   "{t.quote}"
                 </blockquote>
-                <figcaption className="mt-8 text-xs uppercase tracking-widest text-white/50 font-semibold">
+                <figcaption className="mt-6 pt-5 border-t border-border text-xs text-muted-foreground font-semibold leading-snug">
                   — {t.attribution}
                 </figcaption>
               </motion.figure>
