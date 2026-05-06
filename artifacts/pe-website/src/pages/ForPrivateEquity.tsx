@@ -171,7 +171,7 @@ export default function ForPrivateEquity() {
               A retained, hands-on engagement.
             </h2>
             <p className="text-muted-foreground font-light mt-4 leading-relaxed">
-              We work on a retained basis with a small number of sponsors at any given time — fewer searches, run more deeply.
+              We work on a retained basis with a small number of sponsors at any given time - fewer searches, run more deeply.
             </p>
           </motion.div>
 
@@ -180,17 +180,17 @@ export default function ForPrivateEquity() {
               {
                 step: "01",
                 title: "Discovery",
-                desc: "We sit with your deal team to understand the thesis, the operating gap, the sponsor's playbook, and the cultural fit that will make this placement successful — not just on paper.",
+                desc: "We sit with your deal team to understand the thesis, the operating gap, the sponsor's playbook, and the cultural fit that will make this placement successful - not just on paper.",
               },
               {
                 step: "02",
                 title: "Sourcing",
-                desc: "We work our proprietary network of operating executives — many of whom we've known for a decade or more — and identify a focused universe of qualified, transition-ready leaders.",
+                desc: "We work our proprietary network of operating executives - many of whom we've known for a decade or more - and identify a focused universe of qualified, transition-ready leaders.",
               },
               {
                 step: "03",
                 title: "Slate",
-                desc: "We present a curated short list with full assessments — backgrounds, motivations, references, comp expectations — and facilitate the interview process end-to-end.",
+                desc: "We present a curated short list with full assessments - backgrounds, motivations, references, comp expectations - and facilitate the interview process end-to-end.",
               },
               {
                 step: "04",
@@ -229,7 +229,7 @@ export default function ForPrivateEquity() {
               The shape of the work.
             </h2>
             <p className="text-muted-foreground font-light mt-4 leading-relaxed">
-              A sample of recent engagements, anonymized — every search is bespoke to the sponsor and the thesis.
+              A sample of recent engagements, anonymized - every search is bespoke to the sponsor and the thesis.
             </p>
           </motion.div>
 
@@ -273,7 +273,61 @@ export default function ForPrivateEquity() {
         </Reveal>
       </section>
 
-      {/* ── CTA — navy ── */}
+      {/* ── FAQ ── */}
+      <section className="py-16 md:py-24 bg-white" data-testid="faq-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
+          <motion.div variants={fadeInUp} className="mb-10">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-[2px] bg-primary" />
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Common Questions</p>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
+              Frequently asked.
+            </h2>
+          </motion.div>
+
+          <dl className="divide-y divide-border border-t border-b border-border">
+            {[
+              {
+                q: "Do you work on a retained or contingent basis?",
+                a: "Retained, always. We take on a small number of searches at any given time and work each one deeply. Contingent search rewards volume; the work we do for our sponsors rewards fit.",
+              },
+              {
+                q: "How long does a typical search take?",
+                a: "From kickoff to signed offer letter, most C-level searches close in 10 to 16 weeks. Board and advisory placements are often quicker. Searches that require a specific industry or geography sometimes take longer, and we say so up front.",
+              },
+              {
+                q: "What does a typical slate look like?",
+                a: "Four to six fully briefed candidates, each with a written assessment, references in motion, and a clear read on motivations and comp expectations. We bring fewer names than the bulge-bracket firms and brief each one more deeply.",
+              },
+              {
+                q: "What sectors do you cover?",
+                a: "L&E principals have built leadership teams in healthcare, industrials, financial services, consumer products, and cleantech. We've worked with sponsors ranging from lower-middle-market buyout funds to growth-equity firms with billions under management.",
+              },
+              {
+                q: "Do you place board directors and advisors, or just full-time C-level?",
+                a: "Both. Operating Partners, Executive Chairmen, Independent Directors, Senior Advisors, and Executives-in-Residence are all common engagements. The Representative Searches above show the range.",
+              },
+              {
+                q: "Is there a placement guarantee?",
+                a: "Specific terms are negotiated as part of each engagement letter. We will be candid about scope, timeline, and what happens in the unlikely case that a placement does not work out within an agreed window.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="py-6"
+                data-testid={`faq-${i}`}
+              >
+                <dt className="text-lg font-serif text-foreground mb-2">{item.q}</dt>
+                <dd className="text-muted-foreground font-light leading-relaxed">{item.a}</dd>
+              </motion.div>
+            ))}
+          </dl>
+        </Reveal>
+      </section>
+
+      {/* ── CTA - navy ── */}
       <section className="py-16 md:py-20 bg-accent" data-testid="cta-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-white mb-6">

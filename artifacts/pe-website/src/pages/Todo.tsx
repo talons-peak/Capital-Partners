@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 import { Camera, FileText, Image, Quote, ServerCog, Globe, Users, MessageSquare, Sparkles, Check } from "lucide-react";
 
-// Temporary internal page — not linked from nav. URL: /todo
+// Temporary internal page - not linked from nav. URL: /todo
 // Use this when walking L&E through outstanding items.
 
 type Item = {
@@ -22,7 +22,7 @@ const items: Item[] = [
     icon: <FileText className="w-5 h-5" />,
     title: "Updated bio for Lori Hess",
     detail:
-      "L&E's April 2026 feedback marked Lori's bio with a placeholder \"X\" — meaning revised copy is forthcoming. The site currently uses Lori's existing l-epartners.com bio.",
+      "L&E's April 2026 feedback marked Lori's bio with a placeholder \"X\" - meaning revised copy is forthcoming. The site currently uses Lori's existing l-epartners.com bio.",
     rationale:
       "L&E to send the new copy whenever it's ready; trivial to swap.",
   },
@@ -33,9 +33,9 @@ const items: Item[] = [
     icon: <Camera className="w-5 h-5" />,
     title: "High-resolution professional headshots",
     detail:
-      "Current bio photos were pulled from the live site and are tiny (5–6 KB webp files, ~200×250 px). They look acceptable on desktop but get blurry at retina display sizes and on mobile zoom.",
+      "Current bio photos were pulled from the live site and are tiny (5-6 KB webp files, ~200×250 px). They look acceptable on desktop but get blurry at retina display sizes and on mobile zoom.",
     rationale:
-      "Worth investing in proper headshots for all three principals — same photographer, same lighting, neutral background. Would lift the perceived professionalism of the About page significantly.",
+      "Worth investing in proper headshots for all three principals - same photographer, same lighting, neutral background. Would lift the perceived professionalism of the About page significantly.",
   },
   {
     id: "principal-bios",
@@ -44,7 +44,7 @@ const items: Item[] = [
     icon: <Users className="w-5 h-5" />,
     title: "Beef up Sandi and Nikki bios",
     detail:
-      "Lori's bio is dense with proof points (Charterhouse, Cross Country Healthcare, Rice & Dore, Houlihan Lokey). Sandi's and Nikki's bios are thinner — they list sectors but don't anchor the same depth.",
+      "Lori's bio is dense with proof points (Charterhouse, Cross Country Healthcare, Rice & Dore, Houlihan Lokey). Sandi's and Nikki's bios are thinner - they list sectors but don't anchor the same depth.",
     rationale:
       "PE buyers will want to know what each partner specifically delivers. A few sentences from Sandi and Nikki on representative wins (anonymized if needed) would balance the team page.",
   },
@@ -55,7 +55,7 @@ const items: Item[] = [
     icon: <FileText className="w-5 h-5" />,
     title: "Replace illustrative Representative Searches with real engagements",
     detail:
-      "/services/private-equity has 8 anonymized search examples. They're plausible placeholders I wrote (e.g., \"CEO — PE-backed healthcare services platform\") to demonstrate the format L&E might want.",
+      "/services/private-equity has 8 anonymized search examples. They're plausible placeholders I wrote (e.g., \"CEO - PE-backed healthcare services platform\") to demonstrate the format L&E might want.",
     rationale:
       "L&E should swap these with real recent engagements, anonymized however confidentiality requires (sector + role + sponsor type + transaction stage is usually enough). This is the single highest-impact piece of social proof for PE buyers.",
   },
@@ -68,7 +68,7 @@ const items: Item[] = [
     detail:
       "The home page has 8 short attributed testimonials from the live site. None are paragraph-length narratives.",
     rationale:
-      "A 60–80 word quote from an executive L&E placed, describing the experience of working with the firm, would significantly strengthen the For Executives audience pull. Even one is enough.",
+      "A 60-80 word quote from an executive L&E placed, describing the experience of working with the firm, would significantly strengthen the For Executives audience pull. Even one is enough.",
   },
   {
     id: "for-execs-photo",
@@ -90,7 +90,7 @@ const items: Item[] = [
     detail:
       "The old site had a 1 GB file upload field. The new site removed it.",
     rationale:
-      "The For Executives page now says \"no résumé required\" — that low-friction stance is deliberately welcoming to in-seat executives nervous about putting anything in writing. Adding the upload back implicitly contradicts that. Recommendation: keep it removed; if an executive wants to share a CV, they can email it directly to lori@l-epartners.com after the first call. Final call is L&E's.",
+      "The For Executives page now says \"no résumé required\" - that low-friction stance is deliberately welcoming to in-seat executives nervous about putting anything in writing. Adding the upload back implicitly contradicts that. Recommendation: keep it removed; if an executive wants to share a CV, they can email it directly to lori@l-epartners.com after the first call. Final call is L&E's.",
   },
   {
     id: "differentiation",
@@ -99,7 +99,7 @@ const items: Item[] = [
     icon: <Sparkles className="w-5 h-5" />,
     title: "Differentiation from expert networks (AlphaSights / GLG / Guidepoint)",
     detail:
-      "The site previously used language (\"introductions\", \"thesis development\", \"due diligence\") that overlapped with how expert networks describe their service. Added a \"Why L&E — Relationships, not transactions\" section to the home page with three pillars (Decades-long relationships / Timing matters / Fit is everything) framing L&E as a relationship-driven boutique rather than a matching service.",
+      "The site previously used language (\"introductions\", \"thesis development\", \"due diligence\") that overlapped with how expert networks describe their service. Added a \"Why L&E - Relationships, not transactions\" section to the home page with three pillars (Decades-long relationships / Timing matters / Fit is everything) framing L&E as a relationship-driven boutique rather than a matching service.",
     rationale:
       "L&E to confirm the framing reads correctly. Optional further moves: replace some \"introduction\" language with \"placement\" where it's accurate; add one explicit \"we are not an expert network\" line if the firm is comfortable being that direct (some prefer not to name the contrast).",
   },
@@ -207,7 +207,7 @@ export default function Todo() {
           </div>
           <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-3">What we built for L&amp;E</h2>
           <p className="text-muted-foreground font-light mb-10 max-w-3xl">
-            A complete rebuild of l-epartners.com — new platform, new design, new copy throughout, plus a migration off the old WordPress / GoDaddy hosting stack onto modern serverless infrastructure.
+            A complete rebuild of l-epartners.com - new platform, new design, new copy throughout, plus a migration off the old WordPress / GoDaddy hosting stack onto modern serverless infrastructure.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
@@ -220,10 +220,11 @@ export default function Todo() {
                   "Built on Tailwind CSS v4 with a custom navy / gold / serif design system",
                   "Editorial typography hierarchy and consistent brand treatment across all pages",
                   "Framer Motion reveal animations and parallax effects for visual polish",
-                  "Fully responsive layouts — mobile, tablet, and desktop",
+                  "Fully responsive layouts - mobile, tablet, and desktop",
                   "Hosted on Vercel: HTTPS, edge CDN, sub-100ms TTFB, automatic certificates",
                   "Migrated off Replit; clean Git history at github.com/talons-peak/Capital-Partners",
                   "Type-safe codebase that passes strict TypeScript checks",
+                  "Scroll-to-top on every route change so deep links land at the page top",
                 ].map((s) => <Item key={s}>{s}</Item>)}
               </ul>
             </div>
@@ -249,7 +250,7 @@ export default function Todo() {
                   "Consistent L&E ampersand styling site-wide",
                   "Persistent header subtitle: 'Rethinking How Private Equity Firms Invest in Executives'",
                   "Pulled all real L&E imagery from the live site (logo, three bio photos, three editorial heroes)",
-                  "Pull-quote: 'Partnerships are grown, not born' — the L&E ethos",
+                  "Pull-quote: 'Partnerships are grown, not born' - the L&E ethos",
                   "50+ Years of Combined Relationships stat band",
                 ].map((s) => <Item key={s}>{s}</Item>)}
               </ul>
@@ -259,10 +260,10 @@ export default function Todo() {
               <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">Home page</h3>
               <ul className="space-y-2 text-sm text-muted-foreground font-light">
                 {[
-                  "Full L&E intro: 'Markets shift and transform — but business remains driven by one thing: human talent'",
+                  "Full L&E intro: 'Markets shift and transform - but business remains driven by one thing: human talent'",
                   "Three intro paragraphs from the April 2026 feedback (verbatim)",
                   "Dual-audience cards routing to PE Firms / Executives",
-                  "'Why L&E — Relationships, not transactions' three-pillar positioning",
+                  "'Why L&E - Relationships, not transactions' three-pillar positioning",
                   "Sectors section: Healthcare, Industrial, Financial Services, Consumer Products, Cleantech",
                   "Testimonials grid with all 8 attributed quotes from the old site",
                 ].map((s) => <Item key={s}>{s}</Item>)}
@@ -287,8 +288,9 @@ export default function Todo() {
                 {[
                   "Verbatim L&E-supplied copy (offers, roles, drivers)",
                   "Vertical (single-column) layout per April 2026 feedback",
-                  "'How a Search Works' — 4-phase retained engagement breakdown",
-                  "Representative Searches — 8 anonymized engagement examples (placeholder copy)",
+                  "'How a Search Works' - 4-phase retained engagement breakdown",
+                  "Representative Searches - 8 anonymized engagement examples (placeholder copy)",
+                  "FAQ section - 6 common PE-buyer questions answered",
                 ].map((s) => <Item key={s}>{s}</Item>)}
               </ul>
             </div>
@@ -299,7 +301,8 @@ export default function Todo() {
                 {[
                   "Real copy pulled from l-epartners.com (entrepreneur quote, candidate types, collaboration paragraph)",
                   "Vertical layout per April 2026 feedback",
-                  "'What to Expect' — 4-phase rhythm narrative",
+                  "'What to Expect' - 4-phase rhythm narrative",
+                  "FAQ section - 6 common executive questions answered",
                   "Confidentiality section explicitly addressing in-seat executives",
                   "'Start a confidential conversation' CTA framing",
                 ].map((s) => <Item key={s}>{s}</Item>)}

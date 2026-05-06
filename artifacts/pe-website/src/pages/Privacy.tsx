@@ -31,7 +31,7 @@ export default function Privacy() {
 
           <H2>Information we collect</H2>
           <P>
-            When you submit our contact form, we collect the information you provide — typically name, organization, email address, phone number (optional), the nature of your inquiry, and the message itself. We also receive standard server-side technical information from your browser, such as IP address, browser type, and the pages you visit on this site, used solely for security and operational purposes.
+            When you submit our contact form, we collect the information you provide - typically name, organization, email address, phone number (optional), the nature of your inquiry, and the message itself. We also receive standard server-side technical information from your browser, such as IP address, browser type, and the pages you visit on this site, used solely for security and operational purposes.
           </P>
 
           <H2>How we use your information</H2>
@@ -39,7 +39,7 @@ export default function Privacy() {
             We use the information you submit only to respond to your inquiry and to maintain the relationship that follows. We do not sell, rent, or share your information with third parties for marketing purposes.
           </P>
           <P>
-            Because L&amp;E is an executive search firm, we may use professional information you choose to share with us — for example, your résumé or background — to consider you for current and future search engagements with our private equity clients. Any such use is at your discretion and you may withdraw at any time.
+            Because L&amp;E is an executive search firm, we may use professional information you choose to share with us - for example, your résumé or background - to consider you for current and future search engagements with our private equity clients. Any such use is at your discretion and you may withdraw at any time.
           </P>
 
           <H2>Confidentiality</H2>

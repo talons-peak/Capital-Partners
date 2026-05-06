@@ -115,7 +115,7 @@ export default function ForExecutives() {
               {
                 step: "02",
                 title: "A careful read",
-                desc: "We take the time to understand your skills, sector depth, and the leadership opportunities that will let you do your best work. If we don't see a near-term fit, we say so — and we stay in touch over time.",
+                desc: "We take the time to understand your skills, sector depth, and the leadership opportunities that will let you do your best work. If we don't see a near-term fit, we say so - and we stay in touch over time.",
               },
               {
                 step: "03",
@@ -125,7 +125,7 @@ export default function ForExecutives() {
               {
                 step: "04",
                 title: "Through the process",
-                desc: "We support you through interviews, references, comp discussions, and offer negotiation — and we stay engaged through your onboarding to make sure the relationship starts well.",
+                desc: "We support you through interviews, references, comp discussions, and offer negotiation - and we stay engaged through your onboarding to make sure the relationship starts well.",
               },
             ].map((s, i) => (
               <motion.li
@@ -155,21 +155,75 @@ export default function ForExecutives() {
             <div>
               <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-3">Discretion Is the Default</p>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
-                Many of the executives we speak with are still in seat. Every conversation we have is held in strict confidence. There is no obligation, no formal application, and no résumé required to begin a dialogue — just a quiet introduction and a careful read of where your experience might fit.
+                Many of the executives we speak with are still in seat. Every conversation we have is held in strict confidence. There is no obligation, no formal application, and no résumé required to begin a dialogue - just a quiet introduction and a careful read of where your experience might fit.
               </p>
             </div>
           </motion.div>
         </Reveal>
       </section>
 
-      {/* ── CTA — navy ── */}
+      {/* ── FAQ ── */}
+      <section className="py-16 md:py-24 bg-muted" data-testid="faq-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
+          <motion.div variants={fadeInUp} className="mb-10">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-[2px] bg-primary" />
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Common Questions</p>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
+              Frequently asked.
+            </h2>
+          </motion.div>
+
+          <dl className="divide-y divide-border border-t border-b border-border bg-white">
+            {[
+              {
+                q: "Do I need to send a résumé?",
+                a: "No. Our preference is a short note describing where you've been and what you're thinking about next. A formal CV is welcome later in the process if and when it makes sense, but it isn't a precondition for a first conversation.",
+              },
+              {
+                q: "What if I'm currently in a role?",
+                a: "Most of the executives we work with are. Every conversation is held in strict confidence, including the fact that you reached out at all. We will not contact employers, references, or third parties without your explicit consent.",
+              },
+              {
+                q: "How will my information be used?",
+                a: "Solely to consider you for current and future search engagements with our private equity clients. We do not sell or share information, and we never present a candidate to a sponsor without that candidate's permission.",
+              },
+              {
+                q: "What kinds of roles do you typically place?",
+                a: "Chairperson, CEO, President, COO, CFO, Operating Partner, Board Director, Senior Advisor, and Executive-in-Residence engagements with private-equity-backed and PE-sponsored companies. The Representative Searches on our For Private Equity Firms page give a representative cross-section.",
+              },
+              {
+                q: "What if I'm pre-CEO, like a divisional president or BU head?",
+                a: "Many of our most successful placements were people moving into their first CEO seat. We work with executives at the right inflection point in their careers, not just sitting CEOs.",
+              },
+              {
+                q: "How quickly will I hear about an opportunity?",
+                a: "It depends on what's active and where the fit lies. Sometimes it's weeks; more often, the right introduction emerges over a longer horizon. We stay in touch over time and reach out when the thesis matches.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="py-6 px-6 md:px-8"
+                data-testid={`faq-${i}`}
+              >
+                <dt className="text-lg font-serif text-foreground mb-2">{item.q}</dt>
+                <dd className="text-muted-foreground font-light leading-relaxed">{item.a}</dd>
+              </motion.div>
+            ))}
+          </dl>
+        </Reveal>
+      </section>
+
+      {/* ── CTA - navy ── */}
       <section className="py-16 md:py-20 bg-accent" data-testid="cta-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-white mb-4">
             Start a confidential conversation.
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-white/60 font-light mb-10 max-w-xl mx-auto">
-            A short note is enough — we'll take it from there.
+            A short note is enough - we'll take it from there.
           </motion.p>
           <motion.div variants={fadeInUp}>
             <Link href="/contact" data-testid="cta-link">

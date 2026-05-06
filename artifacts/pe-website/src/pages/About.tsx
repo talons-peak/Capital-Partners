@@ -29,7 +29,7 @@ function GoldLabel({ children }: { children: ReactNode }) {
   );
 }
 
-// NOTE: Lori's bio is a placeholder per "X" in the April 2026 feedback document —
+// NOTE: Lori's bio is a placeholder per "X" in the April 2026 feedback document -
 // the copy below comes from l-epartners.com. Update when L&E sends the new bio.
 const principals = [
   {
@@ -37,7 +37,7 @@ const principals = [
     title: "Founder & Managing Partner",
     img: "/le/lori.webp",
     bio: [
-      "Lori has spent the majority of her career within the private equity sector. From 1994 to 2007 she was with Charterhouse Group Inc., a middle-market private equity firm in New York, where she developed the firm's Healthcare industry vertical and was instrumental in healthcare initiatives and portfolio companies — including the acquisition of Cross Country Healthcare, the merger with its leading competitor, and the subsequent IPO. She served on several healthcare portfolio company boards and co-led the Business Development function, identifying operating executives for new investment strategies and collaborating with deal and financing sources.",
+      "Lori has spent the majority of her career within the private equity sector. From 1994 to 2007 she was with Charterhouse Group Inc., a middle-market private equity firm in New York, where she developed the firm's Healthcare industry vertical and was instrumental in healthcare initiatives and portfolio companies - including the acquisition of Cross Country Healthcare, the merger with its leading competitor, and the subsequent IPO. She served on several healthcare portfolio company boards and co-led the Business Development function, identifying operating executives for new investment strategies and collaborating with deal and financing sources.",
       "Prior to establishing L&E Partners in November 2010, Lori headed the U.S. Private Equity Practice for Rice & Dore, a global executive search firm serving alternative investment funds, working with senior-level investment professionals and experienced operating executives. Between 1992 and 1994 she held financial and strategic planning positions at Avon Products and Sterling Health, and she began her career at Houlihan Lokey Howard & Zukin in Los Angeles as a financial analyst.",
       "Lori resides in New York with her family. She holds an MBA from Columbia Business School and a BA in Economics from the University of Pennsylvania.",
     ],
@@ -58,7 +58,7 @@ const principals = [
     title: "Principal",
     img: "/le/nikki.jpg",
     bio: [
-      "Nikki Delp has worked as an executive recruiter since 2018 across industrial, healthcare, and consumer products sectors, serving publicly traded, private equity-backed, and venture-funded companies. Since 2020 she has focused primarily on private equity — both for portfolio companies and for private equity firms directly.",
+      "Nikki Delp has worked as an executive recruiter since 2018 across industrial, healthcare, and consumer products sectors, serving publicly traded, private equity-backed, and venture-funded companies. Since 2020 she has focused primarily on private equity - both for portfolio companies and for private equity firms directly.",
       "Nikki brings marketing and communications expertise and has assisted search firm marketing departments. She joined L&E Partners in 2023, lives in the Philadelphia suburbs, and holds a BA in Mass Communication from the University of Delaware.",
     ],
     education: ["BA Mass Communication, University of Delaware"],

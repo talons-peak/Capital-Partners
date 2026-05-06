@@ -36,12 +36,12 @@ export default function Terms() {
 
           <H2>Intellectual property</H2>
           <P>
-            All content on the Site — including text, graphics, photos, logos, and the Site design itself — is the property of L&amp;E Partners or its licensors and is protected by U.S. and international intellectual property laws. You may view and print pages for personal, non-commercial use; you may not reproduce, modify, distribute, or otherwise exploit Site content without our prior written consent.
+            All content on the Site - including text, graphics, photos, logos, and the Site design itself - is the property of L&amp;E Partners or its licensors and is protected by U.S. and international intellectual property laws. You may view and print pages for personal, non-commercial use; you may not reproduce, modify, distribute, or otherwise exploit Site content without our prior written consent.
           </P>
 
           <H2>No warranties</H2>
           <P>
-            The Site is provided on an "as is" and "as available" basis. While we make reasonable efforts to keep the Site accurate and current, we make no warranties — express or implied — regarding accuracy, reliability, completeness, or availability. We may modify, suspend, or discontinue any part of the Site at any time without notice.
+            The Site is provided on an "as is" and "as available" basis. While we make reasonable efforts to keep the Site accurate and current, we make no warranties - express or implied - regarding accuracy, reliability, completeness, or availability. We may modify, suspend, or discontinue any part of the Site at any time without notice.
           </P>
 
           <H2>No professional advice</H2>

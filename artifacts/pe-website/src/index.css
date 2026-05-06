@@ -67,7 +67,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* LIGHT MODE — White with Navy + Gold */
+/* LIGHT MODE - White with Navy + Gold */
 :root {
   --button-outline: rgba(0,0,0, .08);
   --badge-outline: rgba(0,0,0, .05);
@@ -86,7 +86,7 @@
   --card-foreground: 222 47% 11%;
   --card-border: 214 25% 90%;
 
-  /* Sidebar — keep dark navy for sidebar contexts */
+  /* Sidebar - keep dark navy for sidebar contexts */
   --sidebar: 222 47% 11%;
   --sidebar-foreground: 0 0% 96%;
   --sidebar-border: 222 30% 20%;
@@ -111,7 +111,7 @@
   --muted: 210 20% 95%;
   --muted-foreground: 220 15% 45%;
 
-  /* Navy accent — used for dark sections */
+  /* Navy accent - used for dark sections */
   --accent: 222 47% 16%;
   --accent-foreground: 0 0% 97%;
 

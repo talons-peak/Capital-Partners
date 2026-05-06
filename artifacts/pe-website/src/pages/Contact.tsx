@@ -74,7 +74,7 @@ export default function Contact() {
   function onSubmit(values: InquiryForm) {
     console.log(values);
     toast({
-      title: "Thank you — we've received your note.",
+      title: "Thank you - we've received your note.",
       description: "A member of the L&E Partners team will be in touch within one business day.",
     });
     form.reset();
@@ -97,7 +97,7 @@ export default function Contact() {
             Let's talk.
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-xl text-muted-foreground font-light leading-relaxed max-w-3xl">
-            Whether you're a private equity firm exploring a search, an executive weighing your next chapter, or a connection somewhere in our industry — we'd welcome the conversation. Every inquiry is held in strict confidence, and a member of our team will respond within one business day.
+            Whether you're a private equity firm exploring a search, an executive weighing your next chapter, or a connection somewhere in our industry - we'd welcome the conversation. Every inquiry is held in strict confidence, and a member of our team will respond within one business day.
           </motion.p>
         </Reveal>
       </section>
@@ -112,7 +112,7 @@ export default function Contact() {
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-foreground">Reach a principal directly.</h2>
             <p className="text-muted-foreground font-light mt-3 max-w-2xl">
-              You're welcome to write to any of us — we read everything personally.
+              You're welcome to write to any of us - we read everything personally.
             </p>
           </motion.div>
 
@@ -188,7 +188,7 @@ export default function Contact() {
                     <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Confidential by Default</p>
                   </div>
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
-                    Many of the executives and sponsors we hear from are still in active engagements or seats. Anything you share with us — including the fact that you got in touch — stays between us.
+                    Many of the executives and sponsors we hear from are still in active engagements or seats. Anything you share with us - including the fact that you got in touch - stays between us.
                   </p>
                 </div>
               </motion.div>
@@ -197,7 +197,7 @@ export default function Contact() {
             <div className="lg:col-span-7 lg:col-start-6 bg-white border border-border p-8 md:p-10" data-testid="contact-form">
               <h2 className="text-2xl font-serif text-foreground mb-2">Send a note</h2>
               <p className="text-sm text-muted-foreground font-light mb-7">
-                A few sentences are plenty — we'll write back to set up a call.
+                A few sentences are plenty - we'll write back to set up a call.
               </p>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

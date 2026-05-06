@@ -52,7 +52,7 @@ export default function Disclosures() {
 
           <H2>No guarantee of placement</H2>
           <P>
-            L&amp;E provides executive search and consulting services on a retained basis. No guarantee is made — express or implied — regarding the placement of any executive, the success of any portfolio investment, or the return on any transaction in connection with our services.
+            L&amp;E provides executive search and consulting services on a retained basis. No guarantee is made - express or implied - regarding the placement of any executive, the success of any portfolio investment, or the return on any transaction in connection with our services.
           </P>
 
           <H2>Third-party content</H2>

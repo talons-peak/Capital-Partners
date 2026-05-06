@@ -22,7 +22,7 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
   );
 }
 
-// Verbatim from l-epartners.com — mix of PE-firm clients and placed executives.
+// Verbatim from l-epartners.com - mix of PE-firm clients and placed executives.
 const testimonials = [
   {
     quote: "Thank you for everything… you guys are great…we never would have made this work without you.",
@@ -30,11 +30,11 @@ const testimonials = [
   },
   {
     quote: "Really great to work with the two of you. Keep thinking.",
-    attribution: "CoFounder / Partner — PE client that invested in a company brought to its attention by L&E",
+    attribution: "CoFounder / Partner - PE client that invested in a company brought to its attention by L&E",
   },
   {
     quote: "Hope you have gotten off to a good start this year… we love your guys.",
-    attribution: "Managing Director — PE Client",
+    attribution: "Managing Director - PE Client",
   },
   {
     quote: "You two are terrific!",
@@ -95,7 +95,7 @@ export default function Home() {
                 variants={fadeInUp}
                 className="text-lg text-muted-foreground font-light leading-relaxed mb-12 max-w-lg"
               >
-                Markets shift and transform — but business remains driven by one thing: human talent. At L&amp;E Partners, our job is to facilitate mutually beneficial introductions that connect our private equity clients with high-caliber executives who can create value within our clients' new and existing investments.
+                Markets shift and transform - but business remains driven by one thing: human talent. At L&amp;E Partners, our job is to facilitate mutually beneficial introductions that connect our private equity clients with high-caliber executives who can create value within our clients' new and existing investments.
               </motion.p>
 
               <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
@@ -217,7 +217,7 @@ export default function Home() {
               Relationships, not transactions.
             </h2>
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              At the C-suite level, the difference between a placement that lasts and one that doesn't comes down to fit, timing, and trust — and those are cultivated over years, not deals. Executive search at this level is not a matching service.
+              At the C-suite level, the difference between a placement that lasts and one that doesn't comes down to fit, timing, and trust - and those are cultivated over years, not deals. Executive search at this level is not a matching service.
             </p>
           </motion.div>
 
@@ -231,12 +231,12 @@ export default function Home() {
               {
                 icon: <Hourglass className="w-6 h-6" />,
                 title: "Timing matters",
-                desc: "We don't push placements to close a transaction. The right operator and the right sponsor sometimes need to wait for the right thesis — and we wait with them.",
+                desc: "We don't push placements to close a transaction. The right operator and the right sponsor sometimes need to wait for the right thesis - and we wait with them.",
               },
               {
                 icon: <Target className="w-6 h-6" />,
                 title: "Fit is everything",
-                desc: "Our success is measured by how well placements stick — by the executives who go on to build the businesses, not by the number of introductions made.",
+                desc: "Our success is measured by how well placements stick - by the executives who go on to build the businesses, not by the number of introductions made.",
               },
             ].map((p, i) => (
               <motion.div
@@ -264,7 +264,7 @@ export default function Home() {
             </div>
             <div className="md:col-span-7 md:col-start-6">
               <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
-                The principals of L&amp;E Partners have spent decades cultivating the network of operating executives we introduce to our private equity clients today — relationships that are the foundation of every successful placement.
+                The principals of L&amp;E Partners have spent decades cultivating the network of operating executives we introduce to our private equity clients today - relationships that are the foundation of every successful placement.
               </p>
             </div>
           </motion.div>
@@ -307,7 +307,7 @@ export default function Home() {
               We work across all industry sectors.
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed max-w-2xl mt-6 text-lg">
-              The principals of L&amp;E Partners have built leadership teams across publicly traded, private equity-backed, and venture-funded companies — with particular depth in the sectors below.
+              The principals of L&amp;E Partners have built leadership teams across publicly traded, private equity-backed, and venture-funded companies - with particular depth in the sectors below.
             </p>
           </motion.div>
 
@@ -336,7 +336,7 @@ export default function Home() {
               <div className="w-8 h-[2px] bg-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
-              Our services have been utilized by many private equity firms and CEOs — both groups clearly recognizing our value.
+              Our services have been utilized by many private equity firms and CEOs - both groups clearly recognizing our value.
             </h2>
           </motion.div>
 
@@ -353,7 +353,7 @@ export default function Home() {
                   "{t.quote}"
                 </blockquote>
                 <figcaption className="mt-6 pt-5 border-t border-border text-xs text-muted-foreground font-semibold leading-snug">
-                  — {t.attribution}
+                  - {t.attribution}
                 </figcaption>
               </motion.figure>
             ))}
