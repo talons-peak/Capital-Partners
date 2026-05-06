@@ -95,13 +95,13 @@ const items: Item[] = [
   {
     id: "differentiation",
     category: "Decisions for L&E",
-    priority: "Medium",
+    priority: "Low",
     icon: <Sparkles className="w-5 h-5" />,
-    title: "Address the AlphaSights / GLG / Guidepoint confusion",
+    title: "Differentiation from expert networks (AlphaSights / GLG / Guidepoint)",
     detail:
-      "The site uses words like \"introductions\" and \"thesis development\" that overlap with how expert-network firms describe their service. A reader unfamiliar with executive search could mistake L&E for that category.",
+      "The site previously used language (\"introductions\", \"thesis development\", \"due diligence\") that overlapped with how expert networks describe their service. Added a \"Why L&E — Relationships, not transactions\" section to the home page with three pillars (Decades-long relationships / Timing matters / Fit is everything) framing L&E as a relationship-driven boutique rather than a matching service.",
     rationale:
-      "Possible fixes: (a) replace some \"introductions\" with \"placements\" / \"placed executives\" where appropriate; (b) add one explicit line like \"L&E places senior operating executives into full-time leadership roles — we are not an expert network or hourly-consulting firm\" on the For PE Firms page; (c) lean harder on phrases like \"operating executive\" rather than just \"executive\". L&E to weigh in on tone.",
+      "L&E to confirm the framing reads correctly. Optional further moves: replace some \"introduction\" language with \"placement\" where it's accurate; add one explicit \"we are not an expert network\" line if the firm is comfortable being that direct (some prefer not to name the contrast).",
   },
   {
     id: "policies",

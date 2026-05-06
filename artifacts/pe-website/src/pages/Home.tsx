@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { ArrowRight, Quote, Building2, HeartPulse, Landmark, ShoppingBag, Leaf } from "lucide-react";
+import { ArrowRight, Quote, Building2, HeartPulse, Landmark, ShoppingBag, Leaf, Handshake, Hourglass, Target } from "lucide-react";
 import { Link } from "wouter";
 
 const fadeInUp = {
@@ -201,6 +201,55 @@ export default function Home() {
                 </div>
               </Link>
             </motion.div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ── WHY L&E ── */}
+      <section className="py-16 md:py-24 bg-white" data-testid="why-le-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
+          <motion.div variants={fadeInUp} className="mb-12 max-w-3xl">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-[2px] bg-primary" />
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Why L&amp;E</p>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight mb-5">
+              Relationships, not transactions.
+            </h2>
+            <p className="text-lg text-muted-foreground font-light leading-relaxed">
+              At the C-suite level, the difference between a placement that lasts and one that doesn't comes down to fit, timing, and trust — and those are cultivated over years, not deals. Executive search at this level is not a matching service.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: <Handshake className="w-6 h-6" />,
+                title: "Decades-long relationships",
+                desc: "We've known many of the operating executives in our network for a decade or more, and we work with the same private equity sponsors across multiple searches and multiple years.",
+              },
+              {
+                icon: <Hourglass className="w-6 h-6" />,
+                title: "Timing matters",
+                desc: "We don't push placements to close a transaction. The right operator and the right sponsor sometimes need to wait for the right thesis — and we wait with them.",
+              },
+              {
+                icon: <Target className="w-6 h-6" />,
+                title: "Fit is everything",
+                desc: "Our success is measured by how well placements stick — by the executives who go on to build the businesses, not by the number of introductions made.",
+              },
+            ].map((p, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="bg-muted/40 border border-border p-8 md:p-10"
+                data-testid={`why-pillar-${i}`}
+              >
+                <div className="text-primary mb-5">{p.icon}</div>
+                <h3 className="text-xl font-serif text-foreground mb-3">{p.title}</h3>
+                <p className="text-muted-foreground font-light leading-relaxed text-sm">{p.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </Reveal>
       </section>
