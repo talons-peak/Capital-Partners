@@ -2,6 +2,7 @@ import { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { ArrowRight, Quote, Building2, HeartPulse, Landmark, ShoppingBag, Leaf, Handshake, Hourglass, Target } from "lucide-react";
 import { Link } from "wouter";
+import { Seo } from "@/components/Seo";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 35 },
@@ -72,6 +73,11 @@ export default function Home() {
 
   return (
     <div className="selection:bg-primary selection:text-primary-foreground">
+      <Seo
+        title="L&E Partners | Executive Search for Private Equity"
+        description="L&E Partners is a boutique executive search firm exclusive to and on retainer with the private equity community. We introduce industry-specific operating executives to PE sponsors for new and existing portfolio companies, investment thesis development, and opportunities being diligenced."
+        path="/"
+      />
 
       {/* ── HERO ── */}
       <section className="relative flex items-center pt-28 pb-12 md:pb-16" data-testid="hero-section">

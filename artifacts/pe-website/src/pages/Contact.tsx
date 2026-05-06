@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, MapPin, Phone, Mail, Lock } from "lucide-react";
+import { Seo } from "@/components/Seo";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 35 },
@@ -82,6 +83,11 @@ export default function Contact() {
 
   return (
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="contact-page">
+      <Seo
+        title="Contact | L&E Partners"
+        description="Reach L&E Partners by phone, mobile, or email. Direct contacts for Lori Hess, Sandi Macan, and Nikki Delp. Office at 36 East 10th Street, Suite 8E, New York, NY 10003. Every inquiry held in strict confidence; response within one business day."
+        path="/contact"
+      />
 
       {/* ── PAGE HERO ── */}
       <section className="relative border-b border-border overflow-hidden bg-white">

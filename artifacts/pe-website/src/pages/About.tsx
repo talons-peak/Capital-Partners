@@ -1,5 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
+import { Seo } from "@/components/Seo";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 35 },
@@ -68,6 +69,11 @@ const principals = [
 export default function About() {
   return (
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="about-page">
+      <Seo
+        title="About | L&E Partners"
+        description="L&E Partners is a boutique executive search firm that develops targeted CEO introductions for a select group of private equity firms. Founded in 2010, the firm is led by Lori Hess (Managing Partner), Sandi Macan (Partner), and Nikki Delp (Principal)."
+        path="/about"
+      />
 
       {/* ── PAGE HERO ── */}
       <section className="py-16 md:py-24 border-b border-border bg-white">

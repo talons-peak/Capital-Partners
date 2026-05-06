@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /todo
+
+Sitemap: https://capital-partners-sand.vercel.app/sitemap.xml

@@ -2,6 +2,7 @@ import { useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Lock } from "lucide-react";
 import { Link } from "wouter";
+import { Seo } from "@/components/Seo";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 35 },
@@ -32,6 +33,11 @@ const candidateTypes = [
 export default function ForExecutives() {
   return (
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="for-executives-page">
+      <Seo
+        title="For Executives | L&E Partners"
+        description="L&E Partners works with senior operating executives - chairpersons, CEOs, presidents, COOs, CFOs, board directors, and advisors - exploring leadership opportunities with private equity-backed companies. Every conversation held in strict confidence; no resume required to begin."
+        path="/services/executives"
+      />
 
       {/* ── PAGE HERO ── */}
       <section className="py-12 md:py-20 border-b border-border bg-white">

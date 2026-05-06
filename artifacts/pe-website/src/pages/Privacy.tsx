@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { Seo } from "@/components/Seo";
 
 function H2({ children }: { children: ReactNode }) {
   return <h2 className="text-xl md:text-2xl font-serif text-foreground mt-12 mb-4">{children}</h2>;
@@ -10,6 +11,11 @@ function P({ children }: { children: ReactNode }) {
 export default function Privacy() {
   return (
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="privacy-page">
+      <Seo
+        title="Privacy Policy | L&E Partners"
+        description="How L&E Partners collects, uses, and protects information from visitors, candidates, and clients. All inquiries held in strict confidence."
+        path="/privacy"
+      />
       <section className="py-12 md:py-16 border-b border-border bg-white">
         <div className="container mx-auto px-6 md:px-12 max-w-3xl">
           <div className="flex items-center gap-3 mb-4">

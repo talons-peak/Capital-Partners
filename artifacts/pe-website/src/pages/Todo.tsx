@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { Seo } from "@/components/Seo";
 
 // Temporary internal page - not linked from nav. URL: /todo
 // Use this when walking L&E through outstanding items.
@@ -59,6 +60,11 @@ const delivered: ChecklistGroup[] = [
       { done: true, title: "50+ Years of Combined Relationships stat band" },
       { done: true, title: "Canonical /public/brand/ asset directory with full SVG coverage (wordmark, icon, favicon, apple-touch-icon, android 192/512, maskable, OG image)" },
       { done: true, title: "Site favicon, apple-touch-icon, web manifest, and OG/Twitter cards all wired to brand assets" },
+      { done: true, title: "Per-page SEO: unique <title>, meta description, canonical URL, Open Graph + Twitter cards on every page" },
+      { done: true, title: "JSON-LD ProfessionalService structured data with full firm info (address, phone, email, principals, sectors)" },
+      { done: true, title: "robots.txt, sitemap.xml, and 301 redirects from old WordPress URLs (/about-us, /services, /for-the-private-equity-firms, etc) to the new routes" },
+      { done: true, title: "/todo and /404 pages set to noindex; everything else marked index, follow" },
+      { done: true, title: "Branded 404 page that points back to the main routes" },
     ],
   },
   {
@@ -219,6 +225,24 @@ const outstanding: ChecklistGroup[] = [
       },
       {
         done: false,
+        title: "Submit to Google Search Console after domain cutover",
+        detail: "Once l-epartners.com points at Vercel, verify ownership in Google Search Console (DNS TXT record or HTML meta tag), then submit the sitemap at /sitemap.xml. Optional but recommended: Bing Webmaster Tools too. SEO meta, canonical URLs, structured data, and the WordPress redirect rules are all in place; this is the final step to tell Google about the new site.",
+        priority: "Medium",
+      },
+      {
+        done: false,
+        title: "Optional: web analytics",
+        detail: "No analytics currently. Most lightweight options for a boutique firm: Vercel Analytics (one-click toggle in the Vercel dashboard, no cookies, no GDPR baggage), Plausible, or Fathom. Heavier option: Google Analytics 4. L&E to decide if measurement is wanted at all.",
+        priority: "Low",
+      },
+      {
+        done: false,
+        title: "Update the Vercel URL once domain cutover happens",
+        detail: "vercel.json, sitemap.xml, robots.txt, and the JSON-LD block in index.html currently reference https://capital-partners-sand.vercel.app. When the site moves to l-epartners.com (or whatever final domain), do a find-and-replace across those files. Set the VITE_SITE_URL env var in Vercel to the new domain and the runtime SEO component will pick it up automatically.",
+        priority: "High",
+      },
+      {
+        done: false,
         title: "Wire GitHub to Vercel auto-deploy",
         detail: "Vercel project is created and deploying via CLI. Auto-deploy on git push isn't connected because the talons-peak GitHub org needs to authorize the Vercel app. One-time setup: project Settings -> Git -> Connect Git Repository -> authorize talons-peak. After that every git push to main auto-deploys.",
         priority: "Medium",
@@ -309,6 +333,12 @@ export default function Todo() {
   const outstandingCount = outstanding.reduce((acc, g) => acc + g.items.filter((i) => !i.done).length, 0);
   return (
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="todo-page">
+      <Seo
+        title="Project Status (Internal) | L&E Partners"
+        description="Internal project status overview - not linked from the public navigation."
+        path="/todo"
+        noindex
+      />
 
       <section className="py-12 md:py-16 border-b border-border bg-white">
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">

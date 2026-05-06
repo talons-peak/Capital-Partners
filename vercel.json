@@ -4,7 +4,33 @@
   "installCommand": "pnpm install --frozen-lockfile",
   "outputDirectory": "artifacts/pe-website/dist/public",
   "framework": null,
+  "redirects": [
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/about-us/", "destination": "/about", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/contact-us/", "destination": "/contact", "permanent": true },
+    { "source": "/services", "destination": "/services/private-equity", "permanent": true },
+    { "source": "/services/", "destination": "/services/private-equity", "permanent": true },
+    { "source": "/for-the-private-equity-firms", "destination": "/services/private-equity", "permanent": true },
+    { "source": "/for-the-private-equity-firms/", "destination": "/services/private-equity", "permanent": true },
+    { "source": "/for-the-executives", "destination": "/services/executives", "permanent": true },
+    { "source": "/for-the-executives/", "destination": "/services/executives", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(robots.txt|sitemap.xml|site.webmanifest)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    },
+    {
+      "source": "/brand/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, immutable" }]
+    },
+    {
+      "source": "/le/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, immutable" }]
+    }
+  ],
   "rewrites": [
-    { "source": "/((?!assets/).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|brand/|le/|robots.txt|sitemap.xml|site.webmanifest|.*\\.(?:svg|png|jpg|jpeg|gif|ico|webp|webmanifest|xml|txt)$).*)", "destination": "/index.html" }
   ]
 }

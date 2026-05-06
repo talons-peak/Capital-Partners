@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Check, Copy, Download, AlertCircle } from "lucide-react";
+import { Seo } from "@/components/Seo";
 
 // Public brand asset library page implementing the get-latest brand-spec v1.
 // Section order is fixed: Intro -> Primary Marks -> Web & App Icons ->
@@ -254,6 +255,11 @@ const dontRules = [
 export default function Brand() {
   return (
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="brand-page">
+      <Seo
+        title="Brand | L&E Partners"
+        description="The L&E Partners brand asset library: marks, wordmarks, colors, typography, and platform icons, with usage rules. Approved files for partner introductions, decks, email signatures, and partner-facing communications."
+        path="/brand"
+      />
 
       {/* 1. INTRO */}
       <section className="py-12 md:py-16 border-b border-border bg-white">

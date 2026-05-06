@@ -2,6 +2,7 @@ import { useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { Seo } from "@/components/Seo";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 35 },
@@ -92,6 +93,11 @@ const representativeSearches = [
 export default function ForPrivateEquity() {
   return (
     <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="for-pe-page">
+      <Seo
+        title="For Private Equity Firms | L&E Partners"
+        description="L&E Partners introduces qualified, high-caliber, C-level operating executives to private equity firms. A retained-search engagement model covering CEO, CFO, COO, Operating Partner, and Board placements across healthcare, industrial, financial services, consumer products, and cleantech."
+        path="/services/private-equity"
+      />
 
       {/* ── PAGE HERO ── */}
       <section className="py-16 md:py-24 border-b border-border bg-white">
