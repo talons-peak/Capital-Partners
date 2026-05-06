@@ -159,6 +159,64 @@ export default function ForPrivateEquity() {
         </Reveal>
       </section>
 
+      {/* ── HOW A SEARCH WORKS ── */}
+      <section className="py-16 md:py-24 bg-white" data-testid="process-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
+          <motion.div variants={fadeInUp} className="mb-10">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-[2px] bg-primary" />
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">How a Search Works</p>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
+              A retained, hands-on engagement.
+            </h2>
+            <p className="text-muted-foreground font-light mt-4 leading-relaxed">
+              We work on a retained basis with a small number of sponsors at any given time — fewer searches, run more deeply.
+            </p>
+          </motion.div>
+
+          <ol className="space-y-8">
+            {[
+              {
+                step: "01",
+                title: "Discovery",
+                desc: "We sit with your deal team to understand the thesis, the operating gap, the sponsor's playbook, and the cultural fit that will make this placement successful — not just on paper.",
+              },
+              {
+                step: "02",
+                title: "Sourcing",
+                desc: "We work our proprietary network of operating executives — many of whom we've known for a decade or more — and identify a focused universe of qualified, transition-ready leaders.",
+              },
+              {
+                step: "03",
+                title: "Slate",
+                desc: "We present a curated short list with full assessments — backgrounds, motivations, references, comp expectations — and facilitate the interview process end-to-end.",
+              },
+              {
+                step: "04",
+                title: "Close",
+                desc: "We support reference checks, comp benchmarking, and offer negotiation. Our involvement continues into onboarding to ensure the relationship gets off to a strong start.",
+              },
+            ].map((s, i) => (
+              <motion.li
+                key={i}
+                variants={fadeInUp}
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start border-l-2 border-primary pl-6 md:pl-8"
+                data-testid={`process-step-${i}`}
+              >
+                <div className="md:col-span-2">
+                  <p className="text-3xl md:text-4xl font-serif font-light text-primary">{s.step}</p>
+                </div>
+                <div className="md:col-span-10">
+                  <h3 className="text-xl font-serif text-foreground mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">{s.desc}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ol>
+        </Reveal>
+      </section>
+
       {/* ── REPRESENTATIVE SEARCHES ── */}
       <section className="py-16 md:py-24 bg-white" data-testid="representative-searches-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">

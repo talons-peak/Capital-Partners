@@ -205,6 +205,23 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* ── 50 YEARS BAND ── */}
+      <section className="bg-accent border-y border-white/10" data-testid="legacy-band">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl py-14 md:py-16">
+          <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-4 text-center md:text-left">
+              <p className="text-6xl md:text-7xl font-serif font-light text-primary leading-none">50+</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-white/55 font-bold mt-3">Years of Combined Relationships</p>
+            </div>
+            <div className="md:col-span-7 md:col-start-6">
+              <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
+                The principals of L&amp;E Partners have spent decades cultivating the network of operating executives we introduce to our private equity clients today — relationships that are the foundation of every successful placement.
+              </p>
+            </div>
+          </motion.div>
+        </Reveal>
+      </section>
+
       {/* ── PULL QUOTE FULL-BLEED ── */}
       <section className="relative h-[340px] md:h-[420px] overflow-hidden" data-testid="pullquote-section">
         <img src="/le/hero-pe.jpg" alt="" className="w-full h-full object-cover object-center" />

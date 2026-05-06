@@ -1,0 +1,246 @@
+import { type ReactNode } from "react";
+import { Camera, FileText, Image, Quote, Scale, ServerCog, Globe, Users, MessageSquare, Sparkles } from "lucide-react";
+
+// Temporary internal page — not linked from nav. URL: /todo
+// Use this when walking L&E through outstanding items.
+
+type Item = {
+  id: string;
+  category: "Content from L&E" | "Decisions for L&E" | "Production / Hosting";
+  priority: "High" | "Medium" | "Low";
+  icon: ReactNode;
+  title: string;
+  detail: string;
+  rationale?: string;
+};
+
+const items: Item[] = [
+  {
+    id: "lori-bio",
+    category: "Content from L&E",
+    priority: "High",
+    icon: <FileText className="w-5 h-5" />,
+    title: "Updated bio for Lori Hess",
+    detail:
+      "L&E's April 2026 feedback marked Lori's bio with a placeholder \"X\" — meaning revised copy is forthcoming. The site currently uses Lori's existing l-epartners.com bio.",
+    rationale:
+      "L&E to send the new copy whenever it's ready; trivial to swap.",
+  },
+  {
+    id: "headshots",
+    category: "Content from L&E",
+    priority: "High",
+    icon: <Camera className="w-5 h-5" />,
+    title: "High-resolution professional headshots",
+    detail:
+      "Current bio photos were pulled from the live site and are tiny (5–6 KB webp files, ~200×250 px). They look acceptable on desktop but get blurry at retina display sizes and on mobile zoom.",
+    rationale:
+      "Worth investing in proper headshots for all three principals — same photographer, same lighting, neutral background. Would lift the perceived professionalism of the About page significantly.",
+  },
+  {
+    id: "principal-bios",
+    category: "Content from L&E",
+    priority: "High",
+    icon: <Users className="w-5 h-5" />,
+    title: "Beef up Sandi and Nikki bios",
+    detail:
+      "Lori's bio is dense with proof points (Charterhouse, Cross Country Healthcare, Rice & Dore, Houlihan Lokey). Sandi's and Nikki's bios are thinner — they list sectors but don't anchor the same depth.",
+    rationale:
+      "PE buyers will want to know what each partner specifically delivers. A few sentences from Sandi and Nikki on representative wins (anonymized if needed) would balance the team page.",
+  },
+  {
+    id: "real-searches",
+    category: "Content from L&E",
+    priority: "High",
+    icon: <FileText className="w-5 h-5" />,
+    title: "Replace illustrative Representative Searches with real engagements",
+    detail:
+      "/services/private-equity has 8 anonymized search examples. They're plausible placeholders I wrote (e.g., \"CEO — PE-backed healthcare services platform\") to demonstrate the format L&E might want.",
+    rationale:
+      "L&E should swap these with real recent engagements, anonymized however confidentiality requires (sector + role + sponsor type + transaction stage is usually enough). This is the single highest-impact piece of social proof for PE buyers.",
+  },
+  {
+    id: "exec-testimonial",
+    category: "Content from L&E",
+    priority: "Medium",
+    icon: <Quote className="w-5 h-5" />,
+    title: "One paragraph-length executive testimonial",
+    detail:
+      "The home page has 8 short attributed testimonials from the live site. None are paragraph-length narratives.",
+    rationale:
+      "A 60–80 word quote from an executive L&E placed, describing the experience of working with the firm, would significantly strengthen the For Executives audience pull. Even one is enough.",
+  },
+  {
+    id: "for-execs-photo",
+    category: "Content from L&E",
+    priority: "Medium",
+    icon: <Image className="w-5 h-5" />,
+    title: "New photo for /services/executives",
+    detail:
+      "L&E's April feedback called for a photo change on this page. Current photo is a placeholder pulled from the live site.",
+    rationale:
+      "Any high-quality editorial image that suggests \"senior leadership\" works. L&E to provide.",
+  },
+  {
+    id: "resume-upload",
+    category: "Decisions for L&E",
+    priority: "Medium",
+    icon: <FileText className="w-5 h-5" />,
+    title: "Decide on résumé upload in the Contact form",
+    detail:
+      "The old site had a 1 GB file upload field. The new site removed it.",
+    rationale:
+      "The For Executives page now says \"no résumé required\" — that low-friction stance is deliberately welcoming to in-seat executives nervous about putting anything in writing. Adding the upload back implicitly contradicts that. Recommendation: keep it removed; if an executive wants to share a CV, they can email it directly to lori@l-epartners.com after the first call. Final call is L&E's.",
+  },
+  {
+    id: "differentiation",
+    category: "Decisions for L&E",
+    priority: "Medium",
+    icon: <Sparkles className="w-5 h-5" />,
+    title: "Address the AlphaSights / GLG / Guidepoint confusion",
+    detail:
+      "The site uses words like \"introductions\" and \"thesis development\" that overlap with how expert-network firms describe their service. A reader unfamiliar with executive search could mistake L&E for that category.",
+    rationale:
+      "Possible fixes: (a) replace some \"introductions\" with \"placements\" / \"placed executives\" where appropriate; (b) add one explicit line like \"L&E places senior operating executives into full-time leadership roles — we are not an expert network or hourly-consulting firm\" on the For PE Firms page; (c) lean harder on phrases like \"operating executive\" rather than just \"executive\". L&E to weigh in on tone.",
+  },
+  {
+    id: "policies",
+    category: "Decisions for L&E",
+    priority: "Medium",
+    icon: <Scale className="w-5 h-5" />,
+    title: "Privacy Policy / Terms / Disclosures pages",
+    detail:
+      "Footer has links to Privacy Policy and Terms but they currently point to \"#\".",
+    rationale:
+      "Standard legalese is fine for a boutique services firm — a one-pager Privacy Policy covering the contact form, no third-party sharing, contact info. L&E or their counsel to provide.",
+  },
+  {
+    id: "fifty-years",
+    category: "Decisions for L&E",
+    priority: "Low",
+    icon: <Sparkles className="w-5 h-5" />,
+    title: "Confirm the \"50+ Years of Combined Relationships\" stat",
+    detail:
+      "Added a stat band on the home page using the figure from the old l-epartners.com home copy. The April 2026 feedback removed the explicit \"50 years\" line from the prose, so this is being added back as a separate visual element rather than in the body copy.",
+    rationale:
+      "Easy to remove if L&E feels the figure is dated or imprecise.",
+  },
+  {
+    id: "industries",
+    category: "Decisions for L&E",
+    priority: "Low",
+    icon: <Globe className="w-5 h-5" />,
+    title: "Industry-specific landing pages (future)",
+    detail:
+      "Currently the home Sectors section lists Healthcare, Industrial, Financial Services, Consumer Products, Cleantech as labels only.",
+    rationale:
+      "Optional future enhancement: dedicated sub-pages per industry with sector-specific copy and representative searches. Useful for SEO and inbound search but not necessary for launch.",
+  },
+  {
+    id: "domain",
+    category: "Production / Hosting",
+    priority: "High",
+    icon: <Globe className="w-5 h-5" />,
+    title: "Custom domain",
+    detail:
+      "The site is currently served at capital-partners-sand.vercel.app. The current production site is at l-epartners.com (WordPress on GoDaddy).",
+    rationale:
+      "When L&E approves the new site, point l-epartners.com (or a subdomain like new.l-epartners.com for staging) at Vercel. Vercel provides one-click DNS instructions; takes ~10 minutes.",
+  },
+  {
+    id: "github-vercel",
+    category: "Production / Hosting",
+    priority: "Medium",
+    icon: <ServerCog className="w-5 h-5" />,
+    title: "Wire GitHub → Vercel auto-deploy",
+    detail:
+      "Vercel project is created and deploying via CLI. Auto-deploy on git push isn't connected because the talons-peak GitHub org needs to authorize the Vercel app.",
+    rationale:
+      "One-time setup in the Vercel dashboard: project Settings → Git → Connect Git Repository → authorize talons-peak. After that, every git push to main auto-deploys.",
+  },
+  {
+    id: "remove-todo",
+    category: "Production / Hosting",
+    priority: "Low",
+    icon: <MessageSquare className="w-5 h-5" />,
+    title: "Remove this /todo page before launch",
+    detail:
+      "This page is unlinked from the nav but reachable at /todo by anyone who knows the URL.",
+    rationale:
+      "Delete the route + page file once the L&E presentation is done.",
+  },
+];
+
+const priorityStyle: Record<Item["priority"], string> = {
+  High: "border-red-300 bg-red-50 text-red-700",
+  Medium: "border-amber-300 bg-amber-50 text-amber-700",
+  Low: "border-slate-300 bg-slate-50 text-slate-600",
+};
+
+export default function Todo() {
+  const categories = Array.from(new Set(items.map((i) => i.category)));
+
+  return (
+    <div className="pt-28 selection:bg-primary selection:text-primary-foreground" data-testid="todo-page">
+      <section className="py-12 md:py-16 border-b border-border bg-white">
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-[2px] bg-primary" />
+            <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold">Internal · Not Linked</p>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-tight text-foreground mb-6">
+            Outstanding items
+          </h1>
+          <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-3xl">
+            Working list of everything still pending before launch — content L&amp;E owes us, decisions to confirm, and production / hosting tasks. Use this when walking the team through the new site.
+          </p>
+          <p className="text-sm text-muted-foreground/60 font-light mt-3">
+            This page is not linked from the navigation. Delete it before public launch.
+          </p>
+        </div>
+      </section>
+
+      {categories.map((cat) => {
+        const catItems = items.filter((i) => i.category === cat);
+        return (
+          <section key={cat} className="py-12 md:py-16 even:bg-muted" data-testid={`todo-category-${cat.toLowerCase().replace(/\W+/g, "-")}`}>
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+              <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-8">{cat}</h2>
+              <div className="space-y-5">
+                {catItems.map((item) => (
+                  <article
+                    key={item.id}
+                    className="bg-white border border-border p-6 md:p-8"
+                    data-testid={`todo-item-${item.id}`}
+                  >
+                    <div className="flex items-start gap-5">
+                      <div className="text-primary mt-0.5 flex-shrink-0">{item.icon}</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-wrap items-center gap-3 mb-2">
+                          <h3 className="text-lg font-serif text-foreground">{item.title}</h3>
+                          <span
+                            className={`text-[10px] uppercase tracking-widest px-2 py-1 border font-semibold ${priorityStyle[item.priority]}`}
+                          >
+                            {item.priority}
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-foreground font-light leading-relaxed mb-3">
+                          {item.detail}
+                        </p>
+                        {item.rationale && (
+                          <p className="text-sm text-foreground/75 font-light leading-relaxed border-l-2 border-primary/40 pl-4 italic">
+                            {item.rationale}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  );
+}

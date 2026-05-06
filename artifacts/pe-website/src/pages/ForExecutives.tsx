@@ -92,6 +92,61 @@ export default function ForExecutives() {
         </Reveal>
       </section>
 
+      {/* ── WHAT TO EXPECT ── */}
+      <section className="py-16 md:py-24 bg-white border-t border-border" data-testid="what-to-expect-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
+          <motion.div variants={fadeInUp} className="mb-10">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-[2px] bg-primary" />
+              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">What to Expect</p>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
+              The rhythm of a relationship with L&amp;E.
+            </h2>
+          </motion.div>
+
+          <ol className="space-y-7">
+            {[
+              {
+                step: "01",
+                title: "An introductory call",
+                desc: "Thirty to sixty minutes, by phone or video. We listen to where you've been, what you're looking for next, and the kind of platform that fits your background and ambition. There's no script and no obligation.",
+              },
+              {
+                step: "02",
+                title: "A careful read",
+                desc: "We take the time to understand your skills, sector depth, and the leadership opportunities that will let you do your best work. If we don't see a near-term fit, we say so — and we stay in touch over time.",
+              },
+              {
+                step: "03",
+                title: "Targeted introductions",
+                desc: "When the right opportunity emerges with one of our private equity clients, we make a deliberate, well-prepared introduction. You'll be presented with full context, not as one of many résumés in a stack.",
+              },
+              {
+                step: "04",
+                title: "Through the process",
+                desc: "We support you through interviews, references, comp discussions, and offer negotiation — and we stay engaged through your onboarding to make sure the relationship starts well.",
+              },
+            ].map((s, i) => (
+              <motion.li
+                key={i}
+                variants={fadeInUp}
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start border-l-2 border-primary pl-6 md:pl-8"
+                data-testid={`expect-step-${i}`}
+              >
+                <div className="md:col-span-2">
+                  <p className="text-3xl md:text-4xl font-serif font-light text-primary">{s.step}</p>
+                </div>
+                <div className="md:col-span-10">
+                  <h3 className="text-xl font-serif text-foreground mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">{s.desc}</p>
+                </div>
+              </motion.li>
+            ))}
+          </ol>
+        </Reveal>
+      </section>
+
       {/* ── CONFIDENTIALITY ── */}
       <section className="py-14 md:py-20 bg-white border-t border-border" data-testid="confidentiality-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
