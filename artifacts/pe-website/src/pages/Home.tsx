@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { ArrowRight, Quote, Building2, HeartPulse, Landmark, ShoppingBag, Leaf, Handshake, Hourglass, Target } from "lucide-react";
+import { ArrowRight, Quote, Building2, HeartPulse, Landmark, ShoppingBag, Leaf, Cpu, Handshake, Hourglass, Target } from "lucide-react";
 import { Link } from "wouter";
 import { Seo } from "@/components/Seo";
 
@@ -62,6 +62,7 @@ const testimonials = [
 const sectors = [
   { icon: <HeartPulse className="w-5 h-5" />, label: "Healthcare" },
   { icon: <Building2 className="w-5 h-5" />, label: "Industrial" },
+  { icon: <Cpu className="w-5 h-5" />, label: "Technology" },
   { icon: <Landmark className="w-5 h-5" />, label: "Financial Services" },
   { icon: <ShoppingBag className="w-5 h-5" />, label: "Consumer Products" },
   { icon: <Leaf className="w-5 h-5" />, label: "Cleantech" },
@@ -317,7 +318,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-px bg-border border border-border">
+          <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border border border-border">
             {sectors.map((s, i) => (
               <div
                 key={i}
