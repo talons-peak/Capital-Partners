@@ -54,8 +54,9 @@ export default function Footer() {
             © {new Date().getFullYear()} L&amp;E Partners LLC. All rights reserved.
           </p>
           <div className="flex gap-8 text-xs uppercase tracking-widest text-white/30 font-semibold">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms</a>
+            <Link href="/privacy"><span className="hover:text-primary transition-colors cursor-pointer">Privacy Policy</span></Link>
+            <Link href="/terms"><span className="hover:text-primary transition-colors cursor-pointer">Terms</span></Link>
+            <Link href="/disclosures"><span className="hover:text-primary transition-colors cursor-pointer">Disclosures</span></Link>
           </div>
         </div>
       </div>

@@ -9,6 +9,9 @@ import About from "@/pages/About";
 import ForPrivateEquity from "@/pages/ForPrivateEquity";
 import ForExecutives from "@/pages/ForExecutives";
 import Contact from "@/pages/Contact";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
+import Disclosures from "@/pages/Disclosures";
 import Todo from "@/pages/Todo";
 import NotFound from "@/pages/not-found";
 
@@ -22,6 +25,9 @@ function Router() {
       <Route path="/services/private-equity" component={ForPrivateEquity} />
       <Route path="/services/executives" component={ForExecutives} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/disclosures" component={Disclosures} />
       <Route path="/todo" component={Todo} />
       <Route component={NotFound} />
     </Switch>

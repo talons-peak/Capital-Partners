@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { Camera, FileText, Image, Quote, Scale, ServerCog, Globe, Users, MessageSquare, Sparkles } from "lucide-react";
+import { Camera, FileText, Image, Quote, ServerCog, Globe, Users, MessageSquare, Sparkles, Check } from "lucide-react";
 
 // Temporary internal page — not linked from nav. URL: /todo
 // Use this when walking L&E through outstanding items.
@@ -104,17 +104,6 @@ const items: Item[] = [
       "L&E to confirm the framing reads correctly. Optional further moves: replace some \"introduction\" language with \"placement\" where it's accurate; add one explicit \"we are not an expert network\" line if the firm is comfortable being that direct (some prefer not to name the contrast).",
   },
   {
-    id: "policies",
-    category: "Decisions for L&E",
-    priority: "Medium",
-    icon: <Scale className="w-5 h-5" />,
-    title: "Privacy Policy / Terms / Disclosures pages",
-    detail:
-      "Footer has links to Privacy Policy and Terms but they currently point to \"#\".",
-    rationale:
-      "Standard legalese is fine for a boutique services firm — a one-pager Privacy Policy covering the contact form, no third-party sharing, contact info. L&E or their counsel to provide.",
-  },
-  {
     id: "fifty-years",
     category: "Decisions for L&E",
     priority: "Low",
@@ -177,6 +166,15 @@ const priorityStyle: Record<Item["priority"], string> = {
   Low: "border-slate-300 bg-slate-50 text-slate-600",
 };
 
+function Item({ children }: { children: ReactNode }) {
+  return (
+    <li className="flex gap-3 items-start leading-relaxed">
+      <Check className="w-3.5 h-3.5 text-primary mt-1.5 flex-shrink-0" />
+      <span>{children}</span>
+    </li>
+  );
+}
+
 export default function Todo() {
   const categories = Array.from(new Set(items.map((i) => i.category)));
 
@@ -189,13 +187,147 @@ export default function Todo() {
             <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold">Internal · Not Linked</p>
           </div>
           <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-tight text-foreground mb-6">
-            Outstanding items
+            Project status
           </h1>
           <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-3xl">
-            Working list of everything still pending before launch — content L&amp;E owes us, decisions to confirm, and production / hosting tasks. Use this when walking the team through the new site.
+            What we shipped for L&amp;E and what's still pending before public launch. Use this when walking the team through the new site.
           </p>
           <p className="text-sm text-muted-foreground/60 font-light mt-3">
-            This page is not linked from the navigation. Delete it before public launch.
+            This page is not linked from the navigation. Delete it before going live.
+          </p>
+        </div>
+      </section>
+
+      {/* ── WHAT WE SHIPPED ── */}
+      <section className="py-12 md:py-16 bg-white border-b border-border" data-testid="shipped-section">
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <div className="flex items-center gap-3 mb-3">
+            <Check className="w-5 h-5 text-primary" />
+            <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Delivered</p>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-3">What we built for L&amp;E</h2>
+          <p className="text-muted-foreground font-light mb-10 max-w-3xl">
+            A complete rebuild of l-epartners.com — new platform, new design, new copy throughout, plus a migration off the old WordPress / GoDaddy hosting stack onto modern serverless infrastructure.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">Platform &amp; rebuild</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Replaced WordPress / GoDaddy with a custom React + Vite + TypeScript SPA",
+                  "Built on Tailwind CSS v4 with a custom navy / gold / serif design system",
+                  "Editorial typography hierarchy and consistent brand treatment across all pages",
+                  "Framer Motion reveal animations and parallax effects for visual polish",
+                  "Fully responsive layouts — mobile, tablet, and desktop",
+                  "Hosted on Vercel: HTTPS, edge CDN, sub-100ms TTFB, automatic certificates",
+                  "Migrated off Replit; clean Git history at github.com/talons-peak/Capital-Partners",
+                  "Type-safe codebase that passes strict TypeScript checks",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">Information architecture</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Removed the standalone Services landing page (per April 2026 feedback)",
+                  "Created a Services dropdown menu with For Private Equity Firms / For Executives",
+                  "Reordered nav: Services first, About second, Inquiries CTA on the right",
+                  "Removed unrelated Portfolio and Team pages from the original template",
+                  "Added Privacy Policy, Terms of Use, and Disclosures pages",
+                  "All deep-links work (e.g., /services/private-equity loads correctly on direct visit)",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">Brand &amp; identity</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Consistent L&E ampersand styling site-wide",
+                  "Persistent header subtitle: 'Rethinking How Private Equity Firms Invest in Executives'",
+                  "Pulled all real L&E imagery from the live site (logo, three bio photos, three editorial heroes)",
+                  "Pull-quote: 'Partnerships are grown, not born' — the L&E ethos",
+                  "50+ Years of Combined Relationships stat band",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">Home page</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Full L&E intro: 'Markets shift and transform — but business remains driven by one thing: human talent'",
+                  "Three intro paragraphs from the April 2026 feedback (verbatim)",
+                  "Dual-audience cards routing to PE Firms / Executives",
+                  "'Why L&E — Relationships, not transactions' three-pillar positioning",
+                  "Sectors section: Healthcare, Industrial, Financial Services, Consumer Products, Cleantech",
+                  "Testimonials grid with all 8 attributed quotes from the old site",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">About page</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Boutique-search-firm blurb (per L&E feedback)",
+                  "Lori Hess full bio with Charterhouse / Cross Country Healthcare / Rice & Dore detail",
+                  "Sandi Macan and Nikki Delp bios with sector and education detail",
+                  "Per-principal photo with grayscale-to-color hover treatment",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">For Private Equity Firms</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Verbatim L&E-supplied copy (offers, roles, drivers)",
+                  "Vertical (single-column) layout per April 2026 feedback",
+                  "'How a Search Works' — 4-phase retained engagement breakdown",
+                  "Representative Searches — 8 anonymized engagement examples (placeholder copy)",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">For Executives</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Real copy pulled from l-epartners.com (entrepreneur quote, candidate types, collaboration paragraph)",
+                  "Vertical layout per April 2026 feedback",
+                  "'What to Expect' — 4-phase rhythm narrative",
+                  "Confidentiality section explicitly addressing in-seat executives",
+                  "'Start a confidential conversation' CTA framing",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-base font-serif text-foreground mb-4 pb-2 border-b border-border">Contact</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                {[
+                  "Three-audience welcome (PE firm / executive / industry connection)",
+                  "One-business-day response promise",
+                  "Direct office, mobile, and email per principal",
+                  "Form with validation, friendly placeholders, friendly response toast",
+                  "'Confidential by Default' sidebar block",
+                ].map((s) => <Item key={s}>{s}</Item>)}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-12 bg-muted border-b border-border">
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <h2 className="text-2xl md:text-3xl font-serif text-foreground">Outstanding items</h2>
+          <p className="text-muted-foreground font-light mt-2 max-w-3xl">
+            What's still needed from L&amp;E, decisions to confirm, and production / hosting tasks before launch.
           </p>
         </div>
       </section>
