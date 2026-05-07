@@ -28,6 +28,7 @@ export default function Footer() {
                 { label: "For Private Equity Firms", href: "/services/private-equity" },
                 { label: "For Executives", href: "/services/executives" },
                 { label: "Contact", href: "/contact" },
+                { label: "Brand", href: "/brand" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>
