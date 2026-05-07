@@ -23,7 +23,7 @@ function Brand({ tone = "dark" }: { tone?: "dark" | "light" }) {
   return (
     <Link href="/" data-testid="nav-logo">
       <span className={`font-serif text-2xl font-bold tracking-wider cursor-pointer select-none hover:opacity-80 transition-opacity duration-300 ${text}`}>
-        L<span className="text-primary">&amp;</span>E Partners
+        L<span className="text-primary text-[0.75em] relative top-[-0.05em] mx-[-0.04em]">&amp;</span>E Partners
       </span>
     </Link>
   );

@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/">
               <span className="font-serif text-3xl font-bold tracking-wider text-white cursor-pointer hover:opacity-80 transition-opacity duration-300">
-                L<span className="text-primary">&amp;</span>E Partners
+                L<span className="text-primary text-[0.75em] relative top-[-0.05em] mx-[-0.04em]">&amp;</span>E Partners
               </span>
             </Link>
             <p className="mt-4 text-sm text-white/50 font-light max-w-xs leading-relaxed">
