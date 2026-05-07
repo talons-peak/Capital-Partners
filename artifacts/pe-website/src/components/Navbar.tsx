@@ -19,12 +19,17 @@ const navLinks: NavLink[] = [
 ];
 
 function Brand({ tone = "dark" }: { tone?: "dark" | "light" }) {
-  const text = tone === "dark" ? "text-foreground" : "text-white";
+  // tone="dark" => dark text on light surface, use wordmark-light.svg (navy text)
+  // tone="light" => light text on dark surface, use wordmark-dark.svg (white text)
+  const src = tone === "dark" ? "/brand/logo/wordmark-light.svg" : "/brand/logo/wordmark-dark.svg";
   return (
     <Link href="/" data-testid="nav-logo">
-      <span className={`font-serif text-2xl font-bold tracking-wider cursor-pointer select-none hover:opacity-80 transition-opacity duration-300 ${text}`}>
-        L<span className="text-primary text-[0.75em] relative top-[-0.05em] mx-[-0.04em]">&amp;</span>E Partners
-      </span>
+      <img
+        src={src}
+        alt="L&E Partners"
+        className="h-7 md:h-8 w-auto cursor-pointer hover:opacity-80 transition-opacity duration-300 select-none"
+        draggable={false}
+      />
     </Link>
   );
 }

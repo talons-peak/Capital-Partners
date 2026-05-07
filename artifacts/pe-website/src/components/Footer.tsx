@@ -7,9 +7,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
             <Link href="/">
-              <span className="font-serif text-3xl font-bold tracking-wider text-white cursor-pointer hover:opacity-80 transition-opacity duration-300">
-                L<span className="text-primary text-[0.75em] relative top-[-0.05em] mx-[-0.04em]">&amp;</span>E Partners
-              </span>
+              <img
+                src="/brand/logo/wordmark-dark.svg"
+                alt="L&E Partners"
+                className="h-9 w-auto cursor-pointer hover:opacity-80 transition-opacity duration-300 select-none"
+                draggable={false}
+              />
             </Link>
             <p className="mt-4 text-sm text-white/50 font-light max-w-xs leading-relaxed">
               A boutique executive search firm exclusive to and on retainer with the private equity community.
