@@ -268,7 +268,7 @@ export default function Brand() {
             <div className="md:col-span-8">
               <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold mb-3">Brand</p>
               <h1 className="text-4xl md:text-5xl font-serif font-semibold leading-tight text-foreground mb-5">
-                L<span className="text-foreground/40">&amp;</span>E Partners brand assets
+                L<span className="text-primary">&amp;</span>E Partners brand assets
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
                 Marks, wordmarks, colors, typography, and platform icons. Use the approved files below and follow the usage rules at the bottom of the page. The brand should feel quiet, precise, and trustworthy. It is the visual face of a thirty-year boutique relationship business; the design should never overshadow the people or the work.
@@ -276,7 +276,7 @@ export default function Brand() {
             </div>
             <div className="md:col-span-4 flex items-center justify-center md:justify-end">
               <span
-                className="font-serif font-bold text-foreground/40 select-none leading-none"
+                className="font-serif font-bold text-primary select-none leading-none"
                 style={{ fontSize: "180px" }}
                 aria-hidden="true"
                 data-testid="ampersand-hero"
@@ -297,7 +297,7 @@ export default function Brand() {
               style={{ height: "200px" }}
             >
               <span
-                className="font-serif font-bold text-foreground/40 select-none leading-none"
+                className="font-serif font-bold text-primary select-none leading-none"
                 style={{ fontSize: "140px" }}
                 data-testid="ampersand-feature"
                 aria-label="L&E Partners ampersand"
@@ -309,10 +309,10 @@ export default function Brand() {
               <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-2">Signature Glyph</p>
               <h2 className="text-2xl md:text-3xl font-serif text-foreground leading-tight mb-3">The ampersand.</h2>
               <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                The ampersand at the heart of the L<span className="text-foreground/40">&amp;</span>E Partners wordmark is the brand's most distinctive shorthand: Playfair Display, bold weight, navy at 40 percent opacity. Use it on its own as a section divider, a watermark, or a single-glyph mark wherever the full wordmark would be too heavy. It carries the firm's identity without ever needing to introduce it.
+                The ampersand at the heart of the L<span className="text-primary">&amp;</span>E Partners wordmark is the brand's most distinctive shorthand: Playfair Display, bold weight, in the L&amp;E gold. Use it on its own as a section divider, a watermark, or a single-glyph mark wherever the full wordmark would be too heavy. It carries the firm's identity without ever needing to introduce it.
               </p>
               <p className="text-xs font-mono text-muted-foreground/70 bg-white border border-border inline-block px-3 py-2">
-                font-family: 'Playfair Display'; font-weight: 700; color: rgb(15 23 42 / 0.40);
+                font-family: 'Playfair Display'; font-weight: 700; color: #CC9A14;
               </p>
             </div>
           </div>

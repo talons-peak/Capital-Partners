@@ -22,8 +22,8 @@ function Brand({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const text = tone === "dark" ? "text-foreground" : "text-white";
   return (
     <Link href="/" data-testid="nav-logo">
-      <span className={`group font-serif text-2xl font-bold tracking-wider cursor-pointer select-none transition-colors duration-300 ${text}`}>
-        L<span className="text-foreground/40 group-hover:text-primary transition-colors duration-300">&amp;</span>E Partners
+      <span className={`font-serif text-2xl font-bold tracking-wider cursor-pointer select-none hover:opacity-80 transition-opacity duration-300 ${text}`}>
+        L<span className="text-primary">&amp;</span>E Partners
       </span>
     </Link>
   );

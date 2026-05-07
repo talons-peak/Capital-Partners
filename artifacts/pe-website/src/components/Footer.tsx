@@ -7,8 +7,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
             <Link href="/">
-              <span className="font-serif text-3xl font-bold tracking-wider text-white cursor-pointer">
-                L<span className="text-white/40">&amp;</span>E Partners
+              <span className="font-serif text-3xl font-bold tracking-wider text-white cursor-pointer hover:opacity-80 transition-opacity duration-300">
+                L<span className="text-primary">&amp;</span>E Partners
               </span>
             </Link>
             <p className="mt-4 text-sm text-white/50 font-light max-w-xs leading-relaxed">
