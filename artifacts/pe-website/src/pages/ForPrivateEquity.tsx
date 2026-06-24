@@ -25,7 +25,8 @@ const offers = [
   "The opportunity to meet industry and sector-specific talent to assist with investment thesis development ahead of an investment transaction in the market.",
   "The ability to partner with proven industry and sector-specific operators to assist with specific transaction due diligence, increasing the likelihood of a successful transaction.",
   "The leadership required to work on existing in-house investment opportunities, particularly those lacking backable management.",
-  "A stable of backable industry-specific C-suite executives and board directors. The introductions made not only provide expertise pre-deal, but are also considered to be board candidates should the acquisition move forward.",
+  "A stable of backable industry-specific C-suite executives and board directors.",
+  "The introductions made not only provide expertise pre-deal, but are also considered to be board candidates should the acquisition move forward.",
 ];
 
 const roles = [
