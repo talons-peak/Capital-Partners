@@ -99,7 +99,7 @@ export default function ForPrivateEquity() {
 
       {/* ── HERO IMAGE ── */}
       <section className="relative h-[280px] md:h-[380px] overflow-hidden" data-testid="hero-image-section">
-        <img src="/le/hero-pe.jpg" alt="" className="w-full h-full object-cover object-center" />
+        <img src="/le/hero-pe-city.jpg" alt="" className="w-full h-full object-cover object-center" />
         <div className="absolute top-0 left-0 w-1.5 h-full bg-primary" />
       </section>
 
