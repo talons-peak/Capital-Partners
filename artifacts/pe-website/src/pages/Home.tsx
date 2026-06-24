@@ -1,6 +1,6 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { ArrowRight, Quote, Building2, HeartPulse, Landmark, ShoppingBag, Leaf, Cpu, Handshake, Hourglass, Target } from "lucide-react";
+import { ArrowRight, Quote, Factory, HeartPulse, Landmark, ShoppingBag, Zap, Cpu, Handshake, Hourglass, BookOpen } from "lucide-react";
 import { Link } from "wouter";
 import { Seo } from "@/components/Seo";
 
@@ -60,12 +60,12 @@ const testimonials = [
 ];
 
 const sectors = [
-  { icon: <HeartPulse className="w-5 h-5" />, label: "Healthcare" },
-  { icon: <Building2 className="w-5 h-5" />, label: "Industrial" },
-  { icon: <Cpu className="w-5 h-5" />, label: "Technology" },
-  { icon: <Landmark className="w-5 h-5" />, label: "Financial Services" },
-  { icon: <ShoppingBag className="w-5 h-5" />, label: "Consumer Products" },
-  { icon: <Leaf className="w-5 h-5" />, label: "Cleantech" },
+  { icon: <Landmark className="w-5 h-5" />, label: "Business & Financial Services" },
+  { icon: <ShoppingBag className="w-5 h-5" />, label: "Consumer" },
+  { icon: <Zap className="w-5 h-5" />, label: "Energy & Infrastructure" },
+  { icon: <HeartPulse className="w-5 h-5" />, label: "Healthcare & Life Sciences" },
+  { icon: <Factory className="w-5 h-5" />, label: "Industrial" },
+  { icon: <Cpu className="w-5 h-5" />, label: "Technology & Tech-enabled Services" },
 ];
 
 export default function Home() {
@@ -149,17 +149,17 @@ export default function Home() {
                 <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Who We Are</p>
               </div>
               <h2 className="text-4xl md:text-5xl font-serif leading-tight text-foreground">
-                Exclusive to and on retainer with the private equity community.
+                Facilitator of meaningful connections between private equity firms and proven operators.
               </h2>
               <div className="mt-10 h-[1px] w-16 bg-border" />
             </motion.div>
 
             <motion.div variants={fadeInUp} className="lg:col-span-7 lg:col-start-6 space-y-7 text-lg text-muted-foreground font-light leading-relaxed">
               <p>
-                L&amp;E Partners is an executive search firm exclusive to and on retainer with the private equity community, assisting our clients with the introduction of industry-specific executives as per their new and existing portfolio companies, as well as investment thesis development and specific opportunities being diligenced. Our objective is to create and nurture the right interactions that ultimately can lead to maximum investment returns.
+                L&amp;E Partners is an executive search firm exclusive to and on retainer with the private equity community, assisting our clients with the introduction of industry-specific executives as per their new and existing portfolio companies, as well as investment thesis development and specific due diligence. Our objective is to create and nurture the right interactions that ultimately can lead to maximum investment returns.
               </p>
               <p>
-                Collectively, the principals of L&amp;E Partners have cultivated long-term relationships that unite talented, backable CEOs with private equity-driven acquisition strategies. Our success is rooted in providing private equity firms with proven operating executives to confidently invest in new and existing portfolio companies. With these talented operators at their side, our clients are better equipped to source, diligence, and transact new investments.
+                Collectively, the principals of L&amp;E Partners have cultivated long-term relationships that unite talented, backable operators with private equity-driven acquisition strategies. Our success is rooted in providing private equity firms with proven operating executives to confidently transact in new investments and support existing portfolio companies.
               </p>
               <p>
                 Our approach encompasses a highly focused recruitment process driven by a thorough understanding of diverse industry sectors and an intricate working knowledge of private equity processes. This perspective has made us a unique and dedicated resource for private equity firms looking to expand their reach into the corporate ranks, recognizing the value created by aligning themselves with qualified operating executives.
@@ -182,7 +182,7 @@ export default function Home() {
                     Qualified, high-caliber, C-level industry experts.
                   </h3>
                   <p className="text-muted-foreground font-light leading-relaxed mb-8">
-                    L&amp;E Partners consistently brings value to private equity firms by introducing C-level executives with industry specialization who can help move businesses forward.
+                    L&amp;E Partners consistently brings value to private equity firms by introducing C-level executives who bring key insights and market intel during diligence.
                   </p>
                   <span className="inline-flex items-center gap-3 text-accent text-xs uppercase tracking-widest font-bold group-hover:text-primary transition-colors">
                     Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -197,10 +197,10 @@ export default function Home() {
                   <div className="w-8 h-[2px] bg-primary mb-6" />
                   <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-4">For Executives</p>
                   <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-6 leading-tight">
-                    Entrepreneurial professionals with creative vision.
+                    Entrepreneurial professionals with vision and leadership experience.
                   </h3>
                   <p className="text-muted-foreground font-light leading-relaxed mb-8">
-                    L&amp;E Partners looks for entrepreneurial professionals with creative vision, skill, and proven experience within specific industry sectors.
+                    L&amp;E Partners looks for entrepreneurial professionals with vision, skill, and proven experience within specific industry sectors.
                   </p>
                   <span className="inline-flex items-center gap-3 text-accent text-xs uppercase tracking-widest font-bold group-hover:text-primary transition-colors">
                     Read More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -221,10 +221,10 @@ export default function Home() {
               <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Why L&amp;E</p>
             </div>
             <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight mb-5">
-              Relationships, not transactions.
+              Long-term relationships with executives and our clients.
             </h2>
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              At the C-suite level, the difference between a placement that lasts and one that doesn't comes down to fit, timing, and trust - and those are cultivated over years, not deals. Executive search at this level is not a matching service.
+              We've spent decades building relationships with both PE firms and C-level executives. We bring a deep understanding of M&amp;A processes and the profile of executives private equity firms partner with throughout the investment process.
             </p>
           </motion.div>
 
@@ -233,17 +233,17 @@ export default function Home() {
               {
                 icon: <Handshake className="w-6 h-6" />,
                 title: "Decades-long relationships",
-                desc: "We've known many of the operating executives in our network for a decade or more, and we work with the same private equity sponsors across multiple searches and multiple years.",
+                desc: "We've come to know the individual characteristics of our private equity clients over the years, and as such, tailor the introductions of executives, resulting in more successful placements between our clients and executives.",
               },
               {
                 icon: <Hourglass className="w-6 h-6" />,
                 title: "Timing matters",
-                desc: "We don't push placements to close a transaction. The right operator and the right sponsor sometimes need to wait for the right thesis - and we wait with them.",
+                desc: "Our clients are often engaged in highly competitive investment processes with tight deadlines. We work in a timely fashion to identify and introduce industry-specific executives, who are critical to our clients' diligence.",
               },
               {
-                icon: <Target className="w-6 h-6" />,
-                title: "Fit is everything",
-                desc: "Our success is measured by how well placements stick - by the executives who go on to build the businesses, not by the number of introductions made.",
+                icon: <BookOpen className="w-6 h-6" />,
+                title: "Knowledge is key",
+                desc: "We work closely with our private equity clients throughout the lifecycle of an investment to understand the required knowledge and expertise they are looking for in an advisor.",
               },
             ].map((p, i) => (
               <motion.div
@@ -261,20 +261,12 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* ── 50 YEARS BAND ── */}
+      {/* ── DEEP NAVY BAND (50+ stat removed per June 2026 feedback) ── */}
       <section className="bg-accent border-y border-white/10" data-testid="legacy-band">
-        <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl py-14 md:py-16">
-          <motion.div variants={fadeInUp} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-4 text-center md:text-left">
-              <p className="text-6xl md:text-7xl font-serif font-light text-primary leading-none">50+</p>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-white/55 font-bold mt-3">Years of Combined Relationships</p>
-            </div>
-            <div className="md:col-span-7 md:col-start-6">
-              <p className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
-                The principals of L&amp;E Partners have spent decades cultivating the network of operating executives we introduce to our private equity clients today - relationships that are the foundation of every successful placement.
-              </p>
-            </div>
-          </motion.div>
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl py-14 md:py-16 text-center">
+          <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
+            The principals of L&amp;E Partners have spent decades cultivating the network of operating executives we introduce to our private equity clients today - relationships that are the foundation of every successful placement.
+          </motion.p>
         </Reveal>
       </section>
 
@@ -292,7 +284,7 @@ export default function Home() {
             >
               <p className="text-primary uppercase tracking-[0.3em] text-xs font-bold mb-6">Est. 2010</p>
               <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight">
-                "Partnerships are grown, not born."
+                "Longstanding relationships with our clients and executives make us a trusted partner."
               </h2>
               <p className="text-white/55 text-sm uppercase tracking-widest mt-6 font-semibold">
                 The L&amp;E Partners ethos
@@ -314,7 +306,7 @@ export default function Home() {
               We work across all industry sectors.
             </h2>
             <p className="text-muted-foreground font-light leading-relaxed max-w-2xl mt-6 text-lg">
-              The principals of L&amp;E Partners have built leadership teams across publicly traded, private equity-backed, and venture-funded companies - with particular depth in the sectors below.
+              The sectors that are of interest to our clients often shift; changing times necessitate us to build our knowledge across all sectors, with particular depth in the sectors below.
             </p>
           </motion.div>
 

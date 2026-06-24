@@ -1,6 +1,6 @@
 # capital-partners
 
-Website for **L&E Partners** (l-epartners.com), a boutique NYC executive search firm exclusive to and on retainer with the private equity community. Three principals: Lori Hess (Managing Partner), Sandi Macan (Partner), Nikki Delp (Principal). Replaces an older WordPress / GoDaddy site.
+Website for **L&E Partners** (l-epartners.com), a boutique NYC executive search firm exclusive to and on retainer with the private equity community. Three principals: Lori Hess (Founder & Managing Partner), Sandi Macan (Principal), Nikki Delp (Principal). Replaces an older WordPress / GoDaddy site.
 
 Live preview: https://capital-partners-sand.vercel.app
 
@@ -42,8 +42,7 @@ Header menu lists Services (dropdown: For PE Firms / For Executives), About, Inq
 - **Body / UI font:** Inter (400 / 500 / 600 / 700)
 - **Display font:** Playfair Display (400 / 600 / 700)
 - **Palette:**
-  - Foreground / Navy: `#0F172A`
-  - Accent / Deep Navy: `#1B2841`
+  - Foreground / Deep Navy: `#1B2841` (the single brand navy - primary text, dark sections, icon backgrounds. The old `#0F172A` "Navy" was dropped June 2026; everything navy is now `#1B2841`.)
   - Primary / Gold: `#CC9A14` (leading accent)
   - Background / White: `#FFFFFF`
   - Muted / Stone: `#F1F4F7`

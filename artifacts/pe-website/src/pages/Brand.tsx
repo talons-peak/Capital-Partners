@@ -19,8 +19,7 @@ type AssetCard = {
 };
 
 const COLORS = [
-  { name: "Foreground / Navy", hex: "#0F172A", rgb: "rgb(15, 23, 42)", role: "Primary text, dark sections, icon backgrounds" },
-  { name: "Accent / Deep Navy", hex: "#1B2841", rgb: "rgb(27, 40, 65)", role: "Dark surfaces (CTA bands, footer, accent strips)" },
+  { name: "Foreground / Deep Navy", hex: "#1B2841", rgb: "rgb(27, 40, 65)", role: "Primary text, dark sections (CTA bands, footer, accent strips), icon backgrounds" },
   { name: "Primary / Gold", hex: "#CC9A14", rgb: "rgb(204, 154, 20)", role: "The brand-leading accent. Gold rules, eyebrow labels, key icons" },
   { name: "Background / White", hex: "#FFFFFF", rgb: "rgb(255, 255, 255)", role: "Default page surface" },
   { name: "Muted / Stone", hex: "#F1F4F7", rgb: "rgb(241, 244, 247)", role: "Section alternation, low-emphasis surfaces" },

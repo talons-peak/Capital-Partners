@@ -22,6 +22,20 @@ type ChecklistGroup = {
 
 const delivered: ChecklistGroup[] = [
   {
+    id: "june-2026-revisions",
+    label: "June 2026 content revision (L&E feedback doc)",
+    items: [
+      { done: true, title: "Brand navy consolidated: dropped #0F172A and applied Deep Navy #1B2841 everywhere navy was used - body text, dark sections, brand SVGs, app icons, and the browser theme color" },
+      { done: true, title: "Home: new 'Who We Are' headline and revised intro paragraphs; updated the two audience-card blurbs; rewrote the 'Why L&E' pillars (Decades-long relationships, Timing matters, Knowledge is key)" },
+      { done: true, title: "Home: removed the '50+ years' stat (kept the Deep Navy band) and replaced the pull-quote with 'Longstanding relationships with our clients and executives make us a trusted partner.'" },
+      { done: true, title: "Home: new sector set - Business & Financial Services, Consumer, Energy & Infrastructure, Healthcare & Life Sciences, Industrial, Technology & Tech-enabled Services (Cleantech removed)" },
+      { done: true, title: "About: revised hero copy and new L&E-supplied bios for all three principals; Sandi's title changed to Principal" },
+      { done: true, title: "For Private Equity Firms: new offers list; reordered roles and removed EVP/SVP; removed 'How a Search Works', 'Our introductions are driven by', the FAQ, and the bottom CTA; replaced the placeholder Representative Searches with 6 real anonymized engagements" },
+      { done: true, title: "For Executives: un-italicized and updated the opening quote; new candidate-types list; new collaboration copy; removed 'What to Expect', Confidentiality, and FAQ; simplified the CTA to a single 'Contact L&E Partners' button" },
+      { done: true, title: "Contact: Sandi's title changed to Principal; removed the 'Reach a principal directly' intro line and the 'Send a note' subtext" },
+    ],
+  },
+  {
     id: "platform",
     label: "Platform & rebuild",
     items: [
@@ -149,39 +163,33 @@ const outstanding: ChecklistGroup[] = [
     items: [
       {
         done: false,
-        title: "Updated bio for Lori Hess",
-        detail: "L&E's April 2026 feedback marked Lori's bio with a placeholder 'X' meaning revised copy is forthcoming. Current site uses Lori's existing l-epartners.com bio. Trivial swap when ready.",
-        priority: "High",
-      },
-      {
-        done: false,
         title: "High-resolution professional headshots",
         detail: "Current bio photos pulled from the live site are tiny (5-6 KB webp, ~200x250 px). Acceptable on desktop but blurry on retina and mobile zoom. Recommend professional headshots for all three principals (same photographer, same lighting, neutral background).",
         priority: "High",
       },
       {
         done: false,
-        title: "Beef up Sandi and Nikki bios",
-        detail: "Lori's bio is dense with proof points (Charterhouse, Cross Country Healthcare, Rice & Dore, Houlihan Lokey). Sandi's and Nikki's are thinner. PE buyers want to know what each partner specifically delivers.",
-        priority: "High",
+        title: "Updated testimonials",
+        detail: "The June 2026 feedback notes L&E is gathering new testimonials. The home page still shows the 8 short attributed quotes pulled from the old site; swap them when the new set arrives. A paragraph-length (60-80 word) quote from a placed executive would also strengthen the For Executives pull.",
+        priority: "Medium",
       },
       {
         done: false,
-        title: "Replace illustrative Representative Searches with real engagements",
-        detail: "/services/private-equity has 8 anonymized search examples (sector + role + sponsor type + transaction stage). Single highest-impact piece of social proof for PE buyers. Ours are plausible placeholders; L&E's real ones are more credible.",
-        priority: "High",
-      },
-      {
-        done: false,
-        title: "One paragraph-length executive testimonial",
-        detail: "Home has 8 short attributed testimonials from the live site. None are paragraph-length. A 60-80 word quote from an executive L&E placed describing the working experience would significantly strengthen the For Executives audience pull.",
+        title: "New cityscape photo for the For Private Equity Firms hero",
+        detail: "The June 2026 feedback asks for a different cityscape on /services/private-equity. Current hero image (/le/hero-pe.jpg) is unchanged pending the new photo.",
         priority: "Medium",
       },
       {
         done: false,
         title: "New photo for /services/executives",
-        detail: "L&E's April feedback called for a photo change on this page. Current photo is a placeholder pulled from the live site.",
+        detail: "The June 2026 feedback (echoing April) calls for a photo change on this page. Current photo is a placeholder pulled from the live site.",
         priority: "Medium",
+      },
+      {
+        done: false,
+        title: "Confirm About-page Education lists",
+        detail: "L&E's revised bios dropped education from the prose. The structured Education sidebars (Lori: Columbia/Penn; Sandi: Villanova/Johns Hopkins; Nikki: Delaware) were left in place pending confirmation - tell us to remove them if they should go.",
+        priority: "Low",
       },
       {
         done: false,

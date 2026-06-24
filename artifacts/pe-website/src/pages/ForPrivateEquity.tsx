@@ -1,7 +1,5 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Link } from "wouter";
 import { Seo } from "@/components/Seo";
 
 const fadeInUp = {
@@ -24,69 +22,52 @@ function Reveal({ children, className = "" }: { children: ReactNode; className?:
 }
 
 const offers = [
-  "The ability to partner with industry-specific executives to develop strategies and identify target acquisitions for new portfolio company investments.",
-  "The opportunity to meet industry and sector-specific talent to assist with investment thesis development, due diligence, and prospective targeted platform acquisitions resulting in proprietary deal introductions.",
+  "The opportunity to meet industry and sector-specific talent to assist with investment thesis development ahead of an investment transaction in the market.",
+  "The ability to partner with proven industry and sector-specific operators to assist with specific transaction due diligence, increasing the likelihood of a successful transaction.",
   "The leadership required to work on existing in-house investment opportunities, particularly those lacking backable management.",
+  "A stable of backable industry-specific C-suite executives and board directors. The introductions made not only provide expertise pre-deal, but are also considered to be board candidates should the acquisition move forward.",
 ];
 
 const roles = [
   "Advisors and Consultants",
-  "Chairpersons and C-level Executives (Chief Executive Officer, Chief Financial Officer, Chief Operating Officer, President, et al.)",
-  "Operating Partners",
-  "Executive Vice Presidents / Senior Vice Presidents",
   "Board Directors",
+  "Chairpersons and C-level Executives",
+  "Operating Partners",
   "Other portfolio company management searches as required and requested by our clients",
 ];
 
-const drivers = [
-  "Actionable initiatives that require the timely identification of qualified and proven leaders with market sector knowledge and skills to move a transaction forward",
-  "Industry leaders with defined and actionable business plans",
-  "The directives of our clients in their continuously changing subsectors of key interest",
-];
-
-// NOTE: representative searches are illustrative placeholders to communicate
-// shape of work. L&E to replace with real anonymized engagements at their
-// discretion.
+// Representative Searches: real anonymized engagements supplied by L&E in the
+// June 2026 feedback document.
 const representativeSearches = [
   {
+    sector: "Industrial Distribution",
     role: "Chief Executive Officer",
-    sector: "Healthcare Services",
-    context: "Mid-market PE-backed specialty care platform; new-investment leadership",
+    context: "Retained to identify a Chief Executive Officer for an acquired B2B distribution business that had been previously run by the founding family. Required experience included prior success leading, growing, and successfully exiting an acquisitive PE-backed company, and the ability to work with the prior CEO / founding family member.",
   },
   {
-    role: "President & Chief Operating Officer",
-    sector: "Industrial / Manufacturing",
-    context: "Recapitalization of a precision components manufacturer; lower-middle-market sponsor",
-  },
-  {
-    role: "Operating Partner",
     sector: "Consumer Products",
-    context: "Thesis development and platform identification for a generalist PE fund",
+    role: "Chief Executive Officer",
+    context: "Retained to identify a Chief Executive Officer for a leading horticulture products company. Identified the chosen candidate who brought significant experience from the organic food sector and thus understood the environmental importance of organic products and the mindset of consumers that buy organic products. This placement led to additional search engagements both for the private equity owner's other portfolio companies as well as for other senior leadership executives for this company, hired by and working alongside the placed CEO.",
   },
   {
-    role: "Executive Chairman",
-    sector: "Financial Services",
-    context: "Specialty finance carve-out from a public parent; growth-equity sponsor",
+    sector: "Logistics",
+    role: "Senior Operating Executive",
+    context: "Asked by a sector-focused private equity firm to identify a Senior Operating Executive with deep expertise in transportation and logistics who would be interested to serve as an Operating Partner to the firm, helping to drive value creation across the portfolio, including serving as Chairman and Board Director within multiple portfolio companies, and assist with new portfolio company identification and diligence. The placed executive brings over 25 years of leadership experience in the transportation and logistics industry, including as the former CEO of a publicly traded, Fortune 500, leading third-party logistics company.",
   },
   {
-    role: "Chief Financial Officer",
+    sector: "Tech-Enabled Services",
+    role: "Board Director",
+    context: "Retained to identify a Diligence Advisor and potential Board Director for a private equity client as per their evaluation of an investment in a tech-enabled services business. During the process, we introduced the former CIO of a Fortune 50 company, who eventually joined this client as an Operating Advisor. We also met the retired Global CTO of a Fortune 50 company whom we later introduced to another client who then appointed him to the Board of their portfolio company, also a tech-enabled services company. This Board Director has been credited with helping the portfolio company close the deal to bring on a new client, the company's largest to date.",
+  },
+  {
     sector: "Healthcare",
-    context: "Post-acquisition value-creation appointment; sponsor-led integration",
+    role: "Operating Partner",
+    context: "Retained to identify a Healthcare Operating Partner for a private equity client as the firm's existing Healthcare Operating Partner whom we placed 14 years ago is preparing to fully retire. Chosen executive brings C-level experience across multiple healthcare services sectors, is familiar with private equity, and has been involved with multiple sale processes, as both buyer and seller.",
   },
   {
-    role: "Independent Board Director",
-    sector: "Cleantech / Industrial",
-    context: "Independent director for a venture-funded grid-infrastructure platform",
-  },
-  {
-    role: "Executive-in-Residence",
-    sector: "Industrial",
-    context: "Industry-sector sourcing partnership with a middle-market buyout firm",
-  },
-  {
-    role: "Senior Advisor",
-    sector: "Consumer Products",
-    context: "Long-term strategic advisor to a PE-backed multi-brand portfolio company",
+    sector: "Food and Beverage",
+    role: "Executive Chair",
+    context: "Retained to identify a Board Director for a private equity client's portfolio company, a marketer of branded specialty beverages. The chosen candidate brought decades of brand management experience with leading food and beverage companies, including experience selling through multiple channels. Candidate started as a Board Director and two years later was appointed Executive Chair. This candidate initially worked quite closely with the CEO / founder to meaningfully professionalize and grow the business.",
   },
 ];
 
@@ -165,64 +146,6 @@ export default function ForPrivateEquity() {
         </Reveal>
       </section>
 
-      {/* ── HOW A SEARCH WORKS ── */}
-      <section className="py-16 md:py-24 bg-white" data-testid="process-section">
-        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
-          <motion.div variants={fadeInUp} className="mb-10">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-[2px] bg-primary" />
-              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">How a Search Works</p>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
-              A retained, hands-on engagement.
-            </h2>
-            <p className="text-muted-foreground font-light mt-4 leading-relaxed">
-              We work on a retained basis with a small number of sponsors at any given time - fewer searches, run more deeply.
-            </p>
-          </motion.div>
-
-          <ol className="space-y-8">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                desc: "We sit with your deal team to understand the thesis, the operating gap, the sponsor's playbook, and the cultural fit that will make this placement successful - not just on paper.",
-              },
-              {
-                step: "02",
-                title: "Sourcing",
-                desc: "We work our proprietary network of operating executives - many of whom we've known for a decade or more - and identify a focused universe of qualified, transition-ready leaders.",
-              },
-              {
-                step: "03",
-                title: "Slate",
-                desc: "We present a curated short list with full assessments - backgrounds, motivations, references, comp expectations - and facilitate the interview process end-to-end.",
-              },
-              {
-                step: "04",
-                title: "Close",
-                desc: "We support reference checks, comp benchmarking, and offer negotiation. Our involvement continues into onboarding to ensure the relationship gets off to a strong start.",
-              },
-            ].map((s, i) => (
-              <motion.li
-                key={i}
-                variants={fadeInUp}
-                className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start border-l-2 border-primary pl-6 md:pl-8"
-                data-testid={`process-step-${i}`}
-              >
-                <div className="md:col-span-2">
-                  <p className="text-3xl md:text-4xl font-serif font-light text-primary">{s.step}</p>
-                </div>
-                <div className="md:col-span-10">
-                  <h3 className="text-xl font-serif text-foreground mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground font-light leading-relaxed">{s.desc}</p>
-                </div>
-              </motion.li>
-            ))}
-          </ol>
-        </Reveal>
-      </section>
-
       {/* ── REPRESENTATIVE SEARCHES ── */}
       <section className="py-16 md:py-24 bg-white" data-testid="representative-searches-section">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-7xl">
@@ -256,98 +179,6 @@ export default function ForPrivateEquity() {
         </Reveal>
       </section>
 
-      {/* ── INTRODUCTIONS ARE DRIVEN BY ── */}
-      <section className="py-16 md:py-24 bg-muted" data-testid="drivers-section">
-        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-foreground mb-10">
-            Our introductions are driven by:
-          </motion.h2>
-
-          <ul className="space-y-6">
-            {drivers.map((item, i) => (
-              <motion.li
-                key={i}
-                variants={fadeInUp}
-                className="flex gap-5 items-start text-lg text-muted-foreground font-light leading-relaxed"
-                data-testid={`driver-${i}`}
-              >
-                <span className="w-2 h-2 rounded-full bg-primary mt-3 flex-shrink-0" />
-                <span>{item}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </Reveal>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section className="py-16 md:py-24 bg-white" data-testid="faq-section">
-        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
-          <motion.div variants={fadeInUp} className="mb-10">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-8 h-[2px] bg-primary" />
-              <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Common Questions</p>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-tight">
-              Frequently asked.
-            </h2>
-          </motion.div>
-
-          <dl className="divide-y divide-border border-t border-b border-border">
-            {[
-              {
-                q: "Do you work on a retained or contingent basis?",
-                a: "Retained, always. We take on a small number of searches at any given time and work each one deeply. Contingent search rewards volume; the work we do for our sponsors rewards fit.",
-              },
-              {
-                q: "How long does a typical search take?",
-                a: "From kickoff to signed offer letter, most C-level searches close in 10 to 16 weeks. Board and advisory placements are often quicker. Searches that require a specific industry or geography sometimes take longer, and we say so up front.",
-              },
-              {
-                q: "What does a typical slate look like?",
-                a: "Four to six fully briefed candidates, each with a written assessment, references in motion, and a clear read on motivations and comp expectations. We bring fewer names than the bulge-bracket firms and brief each one more deeply.",
-              },
-              {
-                q: "What sectors do you cover?",
-                a: "L&E principals have built leadership teams in healthcare, industrials, financial services, consumer products, and cleantech. We've worked with sponsors ranging from lower-middle-market buyout funds to growth-equity firms with billions under management.",
-              },
-              {
-                q: "Do you place board directors and advisors, or just full-time C-level?",
-                a: "Both. Operating Partners, Executive Chairmen, Independent Directors, Senior Advisors, and Executives-in-Residence are all common engagements. The Representative Searches above show the range.",
-              },
-              {
-                q: "Is there a placement guarantee?",
-                a: "Specific terms are negotiated as part of each engagement letter. We will be candid about scope, timeline, and what happens in the unlikely case that a placement does not work out within an agreed window.",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className="py-6"
-                data-testid={`faq-${i}`}
-              >
-                <dt className="text-lg font-serif text-foreground mb-2">{item.q}</dt>
-                <dd className="text-muted-foreground font-light leading-relaxed">{item.a}</dd>
-              </motion.div>
-            ))}
-          </dl>
-        </Reveal>
-      </section>
-
-      {/* ── CTA - navy ── */}
-      <section className="py-16 md:py-20 bg-accent" data-testid="cta-section">
-        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
-          <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-white mb-6">
-            Ready to discuss a search?
-          </motion.h2>
-          <motion.div variants={fadeInUp}>
-            <Link href="/contact" data-testid="cta-link">
-              <span className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 uppercase text-xs tracking-widest font-bold hover:bg-white hover:text-accent transition-colors duration-300 cursor-pointer">
-                Contact L&amp;E Partners <ArrowRight className="w-4 h-4" />
-              </span>
-            </Link>
-          </motion.div>
-        </Reveal>
-      </section>
     </div>
   );
 }

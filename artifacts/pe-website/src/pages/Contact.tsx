@@ -51,7 +51,7 @@ const team = [
   },
   {
     name: "Sandi Macan",
-    title: "Partner",
+    title: "Principal",
     office: "(646) 858-0036",
     mobile: "(610) 420-3142",
     email: "sandi@l-epartners.com",
@@ -116,10 +116,6 @@ export default function Contact() {
               <div className="w-8 h-[2px] bg-primary" />
               <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Our Team</p>
             </div>
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground">Reach a principal directly.</h2>
-            <p className="text-muted-foreground font-light mt-3 max-w-2xl">
-              You're welcome to write to any of us - we read everything personally.
-            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -201,10 +197,7 @@ export default function Contact() {
             </Reveal>
 
             <div className="lg:col-span-7 lg:col-start-6 bg-white border border-border p-8 md:p-10" data-testid="contact-form">
-              <h2 className="text-2xl font-serif text-foreground mb-2">Send a note</h2>
-              <p className="text-sm text-muted-foreground font-light mb-7">
-                A few sentences are plenty - we'll write back to set up a call.
-              </p>
+              <h2 className="text-2xl font-serif text-foreground mb-7">Send a note</h2>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
