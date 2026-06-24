@@ -33,6 +33,7 @@ const delivered: ChecklistGroup[] = [
       { done: true, title: "For Private Equity Firms: new offers list; reordered roles and removed EVP/SVP; removed 'How a Search Works', 'Our introductions are driven by', the FAQ, and the bottom CTA; replaced the placeholder Representative Searches with 6 real anonymized engagements" },
       { done: true, title: "For Executives: un-italicized and updated the opening quote; new candidate-types list; new collaboration copy; removed 'What to Expect', Confidentiality, and FAQ; simplified the CTA to a single 'Contact L&E Partners' button" },
       { done: true, title: "Contact: Sandi's title changed to Principal; removed the 'Reach a principal directly' intro line and the 'Send a note' subtext" },
+      { done: true, title: "New service-page hero photos: aerial Midtown Manhattan cityscape (For PE Firms) and a black-and-white executives-by-the-window shot (For Executives), both resized and compressed for web" },
     ],
   },
   {
@@ -171,18 +172,6 @@ const outstanding: ChecklistGroup[] = [
         done: false,
         title: "Updated testimonials",
         detail: "The June 2026 feedback notes L&E is gathering new testimonials. The home page still shows the 8 short attributed quotes pulled from the old site; swap them when the new set arrives. A paragraph-length (60-80 word) quote from a placed executive would also strengthen the For Executives pull.",
-        priority: "Medium",
-      },
-      {
-        done: false,
-        title: "New cityscape photo for the For Private Equity Firms hero",
-        detail: "The June 2026 feedback asks for a different cityscape on /services/private-equity. Current hero image (/le/hero-pe.jpg) is unchanged pending the new photo.",
-        priority: "Medium",
-      },
-      {
-        done: false,
-        title: "New photo for /services/executives",
-        detail: "The June 2026 feedback (echoing April) calls for a photo change on this page. Current photo is a placeholder pulled from the live site.",
         priority: "Medium",
       },
       {
