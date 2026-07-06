@@ -14,9 +14,118 @@ type AssetCard = {
   note: string;
   previewSurface: "light" | "dark";
   preview: ReactNode;
-  downloads?: { label: string; href: string }[];
+  svgHref?: string; // vector source; also rasterized client-side for the PNG export
+  pngHref?: string; // a pre-existing raster file (used when there is no SVG source)
+  pngSize?: number; // longest edge, in px, for the client-rasterized PNG
   status?: AssetStatus;
 };
+
+const DL_BTN =
+  "inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold border border-border text-foreground/80 hover:border-primary hover:text-primary px-2.5 py-1.5 transition-colors";
+
+// Rasterize one of our brand SVGs to a PNG Blob entirely in the browser. The
+// SVGs are the single source of truth (they carry baked Playfair path data), so
+// the PNG is always derived from - and stays in sync with - the vector file.
+async function rasterizeSvgToPng(svgHref: string, longestEdge: number): Promise<Blob> {
+  const svgText = await (await fetch(svgHref)).text();
+
+  // Work out the intrinsic aspect ratio from the viewBox (falling back to width/height).
+  let vw = longestEdge;
+  let vh = longestEdge;
+  const vb = svgText.match(/viewBox\s*=\s*"([-\d.\s,]+)"/i);
+  if (vb) {
+    const p = vb[1].trim().split(/[\s,]+/).map(Number);
+    if (p.length === 4 && p[2] > 0 && p[3] > 0) {
+      vw = p[2];
+      vh = p[3];
+    }
+  } else {
+    const w = svgText.match(/\bwidth\s*=\s*"(\d*\.?\d+)"/i);
+    const h = svgText.match(/\bheight\s*=\s*"(\d*\.?\d+)"/i);
+    if (w) vw = Number(w[1]);
+    if (h) vh = Number(h[1]);
+  }
+  const scale = longestEdge / Math.max(vw, vh);
+  const outW = Math.max(1, Math.round(vw * scale));
+  const outH = Math.max(1, Math.round(vh * scale));
+
+  // Pin explicit pixel dimensions on the root <svg> so every browser rasterizes
+  // at full target resolution rather than an intrinsic default (which scales blurry).
+  const sized = svgText.replace(/<svg([^>]*?)>/i, (_m, attrs) => {
+    const cleaned = String(attrs).replace(/\s(width|height)\s*=\s*"[^"]*"/gi, "");
+    return `<svg${cleaned} width="${outW}" height="${outH}">`;
+  });
+
+  const url = URL.createObjectURL(new Blob([sized], { type: "image/svg+xml;charset=utf-8" }));
+  try {
+    const img = new Image();
+    await new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve();
+      img.onerror = () => reject(new Error("SVG failed to load for rasterization"));
+      img.src = url;
+    });
+    const canvas = document.createElement("canvas");
+    canvas.width = outW;
+    canvas.height = outH;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) throw new Error("2D canvas context unavailable");
+    ctx.drawImage(img, 0, 0, outW, outH);
+    return await new Promise<Blob>((resolve, reject) =>
+      canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("PNG encode failed"))), "image/png"),
+    );
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+}
+
+async function downloadPngFromSvg(svgHref: string, longestEdge: number) {
+  try {
+    const blob = await rasterizeSvgToPng(svgHref, longestEdge);
+    const name = (svgHref.split("/").pop() || "asset.svg").replace(/\.svg$/i, ".png");
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  } catch (err) {
+    console.error("PNG export failed:", err);
+  }
+}
+
+function DownloadButtons({ svgHref, pngHref, pngSize = 1024 }: { svgHref?: string; pngHref?: string; pngSize?: number }) {
+  const [busy, setBusy] = useState(false);
+  const onPng = async () => {
+    if (!svgHref) return;
+    setBusy(true);
+    await downloadPngFromSvg(svgHref, pngSize);
+    setBusy(false);
+  };
+  return (
+    <div className="flex flex-wrap gap-2 mt-4">
+      {svgHref && (
+        <a href={svgHref} download className={DL_BTN}>
+          <Download className="w-3 h-3" />
+          SVG
+        </a>
+      )}
+      {svgHref && (
+        <button type="button" onClick={onPng} disabled={busy} className={`${DL_BTN} disabled:opacity-50`}>
+          <Download className="w-3 h-3" />
+          {busy ? "..." : "PNG"}
+        </button>
+      )}
+      {!svgHref && pngHref && (
+        <a href={pngHref} download className={DL_BTN}>
+          <Download className="w-3 h-3" />
+          PNG
+        </a>
+      )}
+    </div>
+  );
+}
 
 const COLORS = [
   { name: "Foreground / Deep Navy", hex: "#1B2841", rgb: "rgb(27, 40, 65)", role: "Primary text, dark sections (CTA bands, footer, accent strips), icon backgrounds" },
@@ -66,20 +175,8 @@ function AssetCardView({ card }: { card: AssetCard }) {
         <h3 className="text-sm font-serif text-foreground">{card.title}</h3>
         <p className="text-xs text-muted-foreground/70 font-mono mt-1">{card.meta}</p>
         <p className="text-xs text-muted-foreground font-light mt-2 leading-relaxed">{card.note}</p>
-        {card.downloads && card.status !== "pending" && (
-          <div className="flex flex-wrap gap-2 mt-4">
-            {card.downloads.map((d) => (
-              <a
-                key={d.label}
-                href={d.href}
-                download
-                className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-widest font-bold border border-border text-foreground/80 hover:border-primary hover:text-primary px-2.5 py-1.5 transition-colors"
-              >
-                <Download className="w-3 h-3" />
-                {d.label}
-              </a>
-            ))}
-          </div>
+        {card.status !== "pending" && (card.svgHref || card.pngHref) && (
+          <DownloadButtons svgHref={card.svgHref} pngHref={card.pngHref} pngSize={card.pngSize} />
         )}
       </div>
     </article>
@@ -129,110 +226,110 @@ function NativeIconPreview({ src, size }: { src: string; size: number }) {
 const primaryMarks: AssetCard[] = [
   {
     title: "Wordmark",
-    meta: "SVG · vector",
+    meta: "SVG vector · PNG 1600px",
     note: "The primary horizontal lockup. Use on light surfaces in any external context where space allows.",
     previewSurface: "light",
     preview: <img src="/brand/logo/wordmark-light.svg" alt="L&E Partners wordmark" style={{ height: "36px" }} />,
-    downloads: [
-      { label: "SVG", href: "/brand/logo/wordmark-light.svg" },
-    ],
+    svgHref: "/brand/logo/wordmark-light.svg",
+    pngSize: 1600,
   },
   {
     title: "Wordmark · Dark surface",
-    meta: "SVG · vector",
-    note: "Reversed wordmark for navy and other dark surfaces. Preserve clear space on all sides.",
+    meta: "SVG vector · PNG 1600px",
+    note: "Reversed wordmark for navy and other dark surfaces. Preserve clear space on all sides. The PNG keeps a transparent background.",
     previewSurface: "dark",
     preview: <img src="/brand/logo/wordmark-dark.svg" alt="L&E Partners wordmark, dark" style={{ height: "36px" }} />,
-    downloads: [
-      { label: "SVG", href: "/brand/logo/wordmark-dark.svg" },
-    ],
+    svgHref: "/brand/logo/wordmark-dark.svg",
+    pngSize: 1600,
   },
   {
     title: "Icon",
-    meta: "SVG · 64×64 viewBox",
+    meta: "SVG · PNG 1024px",
     note: "Symbol-only mark for avatars, app tiles, and compact contexts where the wordmark is too wide.",
     previewSurface: "light",
     preview: <img src="/brand/logo/icon-light.svg" alt="L&E icon" style={{ width: "72px", height: "72px" }} />,
-    downloads: [
-      { label: "SVG", href: "/brand/logo/icon-light.svg" },
-    ],
+    svgHref: "/brand/logo/icon-light.svg",
+    pngSize: 1024,
   },
   {
     title: "Icon · Dark surface",
-    meta: "SVG · 64×64 viewBox",
+    meta: "SVG · PNG 1024px",
     note: "Gold-on-navy reversal of the icon mark.",
     previewSurface: "dark",
     preview: <img src="/brand/logo/icon-dark.svg" alt="L&E icon, dark" style={{ width: "72px", height: "72px" }} />,
-    downloads: [
-      { label: "SVG", href: "/brand/logo/icon-dark.svg" },
-    ],
+    svgHref: "/brand/logo/icon-dark.svg",
+    pngSize: 1024,
   },
   {
     title: "Original logo · PNG",
     meta: "PNG · 431×52",
-    note: "The original L&E Partners wordmark in the brand blue, pulled from l-epartners.com. Use until designer-produced PNG fallbacks for the new wordmark are produced.",
+    note: "The original L&E Partners wordmark in the brand blue, pulled from l-epartners.com. A legacy raster only; prefer the vector wordmark above.",
     previewSurface: "light",
     preview: <img src="/brand/logo/logo-light.png" alt="L&E Partners original logo" style={{ height: "26px" }} />,
-    downloads: [
-      { label: "PNG", href: "/brand/logo/logo-light.png" },
-    ],
+    pngHref: "/brand/logo/logo-light.png",
   },
 ];
 
 const webAndAppIcons: AssetCard[] = [
   {
     title: "Favicon",
-    meta: "SVG · scalable",
-    note: "Modern browser tab icon. Scales to any density without loss.",
+    meta: "SVG · PNG 512px",
+    note: "Modern browser tab icon. The SVG scales to any density; the PNG exports at 512px.",
     previewSurface: "light",
     preview: <img src="/brand/favicon/favicon.svg" alt="favicon" style={{ width: "32px", height: "32px" }} />,
-    downloads: [{ label: "SVG", href: "/brand/favicon/favicon.svg" }],
+    svgHref: "/brand/favicon/favicon.svg",
+    pngSize: 512,
   },
   {
     title: "Apple touch icon",
-    meta: "SVG · 180×180 viewBox",
-    note: "iOS home screen icon. Used when an L&E URL is added to the iOS home screen.",
+    meta: "SVG · PNG 180×180",
+    note: "iOS home screen icon. The PNG exports at the 180×180 spec size.",
     previewSurface: "light",
     preview: <img src="/brand/app-icons/apple-touch-icon.svg" alt="apple touch icon" style={{ width: "60px", height: "60px" }} />,
-    downloads: [{ label: "SVG", href: "/brand/app-icons/apple-touch-icon.svg" }],
+    svgHref: "/brand/app-icons/apple-touch-icon.svg",
+    pngSize: 180,
   },
   {
     title: "Android icon · 192",
-    meta: "SVG · 192×192 viewBox",
-    note: "Android launcher and PWA install prompt.",
+    meta: "SVG · PNG 192×192",
+    note: "Android launcher and PWA install prompt. The PNG exports at 192×192.",
     previewSurface: "light",
     preview: <img src="/brand/app-icons/android-chrome-192x192.svg" alt="android 192" style={{ width: "60px", height: "60px" }} />,
-    downloads: [{ label: "SVG", href: "/brand/app-icons/android-chrome-192x192.svg" }],
+    svgHref: "/brand/app-icons/android-chrome-192x192.svg",
+    pngSize: 192,
   },
   {
     title: "Android icon · 512",
-    meta: "SVG · 512×512 viewBox",
-    note: "High-resolution Android launcher and store listings.",
+    meta: "SVG · PNG 512×512",
+    note: "High-resolution Android launcher and store listings. The PNG exports at 512×512.",
     previewSurface: "light",
     preview: <img src="/brand/app-icons/android-chrome-512x512.svg" alt="android 512" style={{ width: "60px", height: "60px" }} />,
-    downloads: [{ label: "SVG", href: "/brand/app-icons/android-chrome-512x512.svg" }],
+    svgHref: "/brand/app-icons/android-chrome-512x512.svg",
+    pngSize: 512,
   },
   {
     title: "Maskable icon",
-    meta: "SVG · 512×512 viewBox",
+    meta: "SVG · PNG 512×512",
     note: "PWA maskable launcher icon with extra safe-zone padding for Android adaptive icons.",
     previewSurface: "light",
     preview: <img src="/brand/app-icons/maskable-icon-512x512.svg" alt="maskable icon" style={{ width: "60px", height: "60px" }} />,
-    downloads: [{ label: "SVG", href: "/brand/app-icons/maskable-icon-512x512.svg" }],
+    svgHref: "/brand/app-icons/maskable-icon-512x512.svg",
+    pngSize: 512,
   },
   {
     title: "Open Graph card",
-    meta: "SVG · 1200×630",
+    meta: "SVG · PNG 1200×630",
     note: "Social preview card for link unfurls on LinkedIn, X, and other platforms.",
     previewSurface: "light",
     preview: <img src="/brand/social/og-image.svg" alt="og image" style={{ width: "120px", height: "63px", objectFit: "contain" }} />,
-    downloads: [{ label: "SVG", href: "/brand/social/og-image.svg" }],
+    svgHref: "/brand/social/og-image.svg",
+    pngSize: 1200,
   },
 ];
 
-// PNG raster sizes (16/32/48/64/96) are SVG-only on this build. NativeIconPreview
-// is preserved for future PNG ports - it renders icons at their actual pixel
-// dimensions per the brand-spec rule about not upscaling small raster files.
+// PNG exports are rasterized on demand from each SVG (see rasterizeSvgToPng), so
+// the vector file stays the single source of truth. NativeIconPreview is kept for
+// a possible future native-pixel preview at small icon sizes.
 void NativeIconPreview;
 
 const doRules = [
@@ -313,6 +410,9 @@ export default function Brand() {
               <p className="text-xs font-mono text-muted-foreground/70 bg-white border border-border inline-block px-3 py-2">
                 font-family: 'Playfair Display'; font-weight: 700; font-size: 75%; color: #CC9A14;
               </p>
+              <div>
+                <DownloadButtons svgHref="/brand/logo/ampersand-gold.svg" pngSize={1024} />
+              </div>
             </div>
           </div>
         </div>
