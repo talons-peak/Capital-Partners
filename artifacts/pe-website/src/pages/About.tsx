@@ -47,7 +47,7 @@ const principals = [
   {
     name: "Sandi Macan",
     title: "Principal",
-    img: "/le/sandi.webp",
+    img: "/le/sandi-v2.jpg",
     bio: [
       "Sandi joined L&E Partners in 2021. She has worked as an executive recruiter for thirty years, identifying senior-level management across various industries. She has partnered with executives and investors to build high-performing leadership teams for publicly traded, private equity-backed, and venture-funded companies in healthcare, cleantech, industrial, financial services, and consumer products.",
     ],
@@ -58,8 +58,7 @@ const principals = [
     title: "Principal",
     img: "/le/nikki.jpg",
     bio: [
-      "Nikki joined L&E Partners in 2023 and has worked as an executive recruiter since 2018 across industrial, healthcare, and consumer products sectors, serving publicly traded, private equity-backed, and venture-funded companies. Since 2020, she has focused primarily on private equity - both for portfolio companies and for private equity firms directly.",
-      "Nikki brings business development, marketing, and communications expertise.",
+      "Nikki joined L&E Partners in 2023 and has worked as an executive recruiter since 2018 across industrial, healthcare, and consumer products sectors, serving publicly traded, private equity-backed, and venture-funded companies. Since 2020, she has focused primarily on private equity - both for portfolio companies and for private equity firms directly. Nikki brings business development, marketing, and communications expertise.",
     ],
     education: ["BA Mass Communication, University of Delaware"],
   },

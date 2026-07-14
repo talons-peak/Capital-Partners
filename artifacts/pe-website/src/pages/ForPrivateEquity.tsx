@@ -1,5 +1,7 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useInView } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 import { Seo } from "@/components/Seo";
 
 const fadeInUp = {
@@ -68,7 +70,7 @@ const representativeSearches = [
   {
     sector: "Food and Beverage",
     role: "Executive Chair",
-    context: "Retained to identify a Board Director for a private equity client's portfolio company, a marketer of branded specialty beverages. The chosen candidate brought decades of brand management experience with leading food and beverage companies, including experience selling through multiple channels. Candidate started as a Board Director and two years later was appointed Executive Chair. This candidate initially worked quite closely with the CEO / founder to meaningfully professionalize and grow the business.",
+    context: "Retained to identify a Board Director for a private equity client's portfolio company, a marketer of branded specialty beverages. The chosen candidate brought decades of brand management experience with leading food and beverage companies, including experience selling through multiple channels. Candidate started as a Board Director and two years later was appointed Executive Chair. This candidate initially worked quite closely with the CEO / founder to meaningfully professionalize and grow the business. Since the appointment of this Executive Chair, we have been asked to identify and recruit two additional Board Directors, one with extensive sales expertise and the other with financial expertise to serve as the Audit Chair.",
   },
 ];
 
@@ -177,6 +179,19 @@ export default function ForPrivateEquity() {
               </motion.div>
             ))}
           </div>
+        </Reveal>
+      </section>
+
+      {/* ── CTA - navy ── */}
+      <section className="py-16 md:py-20 bg-accent" data-testid="cta-section">
+        <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl text-center">
+          <motion.div variants={fadeInUp}>
+            <Link href="/contact" data-testid="cta-link">
+              <span className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 uppercase text-xs tracking-widest font-bold hover:bg-white hover:text-accent transition-colors duration-300 cursor-pointer">
+                Contact L&amp;E Partners <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
+          </motion.div>
         </Reveal>
       </section>
 

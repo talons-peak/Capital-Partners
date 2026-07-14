@@ -49,9 +49,9 @@ export default function ForExecutives() {
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-serif font-semibold leading-[0.9] tracking-tight text-foreground mb-10">
             For Executives.
           </motion.h1>
-          <motion.blockquote variants={fadeInUp} className="text-xl text-foreground/85 font-light leading-relaxed font-serif border-l-2 border-primary pl-6">
-            "We look for entrepreneurial professionals with vision, skill, and proven experience in building businesses who are interested in exploring leadership and board opportunities with the private equity community."
-          </motion.blockquote>
+          <motion.p variants={fadeInUp} className="text-xl text-foreground/85 font-light leading-relaxed">
+            <strong className="font-semibold">We look for entrepreneurial professionals with vision, skill, and proven experience in building businesses who are interested in exploring leadership and board opportunities with the private equity community.</strong>
+          </motion.p>
         </Reveal>
       </section>
 
@@ -89,10 +89,10 @@ export default function ForExecutives() {
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl">
           <motion.div variants={fadeInUp} className="space-y-7 text-lg text-muted-foreground font-light leading-relaxed">
             <p>
-              Keeping our clients' interests in mind at all times, the L&amp;E Partners' team collaborates with such executives to develop a customized set of private equity firms for introduction.
+              Keeping our clients' interests in mind at all times, the L&amp;E Partners team collaborates with such executives to develop a customized set of private equity firms for introduction.
             </p>
             <p>
-              We prepare our executives with an in-depth understanding of the cultures of select private equity firms and their specific investment criteria, as well as their respective internal processes. Our continuous hands-on involvement throughout the process ensures that promising relationships have the highest likelihood of being realized.
+              We prepare our executives with an in-depth understanding of the cultures of select private equity firms and their specific investment criteria, as well as their respective internal processes. Our continuous hands-on involvement and follow-up ensure that promising relationships have the highest likelihood of being realized.
             </p>
           </motion.div>
         </Reveal>

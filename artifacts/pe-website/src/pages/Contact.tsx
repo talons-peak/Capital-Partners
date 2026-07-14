@@ -103,7 +103,7 @@ export default function Contact() {
             Let's talk.
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-xl text-muted-foreground font-light leading-relaxed max-w-3xl">
-            Whether you're a private equity firm exploring a search, an executive weighing your next chapter, or a connection somewhere in our industry - we'd welcome the conversation. Every inquiry is held in strict confidence, and a member of our team will respond within one business day.
+            Whether you're a private equity firm exploring a search or an executive weighing your next chapter, or a connection somewhere in our industry - we'd welcome the conversation. Every inquiry is held in strict confidence.
           </motion.p>
         </Reveal>
       </section>
@@ -187,7 +187,7 @@ export default function Contact() {
                 <div>
                   <div className="flex items-center gap-3 mb-5">
                     <Lock className="w-4 h-4 text-primary flex-shrink-0" />
-                    <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">Confidential by Default</p>
+                    <p className="text-primary uppercase tracking-[0.2em] text-xs font-bold">All conversations and inquiries are strictly confidential.</p>
                   </div>
                   <p className="text-sm text-muted-foreground font-light leading-relaxed">
                     Many of the executives and sponsors we hear from are still in active engagements or seats. Anything you share with us - including the fact that you got in touch - stays between us.
@@ -267,7 +267,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-semibold">Message</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="A few sentences about what's on your mind…" rows={6} className="border-border focus:border-accent rounded-none resize-none" data-testid="textarea-message" {...field} />
+                        <Textarea placeholder="Tell us how we can help…" rows={6} className="border-border focus:border-accent rounded-none resize-none" data-testid="textarea-message" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

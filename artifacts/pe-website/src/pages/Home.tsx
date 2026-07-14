@@ -265,7 +265,7 @@ export default function Home() {
       <section className="bg-accent border-y border-white/10" data-testid="legacy-band">
         <Reveal className="container mx-auto px-6 md:px-12 max-w-4xl py-14 md:py-16 text-center">
           <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/80 font-light leading-relaxed">
-            The principals of L&amp;E Partners have spent decades cultivating the network of operating executives we introduce to our private equity clients today - relationships that are the foundation of every successful placement.
+            The principals of L&amp;E Partners have spent decades building and cultivating our network of operating executives, continually expanding it to cater to our clients' shifting investment interests.
           </motion.p>
         </Reveal>
       </section>
