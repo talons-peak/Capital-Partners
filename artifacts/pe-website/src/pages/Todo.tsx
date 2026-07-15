@@ -22,6 +22,20 @@ type ChecklistGroup = {
 
 const delivered: ChecklistGroup[] = [
   {
+    id: "july-2026-revisions",
+    label: "July 2026 content revision (L&E changes doc)",
+    items: [
+      { done: true, title: "Home: reworded the Deep Navy pull-quote to 'The principals of L&E Partners have spent decades building and cultivating our network of operating executives, continually expanding it to cater to our clients' shifting investment interests.'" },
+      { done: true, title: "For Private Equity Firms: extended the Food and Beverage / Executive Chair search with the two follow-on Board Director recruitments (one for sales expertise, one to serve as Audit Chair)" },
+      { done: true, title: "For Private Equity Firms: added a 'Contact L&E Partners' button at the bottom of the page, matching the For Executives page" },
+      { done: true, title: "For Executives: restyled the opening statement to match the For Private Equity Firms treatment - quotation marks, gold rule, and serif type removed" },
+      { done: true, title: "For Executives: removed the stray apostrophe in 'L&E Partners team' and reworded the closing sentence to 'continuous hands-on involvement and follow-up ensure...'" },
+      { done: true, title: "About: merged Nikki Delp's closing sentence into her bio paragraph; swapped in Sandi Macan's new professional headshot" },
+      { done: true, title: "Contact: intro now reads 'a search or an executive' and ends at 'strict confidence.'; the message placeholder now reads 'Tell us how we can help...'; the confidentiality note now reads 'All conversations and inquiries are strictly confidential.'" },
+      { done: true, title: "Brand page: every asset now downloads as both SVG and PNG, and the signature gold ampersand is available as its own downloadable asset" },
+    ],
+  },
+  {
     id: "june-2026-revisions",
     label: "June 2026 content revision (L&E feedback doc)",
     items: [
@@ -164,9 +178,15 @@ const outstanding: ChecklistGroup[] = [
     items: [
       {
         done: false,
-        title: "High-resolution professional headshots",
-        detail: "Current bio photos pulled from the live site are tiny (5-6 KB webp, ~200x250 px). Acceptable on desktop but blurry on retina and mobile zoom. Recommend professional headshots for all three principals (same photographer, same lighting, neutral background).",
+        title: "High-resolution professional headshots for Lori and Nikki",
+        detail: "Sandi's new headshot is in place. Lori's and Nikki's bio photos are still the small files pulled from the old site (5-6 KB webp, ~200x250 px) - acceptable on desktop but blurry on retina and mobile zoom. Ideally shot by the same photographer as Sandi's for consistent lighting and background.",
         priority: "High",
+      },
+      {
+        done: false,
+        title: "Replacement photo for the For Executives page",
+        detail: "The July 2026 changes doc asks to swap the black-and-white executives-by-the-window banner. L&E is sourcing a replacement. It needs to be a wide landscape image (roughly 2560 px across) that reads well in black and white, since it runs as a full-bleed banner strip.",
+        priority: "Medium",
       },
       {
         done: false,
@@ -179,12 +199,6 @@ const outstanding: ChecklistGroup[] = [
         title: "Confirm About-page Education lists",
         detail: "L&E's revised bios dropped education from the prose. The structured Education sidebars (Lori: Columbia/Penn; Sandi: Villanova/Johns Hopkins; Nikki: Delaware) were left in place pending confirmation - tell us to remove them if they should go.",
         priority: "Low",
-      },
-      {
-        done: false,
-        title: "Designer-produced PNG versions of the brand assets",
-        detail: "The Brand page has the full set of vector logo files (wordmark light and dark, icon light and dark, browser-tab icon, iOS and Android home-screen icons, the social preview card). Vector files look perfect on the live site, in modern browsers, and on phones. A handful of legacy contexts - older Microsoft Office versions in the email signature, certain CRM exports, very old browsers - still want PNG image files. Worth having a designer produce those PNG variants before launch so every situation has a perfect-looking asset.",
-        priority: "Medium",
       },
     ],
   },
