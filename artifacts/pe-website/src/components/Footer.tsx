@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-accent text-accent-foreground print:hidden" data-testid="footer">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
           <div className="md:col-span-2">
             <Link href="/">
               <img
@@ -37,8 +37,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
 
-            <h4 className="text-xs uppercase tracking-widest font-semibold text-white/35 mt-8 mb-4">One-pagers</h4>
+          <div>
+            <h4 className="text-xs uppercase tracking-widest font-semibold text-white/35 mb-4">One-pagers</h4>
             <ul className="space-y-3">
               {[
                 { label: "For Private Equity Firms", href: "/one-pager/private-equity" },
