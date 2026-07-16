@@ -218,6 +218,12 @@ const outstanding: ChecklistGroup[] = [
     items: [
       {
         done: false,
+        title: "Confirm the one-pager content choices",
+        detail: "The three printable one-pagers are live. Two editorial calls to confirm: (1) the For Private Equity Firms sheet shows 3 of the 6 representative searches (Industrial Distribution, Healthcare, Food and Beverage), with their write-ups shortened, so everything fits one page - tell us if you want different searches or all six (which makes it a two-page sheet); (2) the sheets are linked in the footer only, not the main navigation. Both are easy to change.",
+        priority: "Low",
+      },
+      {
+        done: false,
         title: "Decide on resume upload in the Contact form",
         detail: "Old site had a 1 GB file upload field. New site removed it. The For Executives page now says 'no resume required'; that low-friction stance is deliberately welcoming to in-seat executives. Adding the upload back implicitly contradicts that. Recommendation: keep it removed; if an executive wants to share a CV they can email lori@l-epartners.com after the first call. Final call is L&E's.",
         priority: "Medium",
