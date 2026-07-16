@@ -281,3 +281,64 @@
     inset: -1px;
   }
 }
+
+/* ============================================================
+   One-pager sheets (/one-pager/:slug)
+   A print-first layout sized to exactly one US Letter page.
+   Sizes are in pt so screen and print render consistently.
+   ============================================================ */
+.op-sheet {
+  display: flex;
+  flex-direction: column;
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.5in 0.6in;
+  box-shadow: 0 12px 44px rgba(27, 40, 65, 0.14);
+}
+.op-wordmark { height: 30px; }
+.op-eyebrow { font-size: 8pt; }
+.op-rule { height: 2px; width: 100%; }
+.op-title { font-size: 23pt; }
+.op-lead { font-size: 11pt; }
+.op-body { font-size: 9.5pt; }
+.op-dot { width: 5px; height: 5px; margin-top: 5px; }
+.op-pillar-title { font-size: 10.5pt; }
+.op-fine { font-size: 8pt; }
+.op-micro { font-size: 6.5pt; }
+.op-sectors { font-size: 9pt; }
+.op-sep { width: 3px; height: 3px; }
+.op-note { font-size: 9pt; }
+.op-contact-name { font-size: 11pt; }
+
+/* Full-bleed navy contact band pinned to the bottom of the sheet */
+.op-contact {
+  margin-top: auto;
+  margin-left: -0.6in;
+  margin-right: -0.6in;
+  margin-bottom: -0.5in;
+  padding: 0.26in 0.6in 0.3in;
+}
+
+@media print {
+  @page { size: Letter; margin: 0; }
+  html, body { background: #fff !important; }
+  .op-screen {
+    padding: 0 !important;
+    background: #fff !important;
+    min-height: 0 !important;
+  }
+  .op-controls { display: none !important; }
+  .op-sheet {
+    width: 100% !important;
+    min-height: 100vh !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+  /* Keep the navy bands and gold accents when printing */
+  .op-sheet,
+  .op-sheet * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .op-block { break-inside: avoid; }
+}

@@ -2,7 +2,7 @@ import { Link } from "wouter";
 
 export default function Footer() {
   return (
-    <footer className="bg-accent text-accent-foreground" data-testid="footer">
+    <footer className="bg-accent text-accent-foreground print:hidden" data-testid="footer">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
@@ -29,6 +29,21 @@ export default function Footer() {
                 { label: "For Executives", href: "/services/executives" },
                 { label: "Contact", href: "/contact" },
                 { label: "Brand", href: "/brand" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>
+                    <span className="text-sm text-white/55 hover:text-primary transition-colors cursor-pointer">{link.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h4 className="text-xs uppercase tracking-widest font-semibold text-white/35 mt-8 mb-4">One-pagers</h4>
+            <ul className="space-y-3">
+              {[
+                { label: "For Private Equity Firms", href: "/one-pager/private-equity" },
+                { label: "For Executives", href: "/one-pager/executives" },
+                { label: "Firm Overview", href: "/one-pager/firm" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>

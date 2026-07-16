@@ -24,6 +24,7 @@ import Terms from "@/pages/Terms";
 import Disclosures from "@/pages/Disclosures";
 import Brand from "@/pages/Brand";
 import Todo from "@/pages/Todo";
+import OnePager from "@/pages/OnePager";
 import NotFound from "@/pages/not-found";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/disclosures" component={Disclosures} />
       <Route path="/brand" component={Brand} />
+      <Route path="/one-pager/:slug" component={OnePager} />
       <Route path="/todo" component={Todo} />
       <Route component={NotFound} />
     </Switch>

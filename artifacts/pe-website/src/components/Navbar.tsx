@@ -55,7 +55,7 @@ export default function Navbar() {
     <>
       <nav
         data-testid="navbar"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 print:hidden ${
           scrolled || mobileOpen
             ? "bg-white/95 backdrop-blur shadow-sm border-b border-border"
             : "bg-white border-b border-border"
