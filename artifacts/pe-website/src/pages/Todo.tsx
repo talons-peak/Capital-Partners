@@ -40,6 +40,7 @@ const delivered: ChecklistGroup[] = [
       { done: true, title: "For Executives: restyled the opening statement to match the For Private Equity Firms treatment - quotation marks, gold rule, and serif type removed" },
       { done: true, title: "For Executives: removed the stray apostrophe in 'L&E Partners team' and reworded the closing sentence to 'continuous hands-on involvement and follow-up ensure...'" },
       { done: true, title: "About: merged Nikki Delp's closing sentence into her bio paragraph; swapped in Sandi Macan's new professional headshot" },
+      { done: true, title: "For Executives: replaced the hero banner with L&E's new low-angle office-tower photo (used in full color, as supplied)" },
       { done: true, title: "Contact: intro now reads 'a search or an executive' and ends at 'strict confidence.'; the message placeholder now reads 'Tell us how we can help...'; the confidentiality note now reads 'All conversations and inquiries are strictly confidential.'" },
       { done: true, title: "Brand page: every asset now downloads as both SVG and PNG, and the signature gold ampersand is available as its own downloadable asset" },
     ],
@@ -190,12 +191,6 @@ const outstanding: ChecklistGroup[] = [
         title: "High-resolution professional headshots for Lori and Nikki",
         detail: "Sandi's new headshot is in place. Lori's and Nikki's bio photos are still the small files pulled from the old site (5-6 KB webp, ~200x250 px) - acceptable on desktop but blurry on retina and mobile zoom. Ideally shot by the same photographer as Sandi's for consistent lighting and background.",
         priority: "High",
-      },
-      {
-        done: false,
-        title: "Replacement photo for the For Executives page",
-        detail: "The July 2026 changes doc asks to swap the black-and-white executives-by-the-window banner. L&E is sourcing a replacement. It needs to be a wide landscape image (roughly 2560 px across) that reads well in black and white, since it runs as a full-bleed banner strip.",
-        priority: "Medium",
       },
       {
         done: false,
