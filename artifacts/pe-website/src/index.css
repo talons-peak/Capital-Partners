@@ -319,6 +319,38 @@
   padding: 0.26in 0.6in 0.3in;
 }
 
+/* Reflow the Letter canvas for small screens while leaving print dimensions intact. */
+@media screen and (max-width: 55.99rem) {
+  .op-screen {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .op-sheet {
+    width: 100%;
+    min-height: 0;
+    padding: 2rem 1.25rem;
+  }
+  .op-sheet > header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .op-title { font-size: 20pt; }
+  .op-lead { font-size: 10.5pt; }
+  .op-body { font-size: 10pt; }
+  .op-sheet .grid-cols-2,
+  .op-sheet .grid-cols-3 {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .op-contact {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    margin-bottom: -2rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
 @media print {
   @page { size: Letter; margin: 0; }
   html, body { background: #fff !important; }

@@ -28,6 +28,7 @@ const delivered: ChecklistGroup[] = [
       { done: true, title: "Three printable one-pager sheets: For Private Equity Firms, For Executives, and a Firm Overview, each at /one-pager/... and linked from the footer" },
       { done: true, title: "Each sheet has a 'Download PDF' button that produces a real, one-page PDF with selectable text, the true brand fonts, and a crisp wordmark (no browser URL or date header)" },
       { done: true, title: "Built entirely from copy already approved for the site; every sheet fits exactly one US Letter page (verified by rendering each to PDF)" },
+      { done: true, title: "Screen previews reflow into a readable single-column layout on phones without changing the one-page Letter PDF output" },
     ],
   },
   {
